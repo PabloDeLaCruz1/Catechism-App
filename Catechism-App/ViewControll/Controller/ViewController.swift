@@ -2,7 +2,7 @@
 //  ViewController.swift
 //  Catechism-App
 //
-//  Created by Pablo De La Cruz on 3/12/22.
+//  Created by Team Pablo De La Cruz on 3/12/22.
 //
 
 import UIKit
