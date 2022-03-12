@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		2201373527DCE197000F0C7C /* TestMeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestMeCoreData.xcdatamodel; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -37,6 +39,38 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2201373027DCDB39000F0C7C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		2201373127DCDB4F000F0C7C /* ViewControll */ = {
+			isa = PBXGroup;
+			children = (
+				2201373227DCDB8B000F0C7C /* Controller */,
+				2201373327DCDB98000F0C7C /* View */,
+			);
+			path = ViewControll;
+			sourceTree = "<group>";
+		};
+		2201373227DCDB8B000F0C7C /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
+			);
+			path = Controller;
+			sourceTree = "<group>";
+		};
+		2201373327DCDB98000F0C7C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		FE74DD7F27DCD0F400F33D69 = {
 			isa = PBXGroup;
 			children = (
@@ -57,11 +91,12 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */,
+				2201373027DCDB39000F0C7C /* Model */,
+				2201373127DCDB4F000F0C7C /* ViewControll */,
 				FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */,
-				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
-				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
 				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
+				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
 			);
 			path = "Catechism-App";
@@ -138,6 +173,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
@@ -358,6 +394,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				2201373527DCE197000F0C7C /* TestMeCoreData.xcdatamodel */,
+			);
+			currentVersion = 2201373527DCE197000F0C7C /* TestMeCoreData.xcdatamodel */;
+			path = TestMeCoreData.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = FE74DD8027DCD0F400F33D69 /* Project object */;
 }
