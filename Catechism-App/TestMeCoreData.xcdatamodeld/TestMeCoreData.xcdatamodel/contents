@@ -14,6 +14,7 @@
     <entity name="Quiz" representedClassName="Quiz" syncable="YES">
         <attribute name="descQuiz" optional="YES" attributeType="String"/>
         <attribute name="iQuiz" optional="YES" attributeType="String"/>
+        <attribute name="nameTechnology" optional="YES" attributeType="String"/>
         <attribute name="timeDuration" optional="YES" attributeType="String"/>
         <relationship name="quizQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuizQuestion"/>
         <relationship name="quizRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RankUser"/>
@@ -28,69 +29,38 @@
         <attribute name="idRank" optional="YES" attributeType="String"/>
         <attribute name="valueRank" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="Role" representedClassName="Role" syncable="YES">
-        <attribute name="descRol" optional="YES" attributeType="String"/>
-        <attribute name="idRol" optional="YES" attributeType="String"/>
-        <relationship name="role_detail" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Role_detail"/>
-        <relationship name="role_user" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="User"/>
-    </entity>
-    <entity name="Role_detail" representedClassName="Role_detail" syncable="YES">
-        <attribute name="descDetal" optional="YES" attributeType="String"/>
-        <attribute name="idRoleDetail" optional="YES" attributeType="String"/>
-        <attribute name="status" optional="YES" attributeType="String"/>
-    </entity>
     <entity name="Suscription" representedClassName="Suscription" syncable="YES">
         <attribute name="descSuscription" optional="YES" attributeType="String"/>
         <attribute name="idSuscription" optional="YES" attributeType="String"/>
         <attribute name="isFree" optional="YES" attributeType="String"/>
         <attribute name="status" optional="YES" attributeType="String"/>
-        <relationship name="suscriptionTechnology" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Technology"/>
-        <relationship name="suscriptionUser" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSuscription"/>
-    </entity>
-    <entity name="Technology" representedClassName="Technology" syncable="YES">
-        <attribute name="descTechnology" optional="YES" attributeType="String"/>
-        <attribute name="idTechnology" optional="YES" attributeType="String"/>
-        <relationship name="quiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz"/>
-    </entity>
-    <entity name="Type_Suscription" representedClassName="Type_Suscription" syncable="YES">
-        <attribute name="descTypesucription" optional="YES" attributeType="String"/>
-        <attribute name="idTypeSuscription" optional="YES" attributeType="String"/>
-        <attribute name="isPaid" optional="YES" attributeType="String"/>
-        <relationship name="suscription" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suscription"/>
+        <relationship name="suscriptionQuiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz"/>
     </entity>
     <entity name="User" representedClassName="User" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
+        <attribute name="isAdmin" optional="YES" attributeType="String"/>
         <attribute name="iUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
         <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
         <attribute name="status" optional="YES" attributeType="String"/>
         <relationship name="userAnswer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserAnswer"/>
         <relationship name="userRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RankUser"/>
-        <relationship name="userSuscription" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserSuscription"/>
+        <relationship name="userSuscription" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suscription"/>
     </entity>
     <entity name="UserAnswer" representedClassName="UserAnswer" syncable="YES">
         <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="idAnswer" optional="YES" attributeType="String"/>
         <attribute name="isCorrect" optional="YES" attributeType="String"/>
     </entity>
-    <entity name="UserSuscription" representedClassName="UserSuscription" syncable="YES">
-        <attribute name="idUseruscription" optional="YES" attributeType="String"/>
-        <attribute name="isFree" optional="YES" attributeType="String"/>
-    </entity>
     <elements>
-        <element name="Role" positionX="-636.0859375" positionY="-230.65234375" width="128" height="89"/>
-        <element name="User" positionX="-619.1953125" positionY="-95.90625" width="128" height="178"/>
-        <element name="Role_detail" positionX="-435.875" positionY="-188.5625" width="128" height="74"/>
         <element name="Notification" positionX="-1217.234375" positionY="-214.99609375" width="128" height="89"/>
-        <element name="Suscription" positionX="-1011.58984375" positionY="-99.48046875" width="128" height="133"/>
-        <element name="Type_Suscription" positionX="-1010.13671875" positionY="-231.5703125" width="128" height="103"/>
-        <element name="Quiz" positionX="-1173.94921875" positionY="104.36328125" width="128" height="118"/>
-        <element name="Technology" positionX="-1172.34375" positionY="-26.421875" width="128" height="88"/>
+        <element name="QuestionAnswer" positionX="-792.9140625" positionY="91.0625" width="128" height="88"/>
+        <element name="Quiz" positionX="-1216.01171875" positionY="74.70703125" width="128" height="133"/>
         <element name="QuizQuestion" positionX="-997.78125" positionY="72.64453125" width="128" height="88"/>
-        <element name="QuestionAnswer" positionX="-829.90625" positionY="108.34375" width="128" height="88"/>
         <element name="RankUser" positionX="-464.88671875" positionY="208.86328125" width="128" height="88"/>
-        <element name="UserAnswer" positionX="-604.52734375" positionY="150.34765625" width="128" height="74"/>
-        <element name="UserSuscription" positionX="-806.4375" positionY="-60.96875" width="128" height="73"/>
+        <element name="Suscription" positionX="-1011.58984375" positionY="-99.48046875" width="128" height="118"/>
+        <element name="User" positionX="-741.16796875" positionY="-196.51953125" width="128" height="193"/>
+        <element name="UserAnswer" positionX="-582.77734375" positionY="106.0625" width="128" height="74"/>
     </elements>
 </model>
