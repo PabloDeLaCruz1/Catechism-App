@@ -15,52 +15,35 @@
         <attribute name="descQuiz" optional="YES" attributeType="String"/>
         <attribute name="iQuiz" optional="YES" attributeType="String"/>
         <attribute name="nameTechnology" optional="YES" attributeType="String"/>
+        <attribute name="suscriptionPaidOrFree" optional="YES" attributeType="String"/>
         <attribute name="timeDuration" optional="YES" attributeType="String"/>
         <relationship name="quizQuestion" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuizQuestion"/>
-        <relationship name="quizRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RankUser"/>
     </entity>
     <entity name="QuizQuestion" representedClassName="QuizQuestion" syncable="YES">
         <attribute name="descQuizQuestion" optional="YES" attributeType="String"/>
         <attribute name="idQuizQuestion" optional="YES" attributeType="String"/>
         <relationship name="questionAnswer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="QuestionAnswer"/>
     </entity>
-    <entity name="RankUser" representedClassName="RankUser" syncable="YES">
-        <attribute name="descRank" optional="YES" attributeType="String"/>
-        <attribute name="idRank" optional="YES" attributeType="String"/>
-        <attribute name="valueRank" optional="YES" attributeType="String"/>
-    </entity>
-    <entity name="Suscription" representedClassName="Suscription" syncable="YES">
-        <attribute name="descSuscription" optional="YES" attributeType="String"/>
-        <attribute name="idSuscription" optional="YES" attributeType="String"/>
-        <attribute name="isFree" optional="YES" attributeType="String"/>
-        <attribute name="status" optional="YES" attributeType="String"/>
-        <relationship name="suscriptionQuiz" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz"/>
-    </entity>
     <entity name="User" representedClassName="User" syncable="YES">
-        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="email" optional="YES" attributeType="String"/>
         <attribute name="isAdmin" optional="YES" attributeType="String"/>
-        <attribute name="iUser" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
-        <attribute name="name" optional="YES" attributeType="String"/>
         <attribute name="password" optional="YES" attributeType="String"/>
-        <attribute name="status" optional="YES" attributeType="String"/>
+        <attribute name="rank" optional="YES" attributeType="Integer 32" defaultValueString="0" usesScalarValueType="YES"/>
+        <attribute name="suscriptionPaidOrFree" optional="YES" attributeType="String"/>
         <relationship name="userAnswer" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="UserAnswer"/>
-        <relationship name="userRank" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RankUser"/>
-        <relationship name="userSuscription" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Suscription"/>
+        <relationship name="userSuscription" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Quiz"/>
     </entity>
     <entity name="UserAnswer" representedClassName="UserAnswer" syncable="YES">
-        <attribute name="dateCreated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
-        <attribute name="idAnswer" optional="YES" attributeType="String"/>
+        <attribute name="dateCreated" optional="YES" attributeType="String"/>
+        <attribute name="idAnswer" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="isCorrect" optional="YES" attributeType="String"/>
     </entity>
     <elements>
-        <element name="Notification" positionX="-1217.234375" positionY="-214.99609375" width="128" height="89"/>
-        <element name="QuestionAnswer" positionX="-792.9140625" positionY="91.0625" width="128" height="88"/>
-        <element name="Quiz" positionX="-1216.01171875" positionY="74.70703125" width="128" height="133"/>
-        <element name="QuizQuestion" positionX="-997.78125" positionY="72.64453125" width="128" height="88"/>
-        <element name="RankUser" positionX="-464.88671875" positionY="208.86328125" width="128" height="88"/>
-        <element name="Suscription" positionX="-1011.58984375" positionY="-99.48046875" width="128" height="118"/>
-        <element name="User" positionX="-741.16796875" positionY="-196.51953125" width="128" height="193"/>
-        <element name="UserAnswer" positionX="-582.77734375" positionY="106.0625" width="128" height="74"/>
+        <element name="Notification" positionX="-1217.3984375" positionY="-220.96875" width="128" height="89"/>
+        <element name="QuestionAnswer" positionX="-937.68359375" positionY="120.4921875" width="128" height="88"/>
+        <element name="Quiz" positionX="-1180.13671875" positionY="-113.8125" width="128" height="133"/>
+        <element name="QuizQuestion" positionX="-1169.87890625" positionY="106.5" width="128" height="88"/>
+        <element name="User" positionX="-966.234375" positionY="-132.66796875" width="128" height="148"/>
+        <element name="UserAnswer" positionX="-796.609375" positionY="-29.953125" width="128" height="88"/>
     </elements>
 </model>
