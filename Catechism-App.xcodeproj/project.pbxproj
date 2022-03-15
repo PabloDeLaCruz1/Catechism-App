@@ -11,6 +11,8 @@
 		2201373927DD0B29000F0C7C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373827DD0B29000F0C7C /* Person.swift */; };
 		2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373A27DD0B8D000F0C7C /* DBHelper.swift */; };
 		2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */; };
+		22132BC227E0AA1C00642694 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* Quiz.storyboard */; };
+		22132BC427E0B45800642694 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22132BC327E0B45800642694 /* QuizViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
@@ -24,6 +26,8 @@
 		2201373827DD0B29000F0C7C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2201373A27DD0B8D000F0C7C /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
+		22132BC127E0AA1C00642694 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		22132BC327E0B45800642694 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -68,6 +72,7 @@
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
 				2201373827DD0B29000F0C7C /* Person.swift */,
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
+				22132BC327E0B45800642694 /* QuizViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -76,6 +81,7 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
+				22132BC127E0AA1C00642694 /* Quiz.storyboard */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -172,6 +178,7 @@
 				FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */,
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
+				22132BC227E0AA1C00642694 /* Quiz.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -185,6 +192,7 @@
 				2201373927DD0B29000F0C7C /* Person.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
+				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
