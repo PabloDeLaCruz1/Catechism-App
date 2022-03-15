@@ -11,8 +11,15 @@
 		2201373927DD0B29000F0C7C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373827DD0B29000F0C7C /* Person.swift */; };
 		2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373A27DD0B8D000F0C7C /* DBHelper.swift */; };
 		2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */; };
-		22132BC227E0AA1C00642694 /* Quiz.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* Quiz.storyboard */; };
+		22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */; };
 		22132BC427E0B45800642694 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22132BC327E0B45800642694 /* QuizViewController.swift */; };
+		2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308427E10DB2009085D5 /* StartStoryboard.storyboard */; };
+		2247308B27E10E71009085D5 /* AdmonStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */; };
+		2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */; };
+		2247309127E10ECA009085D5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309027E10ECA009085D5 /* StartViewController.swift */; };
+		2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdmonViewController.swift */; };
+		2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309527E10F43009085D5 /* DashboardViewController.swift */; };
+		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
@@ -26,8 +33,15 @@
 		2201373827DD0B29000F0C7C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2201373A27DD0B8D000F0C7C /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
-		22132BC127E0AA1C00642694 /* Quiz.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Quiz.storyboard; sourceTree = "<group>"; };
+		22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizStoryboard.storyboard; sourceTree = "<group>"; };
 		22132BC327E0B45800642694 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		2247308427E10DB2009085D5 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
+		2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdmonStoryBoard.storyboard; sourceTree = "<group>"; };
+		2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryBoard.storyboard; sourceTree = "<group>"; };
+		2247309027E10ECA009085D5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		2247309327E10F26009085D5 /* AdmonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmonViewController.swift; sourceTree = "<group>"; };
+		2247309527E10F43009085D5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
+		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -49,13 +63,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		2201373027DCDB39000F0C7C /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
-			sourceTree = "<group>";
-		};
 		2201373127DCDB4F000F0C7C /* ViewControll */ = {
 			isa = PBXGroup;
 			children = (
@@ -68,10 +75,14 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				2201373827DD0B29000F0C7C /* Person.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
-				2201373827DD0B29000F0C7C /* Person.swift */,
+				2247309327E10F26009085D5 /* AdmonViewController.swift */,
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
+				2247309527E10F43009085D5 /* DashboardViewController.swift */,
+				2247309027E10ECA009085D5 /* StartViewController.swift */,
+				2247309727E11313009085D5 /* MenuViewController.swift */,
 				22132BC327E0B45800642694 /* QuizViewController.swift */,
 			);
 			path = Controller;
@@ -81,9 +92,19 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
-				22132BC127E0AA1C00642694 /* Quiz.storyboard */,
+				2247308427E10DB2009085D5 /* StartStoryboard.storyboard */,
+				2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */,
+				22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */,
+				2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2247308327E10D6C009085D5 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FE74DD7F27DCD0F400F33D69 = {
@@ -106,7 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */,
-				2201373027DCDB39000F0C7C /* Model */,
+				2247308327E10D6C009085D5 /* Model */,
 				2201373127DCDB4F000F0C7C /* ViewControll */,
 				FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */,
 				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
@@ -177,8 +198,11 @@
 			files = (
 				FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */,
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
+				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
-				22132BC227E0AA1C00642694 /* Quiz.storyboard in Resources */,
+				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
+				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
+				2247308B27E10E71009085D5 /* AdmonStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -194,7 +218,11 @@
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
+				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
+				2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */,
+				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 			);
@@ -353,6 +381,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -381,6 +410,7 @@
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
