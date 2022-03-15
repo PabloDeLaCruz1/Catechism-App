@@ -126,12 +126,12 @@
             <point key="canvasLocation" x="-743" y="-48"/>
         </scene>
         <!--QuizStoryboard-->
-        <scene sceneID="vqT-aQ-RcU">
+        <scene sceneID="zqj-Oq-Mio">
             <objects>
-                <viewControllerPlaceholder storyboardName="QuizStoryboard" id="PW1-iT-7g0" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="791-4g-4CQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewControllerPlaceholder storyboardName="QuizStoryboard" id="g2p-Qy-7KS" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GqE-LB-r8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="733" y="481"/>
+            <point key="canvasLocation" x="648" y="473"/>
         </scene>
         <!--AdmonStoryBoard-->
         <scene sceneID="9o4-eD-tL3">
@@ -173,14 +173,14 @@
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
-                                    <segue destination="PW1-iT-7g0" kind="presentation" modalPresentationStyle="fullScreen" id="md3-ha-p7x"/>
+                                    <segue destination="g2p-Qy-7KS" kind="presentation" id="WQe-Yc-CJm"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvm-XK-qk1">
                                 <rect key="frame" x="115" y="299" width="185" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Admon">
+                                <buttonConfiguration key="configuration" style="filled" title="Admin">
                                     <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
                                 </buttonConfiguration>
                                 <connections>
