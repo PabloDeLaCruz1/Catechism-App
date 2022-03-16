@@ -24,24 +24,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var persons:[Person] = []
     
-    
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
-        cell.textLabel?.text = "Name: " + persons[indexPath.row].name + ", " + "Age: " + String(persons[indexPath.row].age)
-        return cell
-    }
-    
     @IBOutlet weak var tableViewEmail: UITextField!
     @IBOutlet weak var tableViewName: UITextField!
     @IBOutlet weak var tableViewRol: UITextField!
     
     @IBOutlet weak var buttonSave: UIButton!
     
-    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        insertData()
+        populateValues()
+    }
     
     @IBAction func bSave(_ sender: Any) {
         //getting values from textfields
@@ -51,20 +44,16 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         print("Person saved successfully")
     }
     
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        insertData()
-        populateValues()
-        
-      
-  
+    //MARK FUNCTIONS
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return persons.count
     }
     
-    
-    
-    
-    
-    //MARK FUNCTIONS
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
+        cell.textLabel?.text = "Name: " + persons[indexPath.row].name + ", " + "Age: " + String(persons[indexPath.row].age)
+        return cell
+    }
     
     private func populateValues() {
         textLabel.text = "Hello world!"

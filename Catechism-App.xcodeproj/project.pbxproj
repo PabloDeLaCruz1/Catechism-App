@@ -79,7 +79,6 @@
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
 				2247309327E10F26009085D5 /* AdmonViewController.swift */,
-				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
 				2247309527E10F43009085D5 /* DashboardViewController.swift */,
 				2247309027E10ECA009085D5 /* StartViewController.swift */,
 				2247309727E11313009085D5 /* MenuViewController.swift */,
@@ -103,6 +102,7 @@
 		2247308327E10D6C009085D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
