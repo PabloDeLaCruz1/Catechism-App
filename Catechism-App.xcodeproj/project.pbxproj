@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		03FE4EC617654F70EE92F567 /* Pods_Catechism_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C45D82AB9811F9F5805B4935 /* Pods_Catechism_App.framework */; };
 		2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */; };
 		2201373927DD0B29000F0C7C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373827DD0B29000F0C7C /* Person.swift */; };
 		2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373A27DD0B8D000F0C7C /* DBHelper.swift */; };
@@ -20,9 +21,11 @@
 		2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdmonViewController.swift */; };
 		2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309527E10F43009085D5 /* DashboardViewController.swift */; };
 		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
+		224730BA27E154B5009085D5 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224730B927E154B5009085D5 /* ViewController.swift */; };
+		224730BC27E1661E009085D5 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 224730BB27E1661E009085D5 /* WellcomeViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
-		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
+		FE74DD9027DCD0F400F33D69 /* DBTestViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* DBTestViewController.swift */; };
 		FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9127DCD0F400F33D69 /* Main.storyboard */; };
 		FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9427DCD0F800F33D69 /* Assets.xcassets */; };
 		FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */; };
@@ -42,10 +45,15 @@
 		2247309327E10F26009085D5 /* AdmonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmonViewController.swift; sourceTree = "<group>"; };
 		2247309527E10F43009085D5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		224730B927E154B5009085D5 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		224730BB27E1661E009085D5 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
+		C45D82AB9811F9F5805B4935 /* Pods_Catechism_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catechism_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		E06C5A2C18BF587A29783130 /* Pods-Catechism-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.debug.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.debug.xcconfig"; sourceTree = "<group>"; };
+		F8D6A61B2F31112C593C0DAC /* Pods-Catechism-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.release.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.release.xcconfig"; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		FE74DD8F27DCD0F400F33D69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		FE74DD8F27DCD0F400F33D69 /* DBTestViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBTestViewController.swift; sourceTree = "<group>"; };
 		FE74DD9227DCD0F400F33D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FE74DD9427DCD0F800F33D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74DD9727DCD0F800F33D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -57,12 +65,21 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				03FE4EC617654F70EE92F567 /* Pods_Catechism_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1CF116EC7D3604816C93F3A8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				C45D82AB9811F9F5805B4935 /* Pods_Catechism_App.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		2201373127DCDB4F000F0C7C /* ViewControll */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,7 +93,9 @@
 			isa = PBXGroup;
 			children = (
 				2201373827DD0B29000F0C7C /* Person.swift */,
-				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
+				FE74DD8F27DCD0F400F33D69 /* DBTestViewController.swift */,
+				224730BB27E1661E009085D5 /* WellcomeViewController.swift */,
+				224730B927E154B5009085D5 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
 				2247309327E10F26009085D5 /* AdmonViewController.swift */,
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
@@ -107,11 +126,22 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		BD9749253C60A369A9FC94A6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				E06C5A2C18BF587A29783130 /* Pods-Catechism-App.debug.xcconfig */,
+				F8D6A61B2F31112C593C0DAC /* Pods-Catechism-App.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		FE74DD7F27DCD0F400F33D69 = {
 			isa = PBXGroup;
 			children = (
 				FE74DD8A27DCD0F400F33D69 /* Catechism-App */,
 				FE74DD8927DCD0F400F33D69 /* Products */,
+				BD9749253C60A369A9FC94A6 /* Pods */,
+				1CF116EC7D3604816C93F3A8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -145,9 +175,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE74DD9C27DCD0F800F33D69 /* Build configuration list for PBXNativeTarget "Catechism-App" */;
 			buildPhases = (
+				19E3DEAD5F0F906999C9915A /* [CP] Check Pods Manifest.lock */,
 				FE74DD8427DCD0F400F33D69 /* Sources */,
 				FE74DD8527DCD0F400F33D69 /* Frameworks */,
 				FE74DD8627DCD0F400F33D69 /* Resources */,
+				7B22BE8A74859E17A0108FA1 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -208,6 +240,48 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		19E3DEAD5F0F906999C9915A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Catechism-App-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B22BE8A74859E17A0108FA1 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Catechism-App/Pods-Catechism-App-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-Catechism-App/Pods-Catechism-App-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-Catechism-App/Pods-Catechism-App-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		FE74DD8427DCD0F400F33D69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -217,8 +291,10 @@
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
-				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
+				224730BC27E1661E009085D5 /* WellcomeViewController.swift in Sources */,
+				FE74DD9027DCD0F400F33D69 /* DBTestViewController.swift in Sources */,
 				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
+				224730BA27E154B5009085D5 /* ViewController.swift in Sources */,
 				2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
@@ -368,6 +444,7 @@
 		};
 		FE74DD9D27DCD0F800F33D69 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E06C5A2C18BF587A29783130 /* Pods-Catechism-App.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -397,6 +474,7 @@
 		};
 		FE74DD9E27DCD0F800F33D69 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F8D6A61B2F31112C593C0DAC /* Pods-Catechism-App.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;

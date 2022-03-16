@@ -125,6 +125,32 @@
             </objects>
             <point key="canvasLocation" x="-743" y="-48"/>
         </scene>
+        <!--View Controller-->
+        <scene sceneID="h1j-5d-9fQ">
+            <objects>
+                <viewController id="e4u-xS-yOJ" customClass="ViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="G00-bk-1JJ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4rA-fc-QKj" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="124" y="381" width="166" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Fb login"/>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="Xef-qz-FIw"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="lgbtn" destination="4rA-fc-QKj" id="Y5t-rV-baH"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="WoN-A7-tXI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="38" y="-168"/>
+        </scene>
         <!--QuizStoryboard-->
         <scene sceneID="zqj-Oq-Mio">
             <objects>

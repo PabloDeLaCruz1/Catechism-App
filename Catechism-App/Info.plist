@@ -21,5 +21,20 @@
 			</array>
 		</dict>
 	</dict>
+    <key>CFBundleURLTypes</key>
+    <array>
+      <dict>
+      <key>CFBundleURLSchemes</key>
+      <array>
+        <string>fb672974670792818</string>
+      </array>
+      </dict>
+    </array>
+    <key>FacebookAppID</key>
+    <string>672974670792818</string>
+    <key>FacebookClientToken</key>
+    <string>e6141bdd7e979f1677da48bcebe13bae</string>
+    <key>FacebookDisplayName</key>
+    <string>Catechism-App</string>
 </dict>
 </plist>
