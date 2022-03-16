@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fk8-hy-ozg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -114,11 +114,11 @@
                         <outlet property="currencyLabel" destination="IAD-n3-Yb9" id="Dzx-8l-QRH"/>
                         <outlet property="dateLabel" destination="rgR-PL-7hD" id="GFf-FL-ekQ"/>
                         <outlet property="imageView" destination="RXX-jL-S6m" id="4Uq-CW-nny"/>
-                        <outlet property="personTable" destination="bz8-Ha-TgR" id="Ds1-d3-i6H"/>
                         <outlet property="tableViewEmail" destination="UQ1-eE-09J" id="eBi-28-maT"/>
                         <outlet property="tableViewName" destination="KrK-90-MNj" id="EIO-wV-S12"/>
                         <outlet property="tableViewRol" destination="DOa-Dq-wLE" id="od2-ex-6mF"/>
                         <outlet property="textLabel" destination="rfe-Wq-6J6" id="Lk5-9R-nYm"/>
+                        <outlet property="usersTable" destination="bz8-Ha-TgR" id="DNs-ZA-vUv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -133,10 +133,10 @@
             </objects>
             <point key="canvasLocation" x="648" y="473"/>
         </scene>
-        <!--AdmonStoryBoard-->
+        <!--AdminStoryBoard-->
         <scene sceneID="9o4-eD-tL3">
             <objects>
-                <viewControllerPlaceholder storyboardName="AdmonStoryBoard" id="TXc-dj-6or" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="AdminStoryBoard" id="TXc-dj-6or" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="43C-kU-JMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="709" y="664"/>
