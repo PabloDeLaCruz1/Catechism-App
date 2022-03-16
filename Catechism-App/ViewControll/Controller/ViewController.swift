@@ -9,8 +9,8 @@ import UIKit
 import SQLite3
 
 class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    @IBOutlet weak var personTable: UITableView!
   
+    @IBOutlet weak var usersTable: UITableView!
     @IBOutlet weak var currencyLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
     
@@ -22,7 +22,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     
     var db:DBHelper = DBHelper()
     
-    var persons:[Person] = []
+    var users:[Users] = []
     
     @IBOutlet weak var tableViewEmail: UITextField!
     @IBOutlet weak var tableViewName: UITextField!
@@ -33,6 +33,7 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     override func viewDidLoad() {
         super.viewDidLoad()
         insertData()
+
         populateValues()
     }
     
@@ -41,17 +42,17 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
         
         
         //displaying a success message
-        print("Person saved successfully")
+        print("Users saved successfully")
     }
     
     //MARK FUNCTIONS
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return persons.count
+        return users.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell:UITableViewCell = tableView.dequeueReusableCell(withIdentifier: cellReuseIdentifier)!
-        cell.textLabel?.text = "Name: " + persons[indexPath.row].name + ", " + "Age: " + String(persons[indexPath.row].age)
+        cell.textLabel?.text = "Name: " + users[indexPath.row].name + ", " + "password: " + String(users[indexPath.row].password)
         return cell
     }
     
@@ -63,16 +64,18 @@ class ViewController: UIViewController, UITableViewDelegate, UITableViewDataSour
     }
     
     func insertData(){
-        personTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
-        personTable.delegate = self
-        personTable.dataSource = self
+        usersTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
+        usersTable.delegate = self
+        usersTable.dataSource = self
         
-        db.deleteByID(id: 1)
-        db.deleteByID(id: 2)
-        db.insert(id: 11, name: "Pablo", age: 32)
-        db.insert(id: 12, name: "Young", age: 25)
-        db.insert(id: 13, name: "David", age: 23)
-        persons = db.read()
+        db.deleteByID(id: 11)
+        db.deleteByID(id: 12)
+        db.deleteByID(id: 13)
+
+        db.insertUsers(id: 11, name: "Pablo", password: "32" , subscriptionType: 1)
+        db.insertUsers(id: 12, name: "Young", password: "123", subscriptionType: 2)
+        db.insertUsers(id: 13, name: "David", password: "123", subscriptionType: 0)
+        users = db.read()
     }
     
 }

@@ -8,16 +8,15 @@
 
 /* Begin PBXBuildFile section */
 		2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */; };
-		2201373927DD0B29000F0C7C /* Person.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373827DD0B29000F0C7C /* Person.swift */; };
 		2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373A27DD0B8D000F0C7C /* DBHelper.swift */; };
 		2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */; };
 		22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */; };
 		22132BC427E0B45800642694 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22132BC327E0B45800642694 /* QuizViewController.swift */; };
 		2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308427E10DB2009085D5 /* StartStoryboard.storyboard */; };
-		2247308B27E10E71009085D5 /* AdmonStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */; };
+		2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */; };
 		2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */; };
 		2247309127E10ECA009085D5 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309027E10ECA009085D5 /* StartViewController.swift */; };
-		2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdmonViewController.swift */; };
+		2247309427E10F26009085D5 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdminViewController.swift */; };
 		2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309527E10F43009085D5 /* DashboardViewController.swift */; };
 		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
@@ -26,20 +25,21 @@
 		FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9127DCD0F400F33D69 /* Main.storyboard */; };
 		FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9427DCD0F800F33D69 /* Assets.xcassets */; };
 		FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */; };
+		FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0727E1F7A400F33D69 /* Users.swift */; };
+		FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0927E200DF00F33D69 /* QuizSessions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2201373527DCE197000F0C7C /* TestMeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestMeCoreData.xcdatamodel; sourceTree = "<group>"; };
-		2201373827DD0B29000F0C7C /* Person.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Person.swift; sourceTree = "<group>"; };
 		2201373A27DD0B8D000F0C7C /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizStoryboard.storyboard; sourceTree = "<group>"; };
 		22132BC327E0B45800642694 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
 		2247308427E10DB2009085D5 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
-		2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdmonStoryBoard.storyboard; sourceTree = "<group>"; };
+		2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryBoard.storyboard; sourceTree = "<group>"; };
 		2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryBoard.storyboard; sourceTree = "<group>"; };
 		2247309027E10ECA009085D5 /* StartViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
-		2247309327E10F26009085D5 /* AdmonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdmonViewController.swift; sourceTree = "<group>"; };
+		2247309327E10F26009085D5 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		2247309527E10F43009085D5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -50,6 +50,8 @@
 		FE74DD9427DCD0F800F33D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74DD9727DCD0F800F33D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE74DD9927DCD0F800F33D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		FE74DE0727E1F7A400F33D69 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		FE74DE0927E200DF00F33D69 /* QuizSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -75,10 +77,9 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
-				2201373827DD0B29000F0C7C /* Person.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
-				2247309327E10F26009085D5 /* AdmonViewController.swift */,
+				2247309327E10F26009085D5 /* AdminViewController.swift */,
 				2247309527E10F43009085D5 /* DashboardViewController.swift */,
 				2247309027E10ECA009085D5 /* StartViewController.swift */,
 				2247309727E11313009085D5 /* MenuViewController.swift */,
@@ -92,7 +93,7 @@
 			children = (
 				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
 				2247308427E10DB2009085D5 /* StartStoryboard.storyboard */,
-				2247308A27E10E71009085D5 /* AdmonStoryBoard.storyboard */,
+				2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */,
 				22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */,
 				2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */,
 			);
@@ -102,7 +103,9 @@
 		2247308327E10D6C009085D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				FE74DE0727E1F7A400F33D69 /* Users.swift */,
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
+				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -202,7 +205,7 @@
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
 				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
 				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
-				2247308B27E10E71009085D5 /* AdmonStoryBoard.storyboard in Resources */,
+				2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -213,15 +216,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2201373927DD0B29000F0C7C /* Person.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
 				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
-				2247309427E10F26009085D5 /* AdmonViewController.swift in Sources */,
+				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
+				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
