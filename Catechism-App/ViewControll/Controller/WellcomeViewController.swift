@@ -9,10 +9,40 @@ import UIKit
 
 class WellcomeViewController: UIViewController {
     var userWellcome = ""
+    var susWellcome = ""
     @IBOutlet weak var userName: UILabel!
+    @IBOutlet weak var suscriptionL: UILabel!
+    
+    
+    @IBOutlet weak var quizB: UIButton!
+    @IBOutlet weak var dashB: UIButton!
+    @IBOutlet weak var adminB: UIButton!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.text! = userWellcome
+        suscriptionL.text! = susWellcome
+        
+        if (suscriptionL.text == "0"){
+            adminB.isEnabled = false
+            dashB.isEnabled = false
+            quizB.isEnabled = true
+        }else if (suscriptionL.text == "1"){
+            adminB.isEnabled = false
+            dashB.isEnabled = false
+        }else if (suscriptionL.text == "2"){
+            adminB.isEnabled = true
+            dashB.isEnabled = true
+            quizB.isEnabled = true
+        }else if (suscriptionL.text == "3"){
+            adminB.isEnabled = false
+            dashB.isEnabled = false
+            quizB.isEnabled = false
+        }
+        
+        
         print("userWellcome:",userWellcome)
         // Do any additional setup after loading the view.
     }
