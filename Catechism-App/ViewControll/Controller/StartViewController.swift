@@ -76,7 +76,7 @@ class StartViewController: UIViewController {
     
     @IBAction func loginButton(_ sender: Any) {
         //DBHELPER
-        let data = DBHelper.init().read() //  .inst.read()
+        let data = DBHelper.init().getUsers() //  .inst.read()
         for d in data{
             
             if (d.name == userText.text!) &&  (userText.text! != "")  &&  (d.password ==  userPasswordText.text!) {

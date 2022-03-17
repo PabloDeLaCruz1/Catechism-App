@@ -33,6 +33,7 @@
 		FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0927E200DF00F33D69 /* QuizSessions.swift */; };
 		FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */; };
 		FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */; };
+		FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7627E3CA8800F33D69 /* HeaderTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,6 +65,7 @@
 		FE74DE0927E200DF00F33D69 /* QuizSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessions.swift; sourceTree = "<group>"; };
 		FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUsersTableViewController.swift; sourceTree = "<group>"; };
 		FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
+		FE74DE7627E3CA8800F33D69 /* HeaderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -162,6 +164,7 @@
 			children = (
 				2247309327E10F26009085D5 /* AdminViewController.swift */,
 				FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */,
+				FE74DE7627E3CA8800F33D69 /* HeaderTableViewCell.swift */,
 				FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */,
 			);
 			path = Admin;
@@ -258,6 +261,7 @@
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
+				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,

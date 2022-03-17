@@ -9,9 +9,11 @@ import UIKit
 
 class ViewUsersTableViewController: UITableViewController {
 
+    let Users = DBHelper.init().getUsers()
+
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -28,7 +30,7 @@ class ViewUsersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 2
+        return Users.count
     }
 
     
@@ -38,14 +40,11 @@ class ViewUsersTableViewController: UITableViewController {
 
         let cell = tableView.dequeueReusableCell(withIdentifier: "cell") as! UserTableViewCell
 
-        cell.userId.text = "2"
-        cell.userName.text = "Pablo"
-        cell.subType.text = "freeee"
-        cell.totalScore.text = "1000"
-        
-//        cell.img1.image = UIImage(named: imgData[indexPath.row])
-        cell.backgroundColor = UIColor.blue
-        
+            print(Users)
+        cell.userId.text = String(Users[indexPath.row].id)
+        cell.userName.text = Users[indexPath.row].name
+        cell.subType.text = String(Users[indexPath.row].subscriptionType)
+        cell.totalScore.text = String(getTotalScoreById(id: Users[indexPath.row].id))
         return cell
     }
     
@@ -94,5 +93,27 @@ class ViewUsersTableViewController: UITableViewController {
         // Pass the selected object to the new view controller.
     }
     */
+//
+//    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+//
+//    }
+//
+    // Header Cell
+    override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let  headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderTableViewCell
+        headerCell.backgroundColor = UIColor.gray
 
+        return headerCell
+    }
+    
+    func getTotalScoreById(id: Int) -> Int {
+        let quizSessions = DBHelper.init().getQuizSessions()
+        var score = 0
+        for q in quizSessions {
+            if q.userId == id {
+                score += q.score
+            }
+        }
+        return score;
+    }
 }

@@ -15,6 +15,7 @@ class DBHelper
     {
         db = openDatabase()
         createUsersTable()
+        createQuizSessionsTable()
     }
 
     let dbPath: String = "catechism.sqlite"
@@ -93,14 +94,14 @@ class DBHelper
     }
     
     
-
+    // MARK: Insert Data
     //:::::::::::::::::::::::::::::::::::::::::::
     //::::::::::Inserting Data into Tables ::::::
     //:::::::::::::::::::::::::::::::::::::::::::
 
     func insertUsers(id: Int, name: String, password: String, subscriptionType: Int)
     {
-        let users = read()
+        let users = getUsers()
         for u in users
         {
             if u.id == id
@@ -128,9 +129,9 @@ class DBHelper
         sqlite3_finalize(insertStatement)
     }
 
-    func insertQuizSessions(id: Int, userId: Int, score: String, sessionDate: String, subjectName: String)
+    func insertQuizSessions(id: Int, userId: Int, score: Int, sessionDate: String, subjectName: String)
     {
-        let quiz = read()
+        let quiz = getUsers()
         for q in quiz
         {
             if q.id == id
@@ -138,12 +139,12 @@ class DBHelper
                 return
             }
         }
-        let insertStatementString = "INSERT INTO Quiz_Sessions(Id, user_id, score, sessions_date, subject_name) VALUES (?, ?, ?, ?, ?);"
+        let insertStatementString = "INSERT INTO Quiz_Sessions(Id, user_id, score, session_date, subject_name) VALUES (?, ?, ?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(insertStatement, 1, Int32(id))
             sqlite3_bind_int(insertStatement, 2, Int32(userId))
-            sqlite3_bind_text(insertStatement, 3, (score as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 3, Int32(score))
             sqlite3_bind_text(insertStatement, 4, (sessionDate as NSString).utf8String, -1, nil)
             sqlite3_bind_text(insertStatement, 5, (subjectName as NSString).utf8String, -1, nil)
 
@@ -159,14 +160,13 @@ class DBHelper
         sqlite3_finalize(insertStatement)
     }
 
-
+    // MARK: -  Get Data
     //:::::::::::::::::::::::::::::::::::::::::::
     //::::::::::Reading Data from tables ::::::::
     //:::::::::::::::::::::::::::::::::::::::::::
     
-// MARK: -  Data
 
-    func read() -> [Users] {
+    func getUsers() -> [Users] {
         let queryStatementString = "SELECT * FROM users;"
         var queryStatement: OpaquePointer? = nil
         var psns: [Users] = []
@@ -197,11 +197,11 @@ class DBHelper
                 let id = sqlite3_column_int(queryStatement, 0)
                 let userId = sqlite3_column_int(queryStatement, 1)
 
-                let score = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
+                let score = sqlite3_column_int(queryStatement, 2)
                 let sessionDate = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
                 let subjectName = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
 
-                quizSessions.append(QuizSessions(id: Int(id), userId: Int(userId), score: score, sessionDate: sessionDate, subjectName: subjectName))
+                quizSessions.append(QuizSessions(id: Int(id), userId: Int(userId), score: Int(score), sessionDate: sessionDate, subjectName: subjectName))
            
                 print("Quiz Sessions Query Result:")
                 print("\(id) | \(userId) | \(score) | \(sessionDate) | \(subjectName)")
@@ -239,7 +239,7 @@ class DBHelper
         return questions
     }
 
-
+    // MARK: -  Delete Data
     //:::::::::::::::::::::::::::::::::::::::::::
     //::::::::::Deleting Data from tables ::::::::
     //:::::::::::::::::::::::::::::::::::::::::::
@@ -256,6 +256,21 @@ class DBHelper
             }
         } else {
             print("DELETE statement could not be prepared")
+        }
+        sqlite3_finalize(deleteStatement)
+    }
+    func deleteByIDandTable(id: Int, table: String) {
+        let deleteStatementStirng = "DELETE FROM \(table) WHERE Id = ?;"
+        var deleteStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(deleteStatement, 1, Int32(id))
+            if sqlite3_step(deleteStatement) == SQLITE_DONE {
+                print("Successfully deleted row from \(table) .")
+            } else {
+                print("Could not delete row from \(table) .")
+            }
+        } else {
+            print("DELETE statement for \(table) could not be prepared")
         }
         sqlite3_finalize(deleteStatement)
     }
