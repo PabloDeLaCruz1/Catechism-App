@@ -6,6 +6,7 @@
 //
 
 import UIKit
+import SwiftUI
 
 class SignUpViewController: UIViewController {
 
@@ -24,14 +25,58 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var showPB: UIButton!
     @IBOutlet weak var subB: UIButton!
     @IBOutlet weak var errorB: UILabel!
+    
+    // Suscription
+    @IBOutlet weak var freeeB: UIButton!
+    @IBOutlet weak var paidB: UIButton!
+    @IBOutlet weak var adminB: UIButton!
+  
+    
+    
+    
+    struct ContentView: View {
+        @State private var showingConfirmation = false
+        @State private var backgroundColor = Color.white
+
+        var body: some View {
+            Text("Hello, World!")
+                .frame(width: 300, height: 300)
+                .background(backgroundColor)
+                .onTapGesture {
+                    showingConfirmation = true
+                }
+        }
+    }
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         subB.layer.cornerRadius = 20
-  print("selectedName:",userWellcome)
+        
+     
+        
+        //  print("selectedName:",userWellcome)
         // Do any additional setup after loading the view.
     }
     
 
+    @IBAction func BFree(_ sender: Any) {
+        subscriptionType.text = "0"
+       print("free")
+    }
+    
+    
+    @IBAction func BPaid(_ sender: Any) {
+        subscriptionType.text = "1"
+        print("paid")
+    }
+    
+    
+    @IBAction func BAdmin(_ sender: Any) {
+        subscriptionType.text = "2"
+        print("admin")
+    }
+    
    
     @IBAction func crearUsuario(_ sender: UIButton) {
        
@@ -84,17 +129,11 @@ class SignUpViewController: UIViewController {
             return false
         }
         
-        
-        
         return true
     }
-    
-    
-    
+     
     func saveUserDB(){
         db.insertUsers(id: Int(id.text!) ?? 0, name: emailText.text!, password: passT.text! , subscriptionType: Int(subscriptionType.text!) ?? 0)
-        
-        
     }
 
     
