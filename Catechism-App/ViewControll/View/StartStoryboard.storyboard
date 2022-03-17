@@ -107,7 +107,7 @@
                                     <action selector="loginButton:" destination="Jsa-KF-f5s" eventType="touchUpInside" id="hna-x0-3bR"/>
                                 </connections>
                             </button>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-quiz" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-lX-g2Z">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="m6m-lX-g2Z">
                                 <rect key="frame" x="17" y="78" width="79" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -138,7 +138,7 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-quiz" translatesAutoresizingMaskIntoConstraints="NO" id="Dnw-d6-kI0">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="Dnw-d6-kI0">
                                 <rect key="frame" x="0.0" y="20" width="79" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -182,7 +182,7 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-quiz" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-b2-c6j">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-b2-c6j">
                                 <rect key="frame" x="35" y="201" width="344" height="364"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -210,7 +210,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtS-h3-lCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1172.4637681159422" y="1252.2321428571429"/>
+            <point key="canvasLocation" x="-881" y="1254"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="JQF-ut-kNh">
@@ -275,7 +275,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemTealColor"/>
                             </imageView>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-quiz" translatesAutoresizingMaskIntoConstraints="NO" id="nub-Bq-Agu">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="nub-Bq-Agu">
                                 <rect key="frame" x="0.0" y="42" width="115" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -363,15 +363,15 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-WM-II5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="547.82608695652175" y="685.71428571428567"/>
+            <point key="canvasLocation" x="-201" y="647"/>
         </scene>
     </scenes>
     <resources>
         <image name="checkmark.square" catalog="system" width="128" height="114"/>
         <image name="eye.fill" catalog="system" width="128" height="78"/>
         <image name="eye.slash" catalog="system" width="128" height="86"/>
+        <image name="imageCatechism" width="890" height="838"/>
         <image name="lock.icloud" catalog="system" width="128" height="88"/>
-        <image name="main-quiz" width="500" height="502.5"/>
         <image name="person.icloud" catalog="system" width="128" height="88"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">

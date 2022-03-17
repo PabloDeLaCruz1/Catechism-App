@@ -19,6 +19,7 @@
 		2247309427E10F26009085D5 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdminViewController.swift */; };
 		2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309527E10F43009085D5 /* DashboardViewController.swift */; };
 		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
+		22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
 		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
@@ -44,6 +45,7 @@
 		2247309327E10F26009085D5 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		2247309527E10F43009085D5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -81,6 +83,7 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
 				2247309327E10F26009085D5 /* AdminViewController.swift */,
@@ -237,6 +240,7 @@
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
+				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

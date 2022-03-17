@@ -26,7 +26,7 @@
                                 <color key="textColor" systemColor="systemBlueColor"/>
                                 <color key="highlightedColor" name="AccentColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="main-quiz" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-ME-0fM">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="DXp-ME-0fM">
                                 <rect key="frame" x="0.0" y="54" width="115" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
@@ -41,7 +41,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="main-quiz" width="500" height="502.5"/>
+        <image name="imageCatechism" width="890" height="838"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="fk8-hy-ozg">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="A1G-gM-YHp">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
@@ -8,22 +8,6 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--QuizStoryboard-->
-        <scene sceneID="zqj-Oq-Mio">
-            <objects>
-                <viewControllerPlaceholder storyboardName="QuizStoryboard" id="g2p-Qy-7KS" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="GqE-LB-r8o" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="648" y="473"/>
-        </scene>
-        <!--AdminStoryBoard-->
-        <scene sceneID="9o4-eD-tL3">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AdminStoryBoard" id="TXc-dj-6or" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="43C-kU-JMe" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="709" y="664"/>
-        </scene>
         <!--StartStoryboard-->
         <scene sceneID="dg1-OO-k4O">
             <objects>
@@ -32,46 +16,16 @@
             </objects>
             <point key="canvasLocation" x="615" y="741"/>
         </scene>
-        <!--DashboardStoryBoard-->
-        <scene sceneID="alm-ZZ-N8a">
-            <objects>
-                <viewControllerPlaceholder storyboardName="DashboardStoryBoard" id="4iZ-nq-91G" sceneMemberID="viewController"/>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="iq6-J3-Tm9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="477" y="929"/>
-        </scene>
         <!--Menu View Controller-->
         <scene sceneID="0Bl-5t-l6G">
             <objects>
-                <viewController id="fk8-hy-ozg" customClass="MenuViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="menuSB" id="fk8-hy-ozg" customClass="MenuViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="g4v-HV-CyH">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="x9S-bf-LvB">
-                                <rect key="frame" x="115" y="169" width="185" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Quiz">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="g2p-Qy-7KS" kind="presentation" id="WQe-Yc-CJm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pvm-XK-qk1">
-                                <rect key="frame" x="115" y="299" width="185" height="64"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Admin">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="TXc-dj-6or" kind="presentation" modalPresentationStyle="fullScreen" id="Qlg-us-BBz"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UbS-2Y-yo2">
-                                <rect key="frame" x="115" y="437" width="185" height="64"/>
+                                <rect key="frame" x="115" y="609" width="185" height="64"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Start">
@@ -81,17 +35,10 @@
                                     <segue destination="PGG-3h-BpY" kind="presentation" id="6go-kM-yNc"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vDl-43-KlX">
-                                <rect key="frame" x="115" y="583" width="185" height="64"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="JwH-YN-7RK">
+                                <rect key="frame" x="79" y="171" width="287" height="377"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="filled" title="Dashboard">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="30"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <segue destination="4iZ-nq-91G" kind="presentation" modalPresentationStyle="fullScreen" id="qDt-m5-hS3"/>
-                                </connections>
-                            </button>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vkQ-cd-n1o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -99,10 +46,35 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xAs-GQ-PTd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="62" y="481"/>
+            <point key="canvasLocation" x="60.869565217391312" y="480.80357142857139"/>
+        </scene>
+        <!--Launch View Controller-->
+        <scene sceneID="12T-Ua-aNl">
+            <objects>
+                <viewController id="A1G-gM-YHp" customClass="LaunchViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="q9v-wa-lfN">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="YQL-fc-A7r" userLabel="image">
+                                <rect key="frame" x="87" y="298" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="s3X-B2-0fv"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <connections>
+                        <outlet property="image" destination="YQL-fc-A7r" id="VqR-0R-2mx"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="8bN-oE-S8K" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-888" y="-134"/>
         </scene>
     </scenes>
     <resources>
+        <image name="imageCatechism" width="890" height="838"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
