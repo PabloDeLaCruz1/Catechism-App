@@ -31,6 +31,8 @@
 		FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */; };
 		FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0727E1F7A400F33D69 /* Users.swift */; };
 		FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0927E200DF00F33D69 /* QuizSessions.swift */; };
+		FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */; };
+		FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -60,6 +62,8 @@
 		FE74DD9927DCD0F800F33D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE74DE0727E1F7A400F33D69 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		FE74DE0927E200DF00F33D69 /* QuizSessions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessions.swift; sourceTree = "<group>"; };
+		FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewUsersTableViewController.swift; sourceTree = "<group>"; };
+		FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,10 +89,10 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE74DE7127E38DBF00F33D69 /* Admin */,
 				22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
-				2247309327E10F26009085D5 /* AdminViewController.swift */,
 				2247309527E10F43009085D5 /* DashboardViewController.swift */,
 				2247309027E10ECA009085D5 /* StartViewController.swift */,
 				22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */,
@@ -151,6 +155,16 @@
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
 			);
 			path = "Catechism-App";
+			sourceTree = "<group>";
+		};
+		FE74DE7127E38DBF00F33D69 /* Admin */ = {
+			isa = PBXGroup;
+			children = (
+				2247309327E10F26009085D5 /* AdminViewController.swift */,
+				FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */,
+				FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */,
+			);
+			path = Admin;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -240,9 +254,11 @@
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
+				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,
 			);
