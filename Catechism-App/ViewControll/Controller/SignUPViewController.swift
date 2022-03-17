@@ -23,6 +23,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var hidePB: UIButton!
     @IBOutlet weak var showPB: UIButton!
     @IBOutlet weak var subB: UIButton!
+    @IBOutlet weak var errorB: UILabel!
     override func viewDidLoad() {
         super.viewDidLoad()
         subB.layer.cornerRadius = 20
@@ -33,11 +34,13 @@ class SignUpViewController: UIViewController {
 
    
     @IBAction func crearUsuario(_ sender: UIButton) {
-        if (emailText.text! != ""){
+       
+        
+        if validateData(){
             saveUserDB()
             goNextView(nameView : "login")
         }else{
-            print("Ingrese usuario")
+            print("Input user")
         }
    
     }
@@ -59,7 +62,35 @@ class SignUpViewController: UIViewController {
     
   
     
-    // MARK  FUNCTIONS
+    // MARK:  FUNCTIONS
+    
+    func validateData() -> Bool{
+        if emailText.text! == "" {
+            errorB.text = "Enter the user"
+            return false
+        }
+        if passT.text! == "" {
+            errorB.text = "Enter the password"
+            return false
+        }
+        
+        if subscriptionType.text! == "" {
+            errorB.text = "Enter Suscription"
+            return false
+        }
+        
+        if id.text! == "" {
+            errorB.text = "Enter id"
+            return false
+        }
+        
+        
+        
+        return true
+    }
+    
+    
+    
     func saveUserDB(){
         db.insertUsers(id: Int(id.text!) ?? 0, name: emailText.text!, password: passT.text! , subscriptionType: Int(subscriptionType.text!) ?? 0)
         
