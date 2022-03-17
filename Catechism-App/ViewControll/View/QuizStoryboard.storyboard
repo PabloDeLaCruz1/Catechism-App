@@ -11,7 +11,7 @@
         <!--Quiz View Controller-->
         <scene sceneID="s0d-6b-0kx">
             <objects>
-                <viewController id="Y6W-OH-hqX" customClass="QuizViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="quizSB" id="Y6W-OH-hqX" customClass="QuizViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5EZ-qb-Rvc">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -24,7 +24,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Mr-8c-y4b">
-                                <rect key="frame" x="126" y="308" width="119" height="58"/>
+                                <rect key="frame" x="112" y="344" width="119" height="58"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Button"/>
@@ -41,10 +41,10 @@
             </objects>
             <point key="canvasLocation" x="-10.144927536231885" y="70.982142857142847"/>
         </scene>
-        <!--Main-->
+        <!--StartStoryboard-->
         <scene sceneID="WnV-7M-Dvs">
             <objects>
-                <viewControllerPlaceholder storyboardName="Main" id="deA-WW-wHj" sceneMemberID="viewController"/>
+                <viewControllerPlaceholder storyboardName="StartStoryboard" id="deA-WW-wHj" sceneMemberID="viewController"/>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="xNB-YT-Dcd" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="485" y="112"/>
