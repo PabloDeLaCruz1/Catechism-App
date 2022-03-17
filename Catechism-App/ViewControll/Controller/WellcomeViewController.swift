@@ -27,7 +27,14 @@ class WellcomeViewController: UIViewController {
         goNextView(nameView : "admin")
     }
     
-    func goNextView(nameView : String){
+    @IBAction func dashB(_ sender: Any) {
+     
+            goNextView(nameView : "dashboard")
+    }
+    
+        
+    
+    func goNextView(nameView : String) {
         if (nameView == "quiz") {
             
             let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
@@ -46,11 +53,21 @@ class WellcomeViewController: UIViewController {
                 self.present(displayVC, animated: true, completion: nil)
         }
         
+        if (nameView == "dashboard") {
+            
+            let displayVC :
+            DashboardViewController = UIStoryboard(name: "DashboardStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "dashBoardSB") as!  DashboardViewController
+            
+       //     displayVC.userWellcome   = userText.text!
+                    
+                self.present(displayVC, animated: true, completion: nil)
+        }
         
-     
     }
+        
+}
+     
     
     
     
 
-}
