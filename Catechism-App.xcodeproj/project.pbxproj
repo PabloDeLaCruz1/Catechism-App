@@ -19,6 +19,7 @@
 		2247309427E10F26009085D5 /* AdminViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309327E10F26009085D5 /* AdminViewController.swift */; };
 		2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309527E10F43009085D5 /* DashboardViewController.swift */; };
 		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
+		22D2074427E380D7004D96B8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2074327E380D7004D96B8 /* Questions.swift */; };
 		22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
 		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
@@ -45,6 +46,7 @@
 		2247309327E10F26009085D5 /* AdminViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AdminViewController.swift; sourceTree = "<group>"; };
 		2247309527E10F43009085D5 /* DashboardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DashboardViewController.swift; sourceTree = "<group>"; };
 		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
+		22D2074327E380D7004D96B8 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 			isa = PBXGroup;
 			children = (
 				FE74DE0727E1F7A400F33D69 /* Users.swift */,
+				22D2074327E380D7004D96B8 /* Questions.swift */,
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
 				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
@@ -235,6 +238,7 @@
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
+				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
