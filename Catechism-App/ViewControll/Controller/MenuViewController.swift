@@ -9,11 +9,13 @@ import UIKit
 
 class MenuViewController: UIViewController {
 
+    @IBOutlet weak var startB: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        startB.layer.cornerRadius = 20
         // Do any additional setup after loading the view.
     }
+    
     
 
     /*

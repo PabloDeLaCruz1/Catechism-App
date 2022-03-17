@@ -74,8 +74,6 @@ class StartViewController: UIViewController {
     
     
     
-    
-    
     @IBAction func loginButton(_ sender: Any) {
         //DBHELPER
         let data = DBHelper.init().read() //  .inst.read()

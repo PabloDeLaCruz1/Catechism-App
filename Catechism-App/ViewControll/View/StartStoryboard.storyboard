@@ -14,7 +14,7 @@
             <objects>
                 <viewController storyboardIdentifier="loginView" id="Jsa-KF-f5s" customClass="StartViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="PuE-jw-ZB5">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="kXs-nN-5JC" userLabel="userlText">
@@ -111,6 +111,13 @@
                                 <rect key="frame" x="17" y="78" width="79" height="60"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIv-IK-kxZ" userLabel="message">
+                                <rect key="frame" x="87" y="265" width="216" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" red="0.98414963479999995" green="0.22559040750000001" blue="0.14797991369999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MH2-w9-H87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -128,7 +135,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gi-2o-Hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1845" y="687"/>
+            <point key="canvasLocation" x="-1846.376811594203" y="686.38392857142856"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="JQF-ut-kNh">
@@ -167,20 +174,6 @@
                                 </buttonConfiguration>
                                 <connections>
                                     <action selector="crearUsuario:" destination="Rrg-GS-SPj" eventType="touchUpInside" id="xls-48-kf0"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewk-fs-I0G" userLabel="returnLogin">
-                                <rect key="frame" x="134" y="545" width="147" height="39"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Login">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="crearUsuario:" destination="Rrg-GS-SPj" eventType="touchUpInside" id="2sJ-4Z-rBb"/>
-                                    <segue destination="Jsa-KF-f5s" kind="show" id="4Rb-iu-ls7"/>
                                 </connections>
                             </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="person.icloud" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="Bg4-tR-ucS" userLabel="userImage">
@@ -223,6 +216,9 @@
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                     <color key="baseBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="hidePass:" destination="Rrg-GS-SPj" eventType="touchUpInside" id="hly-21-tIp"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezY-ZD-GAQ" userLabel="Show Pas">
                                 <rect key="frame" x="329" y="292" width="44" height="38"/>
@@ -234,6 +230,9 @@
                                     <color key="baseForegroundColor" systemColor="systemTealColor"/>
                                     <color key="baseBackgroundColor" systemColor="tertiarySystemBackgroundColor"/>
                                 </buttonConfiguration>
+                                <connections>
+                                    <action selector="ShowPass:" destination="Rrg-GS-SPj" eventType="touchUpInside" id="Y4X-JQ-yna"/>
+                                </connections>
                             </button>
                             <button hidden="YES" opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G6Y-Ne-rbJ">
                                 <rect key="frame" x="94" y="336" width="200" height="18"/>
@@ -274,8 +273,11 @@
                     <navigationItem key="navigationItem" id="OEr-0Y-gH3" userLabel="NavigationSignUpToHome"/>
                     <connections>
                         <outlet property="emailText" destination="2mN-AN-AYN" id="Cy5-7b-ltj"/>
+                        <outlet property="hidePB" destination="0n7-7i-poO" id="BSK-wg-h4c"/>
                         <outlet property="id" destination="y6g-Lz-txS" id="Yos-Nw-USF"/>
                         <outlet property="passT" destination="pm6-6N-ppR" id="cns-jw-b15"/>
+                        <outlet property="showPB" destination="ezY-ZD-GAQ" id="I8a-1v-cdS"/>
+                        <outlet property="subB" destination="m3c-Vl-hOM" id="c0L-g2-44a"/>
                         <outlet property="subscriptionType" destination="mSY-JP-MP0" id="7hN-i5-6Do"/>
                     </connections>
                 </viewController>
