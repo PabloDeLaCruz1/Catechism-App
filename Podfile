@@ -7,4 +7,7 @@ target 'Catechism-App' do
 
   # Pods for Catechism-App
 
+pod 'FanMenu'
+pod 'Eureka'
+
 end

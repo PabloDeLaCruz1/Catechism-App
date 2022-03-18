@@ -61,9 +61,9 @@ class SignUpViewController: UIViewController {
     
     // MARK  FUNCTIONS
     func saveUserDB(){
-        db.insertUsers(id: Int(id.text!) ?? 0, name: emailText.text!, password: passT.text! , subscriptionType: Int(subscriptionType.text!) ?? 0)
-        
-        
+        db.insertUsers(name: emailText.text!, password: passT.text! , subscriptionType: Int(subscriptionType.text!) ?? 0)
+
+
     }
 
     
