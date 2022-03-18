@@ -64,6 +64,14 @@
                                     <segue destination="S6d-Lk-c8j" kind="show" id="UuX-iQ-m3k"/>
                                 </connections>
                             </button>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="Catechism: a series of fixed questions, answers, or precepts used for instruction in other situations." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-dr-DII">
+                                <rect key="frame" x="102" y="80" width="240" height="119"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="vkQ-cd-n1o"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -97,6 +105,9 @@
     </scenes>
     <resources>
         <image name="imageCatechism" width="890" height="838"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
