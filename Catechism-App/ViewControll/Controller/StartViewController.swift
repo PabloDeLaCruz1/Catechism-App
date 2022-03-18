@@ -101,6 +101,26 @@ class StartViewController: UIViewController {
 //        }
 //    }
 
+    @IBAction func activeMicro(_ sender: Any) {
+        isStart = !isStart
+        if isStart {
+            startSpeechRec()
+            micro.setTitle("stop", for: .normal)
+            label.text = ""
+            
+            micro.tintColor = .blue
+            
+         //   sender.setTitle("stop", for: .normal)
+        }else{
+            cancellSpeechRec()
+            micro.setTitle("start", for: .normal)
+            micro.tintColor = .red
+          //  sender.setTitle("start", for: .normal)
+        }
+    }
+    
+    
+    
     func cancellSpeechRec() {
         rTask.finish()
         rTask.cancel()
