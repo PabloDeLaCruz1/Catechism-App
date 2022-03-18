@@ -9,7 +9,12 @@ import UIKit
 import Speech
 
 class StartViewController: UIViewController {
-
+    // MARK: GCD
+    // GCD
+    let firstD = DispatchQueue(label: "first queue", qos: .userInitiated)
+    let secondD = DispatchQueue(label: "second queue", qos: .utility)
+    
+    // MARK: IBOutlets
     @IBOutlet weak var showP: UIButton!
     @IBOutlet weak var hidePas: UIButton!
     @IBOutlet weak var userText: UITextField!
@@ -18,7 +23,7 @@ class StartViewController: UIViewController {
     @IBOutlet weak var userPasswordText: UITextField!
     @IBOutlet weak var loginB: UIButton!
     @IBOutlet weak var signUpB: UIButton!
-
+    // MARK: Variables
     var loginChecked = false
     var signupChecked = true
     var email = ""
@@ -32,18 +37,85 @@ class StartViewController: UIViewController {
 
     @IBOutlet weak var label: UILabel!
 
-
+    // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        //setupUI()
+        
+        
+        DispatchQueue.main.async {
+            for i in 31..<36{
+                print(" i am in main queue")
+            }
+            self.getData()
+        }
+        firstQueue()
+        testQoS()
+        
+     
         loginB.layer.cornerRadius = 20
         signUpB.layer.cornerRadius = 20
-        // Do any additional setup after loading the view.
         userText.text = email
         userPasswordText.text = password
 
     }
-
+    
+    // Queue GCD  QoS
+    func getData(){
+        // ***
+        //DBHELPER
+        let data = DBHelper.init().getUsers() //  .inst.read()
+        for d in data {
+                    print("DispatchQueue.main.async:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
+        }
+    }
+    
+    // creation of dispatch queue
+    
+        func firstQueue(){
+            let que  = DispatchQueue(label: "my first queue")
+    
+            que.async {
+                for i in 1..<6{
+                    print("in firste queue",i)
+                }
+            }
+            for i in 10..<16{
+                print("main thread que",i)
+            }
+        }
+    // aply  QoS (Quality of Services) :- 6ways(UserInteractive, UserInitiated etc.)
+    
+    func testQoS(){
+      
+        
+        firstD.async {
+            for i in 10..<16{
+                print("in first que",i )
+            }
+        }
+        
+        firstD.async {
+            for i in 1..<6{
+                print("hello",i )
+            }
+        }
+        
+        secondD.async {
+            for i in 10..<16{
+                print("seconde que", i)
+            }
+        }
+        
+    }
+    
+    // ***************************************************************************
+    
+    
+    
+    
+    
+    
+    // MARK: IBActions
     @IBAction func showPass(_ sender: Any) {
         print("Change passs")
         userPasswordText.isSecureTextEntry = false
@@ -64,42 +136,6 @@ class StartViewController: UIViewController {
         goNextView(nameView: "signUp")
     }
 
-    func goNextView(nameView: String) {
-        if (nameView == "signUp") {
-
-            let displayVC: SignUpViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "signUpSB") as! SignUpViewController
-
-            displayVC.userWellcome = userText.text!
-
-            self.present(displayVC, animated: true, completion: nil)
-        } else {
-            print("no")
-        }
-    }
-
-//    @IBAction func loginButton(_ sender: Any) {
-//        //DBHELPER
-//        let data = DBHelper.init().getUsers() //  .inst.read()
-//        for d in data {
-//            @IBAction func activeMicro(_ sender: Any) {
-//                isStart = !isStart
-//                if isStart {
-//                    startSpeechRec()
-//                    micro.setTitle("stop", for: .normal)
-//                    label.text = ""
-//
-//                    micro.tintColor = .blue
-//
-//                    //   sender.setTitle("stop", for: .normal)
-//                } else {
-//                    cancellSpeechRec()
-//                    micro.setTitle("start", for: .normal)
-//                    micro.tintColor = .red
-//                    //  sender.setTitle("start", for: .normal)
-//                }
-//            }
-//        }
-//    }
 
     @IBAction func activeMicro(_ sender: Any) {
         isStart = !isStart
@@ -120,23 +156,6 @@ class StartViewController: UIViewController {
     }
     
     
-    
-    func cancellSpeechRec() {
-        rTask.finish()
-        rTask.cancel()
-        rTask = nil
-        req.endAudio()
-        audioEng.stop()
-
-        if audioEng.inputNode.numberOfInputs > 0 {
-            audioEng.inputNode.removeTap(onBus: 0)
-        }
-        print("cancel")
-    }
-
-
-
-
     @IBAction func loginButton(_ sender: Any) {
 
         if validateData() {
@@ -165,6 +184,22 @@ class StartViewController: UIViewController {
         } // *******
     }
 
+    // MARK: FUNCTIONS
+    func goNextView(nameView: String) {
+        if (nameView == "signUp") {
+
+            let displayVC: SignUpViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "signUpSB") as! SignUpViewController
+
+            displayVC.userWellcome = userText.text!
+
+            self.present(displayVC, animated: true, completion: nil)
+        } else {
+            print("no")
+        }
+    }
+
+
+    
     func validateData() -> Bool {
         if userText.text! == "" {
             error.text = "Enter the user"
@@ -192,7 +227,6 @@ class StartViewController: UIViewController {
         } catch let err {
             printContent(err)
         }
-
         rTask = speechR?.recognitionTask(with: req, resultHandler: {
             (resp, error) in
 
@@ -203,8 +237,6 @@ class StartViewController: UIViewController {
             }
             let msg = resp?.bestTranscription.formattedString
             self.label.text = msg!
-
-
 
             var str: String = ""
             for seg in resp!.bestTranscription.segments {
@@ -233,12 +265,23 @@ class StartViewController: UIViewController {
             default:
                 print("No existe")
             }
-
-
-
         })
-
-
         print("start")
     }
+    
+    
+    func cancellSpeechRec() {
+        rTask.finish()
+        rTask.cancel()
+        rTask = nil
+        req.endAudio()
+        audioEng.stop()
+
+        if audioEng.inputNode.numberOfInputs > 0 {
+            audioEng.inputNode.removeTap(onBus: 0)
+        }
+        print("cancel")
+    }
+    
+    
 }
