@@ -8,18 +8,20 @@
 import UIKit
 
 class WellcomeViewController: UIViewController {
+   
+    //MARK: Variables
     var userWellcome = ""
     var susWellcome = ""
+    
+    //MARK: IBOutlet
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var suscriptionL: UILabel!
-    
-    
     @IBOutlet weak var quizB: UIButton!
     @IBOutlet weak var dashB: UIButton!
     @IBOutlet weak var adminB: UIButton!
     
     
-    
+    //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         userName.text! = userWellcome
@@ -47,7 +49,7 @@ class WellcomeViewController: UIViewController {
         // Do any additional setup after loading the view.
     }
     
-    
+    //MARK: IBAction
     @IBAction func quizB(_ sender: Any) {
         goNextView(nameView : "quiz")
     }
@@ -62,7 +64,7 @@ class WellcomeViewController: UIViewController {
             goNextView(nameView : "dashboard")
     }
     
-        
+     //MARK: Functions
     
     func goNextView(nameView : String) {
         if (nameView == "quiz") {

@@ -32,9 +32,19 @@
             skipped = "NO">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "22ECB18427E2831500E61BC2"
+               BlueprintIdentifier = "22E35A8727E4F7CD004D237D"
                BuildableName = "Catechism-AppTests.xctest"
                BlueprintName = "Catechism-AppTests"
+               ReferencedContainer = "container:Catechism-App.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "22E35A9427E4F820004D237D"
+               BuildableName = "Catechism-AppUITests.xctest"
+               BlueprintName = "Catechism-AppUITests"
                ReferencedContainer = "container:Catechism-App.xcodeproj">
             </BuildableReference>
          </TestableReference>
