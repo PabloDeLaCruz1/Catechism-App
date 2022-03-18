@@ -82,6 +82,10 @@ class StartViewController: UIViewController {
     
     
     
+    @IBAction func loginButton(_ sender: Any) {
+        //DBHELPER
+        let data = DBHelper.init().getUsers() //  .inst.read()
+        for d in data{
     @IBAction func activeMicro(_ sender: Any) {
         isStart = !isStart
         if isStart {

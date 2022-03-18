@@ -1,0 +1,28 @@
+PODS:
+  - Eureka (5.3.5)
+  - FanMenu (0.7.5):
+    - Macaw
+  - Macaw (0.9.9):
+    - SWXMLHash
+  - SWXMLHash (6.0.0)
+
+DEPENDENCIES:
+  - Eureka
+  - FanMenu
+
+SPEC REPOS:
+  trunk:
+    - Eureka
+    - FanMenu
+    - Macaw
+    - SWXMLHash
+
+SPEC CHECKSUMS:
+  Eureka: 7b39a479d074620d43028a0e2bfc3e0d667724df
+  FanMenu: f26be76147954666be0b89ae6ffeb12b72167f2b
+  Macaw: d683339ff44d49c16776ec2bde7aecfd4ba2a3a4
+  SWXMLHash: 9d851ed3edf48ec2bd0db98f0cda0ad4136d75e3
+
+PODFILE CHECKSUM: cf7ccd68231c802bc3c5b0fdc6b0544277712dac
+
+COCOAPODS: 1.11.2
