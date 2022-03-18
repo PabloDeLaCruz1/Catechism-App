@@ -94,7 +94,7 @@ class DBHelper {
     }
 
     func deleteByID(id: Int) {
-        let deleteStatementStirng = "DELETE FROM users WHERE Id = ?;"
+        let deleteStatementStirng = "DELETE FROM Users WHERE Id = ?;"
         var deleteStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(deleteStatement, 1, Int32(id))
@@ -107,6 +107,22 @@ class DBHelper {
             print("DELETE statement could not be prepared")
         }
         sqlite3_finalize(deleteStatement)
+    }
+
+    func blockUserById(id: Int){
+        let updateStatementStirng = "UPDATE Users SET subscriptionType = 3 WHERE Id = ?;"
+        var updateStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(updateStatement, 1, Int32(id))
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("Successfully blocked user with ID: \(id)")
+            } else {
+                print("Could not block user with ID: \(id)")
+            }
+        } else {
+            print("Block user with ID: \(id) statement could not be prepared")
+        }
+        sqlite3_finalize(updateStatement)
     }
 
 }

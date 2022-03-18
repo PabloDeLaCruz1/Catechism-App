@@ -29,11 +29,11 @@ class AdminViewController: UIViewController {
 //        usersTable.delegate = self
 //        usersTable.dataSource = self
 
-        db.deleteByID(id: 11)
-        db.deleteByID(id: 12)
-        db.deleteByID(id: 13)
-        db.deleteByID(id: 14)
-        db.deleteByID(id: 123)
+        for u in 1...db.getUsers().count {
+            db.deleteByID(id: u)
+
+        }
+  
 
         db.deleteByIDandTable(id: 1, table: "Quiz_Sessions")
         db.deleteByIDandTable(id: 2, table: "Quiz_Sessions")
@@ -42,6 +42,12 @@ class AdminViewController: UIViewController {
         db.deleteByIDandTable(id: 5, table: "Quiz_Sessions")
 
         db.insertUsers( name: "Pablo", password: "32", subscriptionType: 1)
+        db.insertUsers( name: "Pablo", password: "32", subscriptionType: 1)
+
+        db.insertUsers( name: "Pablo", password: "32", subscriptionType: 1)
+        db.insertUsers( name: "Pablo", password: "32", subscriptionType: 1)
+        db.insertUsers( name: "Pablo", password: "32", subscriptionType: 1)
+
 //        db.insertUsers(id: 12, name: "Young", password: "123", subscriptionType: 2)
 //        db.insertUsers(id: 13, name: "David", password: "123", subscriptionType: 0)
 
