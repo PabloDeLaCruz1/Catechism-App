@@ -12,6 +12,11 @@
 		2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */; };
 		22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */; };
 		22132BC427E0B45800642694 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22132BC327E0B45800642694 /* QuizViewController.swift */; };
+		2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */; };
+		2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */; };
+		2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */; };
+		2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */; };
+		2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */; };
 		2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308427E10DB2009085D5 /* StartStoryboard.storyboard */; };
 		2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */; };
 		2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */; };
@@ -70,6 +75,11 @@
 		2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizStoryboard.storyboard; sourceTree = "<group>"; };
 		22132BC327E0B45800642694 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimeView.swift; sourceTree = "<group>"; };
+		2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankGraphData.swift; sourceTree = "<group>"; };
+		2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimePresenter.swift; sourceTree = "<group>"; };
+		2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimeViewController.swift; sourceTree = "<group>"; };
+		2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimeRepository.swift; sourceTree = "<group>"; };
 		2247308427E10DB2009085D5 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryBoard.storyboard; sourceTree = "<group>"; };
 		2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryBoard.storyboard; sourceTree = "<group>"; };
@@ -159,6 +169,7 @@
 			isa = PBXGroup;
 			children = (
 				FE74DE7127E38DBF00F33D69 /* Admin */,
+				2226EE7A27E5493A00A0B628 /* Rank */,
 				22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
@@ -182,6 +193,18 @@
 				2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */,
 			);
 			path = View;
+			sourceTree = "<group>";
+		};
+		2226EE7A27E5493A00A0B628 /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */,
+				2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */,
+				2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */,
+				2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */,
+				2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */,
+			);
+			path = Rank;
 			sourceTree = "<group>";
 		};
 		2247308327E10D6C009085D5 /* Model */ = {
@@ -488,13 +511,17 @@
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
 				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
 				FE74DE7B27E404F900F33D69 /* QuizSessionsHelpers.swift in Sources */,
+				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,
 				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
+				2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */,
+				2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */,
 				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
@@ -503,6 +530,7 @@
 				FE74DE8427E431C000F33D69 /* CreateQuizTVC.swift in Sources */,
 				FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */,
 				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
+				2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,
