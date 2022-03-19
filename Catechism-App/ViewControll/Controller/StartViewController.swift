@@ -23,6 +23,9 @@ class StartViewController: UIViewController {
     @IBOutlet weak var userPasswordText: UITextField!
     @IBOutlet weak var loginB: UIButton!
     @IBOutlet weak var signUpB: UIButton!
+    
+    
+    
     // MARK: Variables
     var loginChecked = false
     var signupChecked = true

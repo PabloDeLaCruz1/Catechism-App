@@ -22,6 +22,12 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var subB: UIButton!
     @IBOutlet weak var errorB: UILabel!
     
+    @IBOutlet weak var selected1: UIImageView!
+    
+    @IBOutlet weak var selected2: UIImageView!
+    
+    
+    
     // Suscription
     @IBOutlet weak var freeeB: UIButton!
     @IBOutlet weak var paidB: UIButton!
@@ -41,12 +47,16 @@ class SignUpViewController: UIViewController {
     // MARK: IBACTION
     @IBAction func BFree(_ sender: Any) {
         subscriptionType.text = "0"
+        selected1.isHidden = false
+        selected2.isHidden = true
         print("free")
     }
     
     
     @IBAction func BPaid(_ sender: Any) {
         subscriptionType.text = "1"
+        selected1.isHidden = true
+        selected2.isHidden = false
         print("paid")
     }
     
@@ -102,10 +112,10 @@ class SignUpViewController: UIViewController {
             return false
         }
         
-        if id.text! == "" {
-            errorB.text = "Enter id"
-            return false
-        }
+//        if id.text! == "" {
+//            errorB.text = "Enter id"
+//            return false
+//        }
         
         return true
     }
