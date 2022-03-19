@@ -26,15 +26,15 @@ extension DBHelper {
         sqlite3_finalize(createTableStatement)
     }
 
-    func insertQuestions(answerId: Int, answerText: String, sequence: Int) {
+    func insertQuestions(subjectName: String, questionText: String, correctAnswer: Int) {
         
-        let insertStatementString = "INSERT INTO Answers(subject_name, question_text, correct_answer) VALUES (?, ?, ?);"
+        let insertStatementString = "INSERT INTO Questions(subject_name, question_text, correct_answer) VALUES (?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_int(insertStatement, 0, Int32(answerId))
-            sqlite3_bind_text(insertStatement, 1, (answerText as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(insertStatement, 2, Int32(sequence))
+            sqlite3_bind_text(insertStatement, 0, (subjectName as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 1, (questionText as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 2, Int32(correctAnswer))
 
 
             if sqlite3_step(insertStatement) == SQLITE_DONE {
@@ -56,7 +56,6 @@ extension DBHelper {
             while sqlite3_step(queryStatement) == SQLITE_ROW {
                 let id = sqlite3_column_int(queryStatement, 0)
 
-
                 let subject_name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
                 let question_text = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
                 let corrrect_answer = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
@@ -73,4 +72,9 @@ extension DBHelper {
         return questions
     }
 
+//    func getLastInsertedId() -> Int {
+//        let queryStatementString = "SSELECT LAST_INSERT_ROWID();"
+//        var queryStatement: OpaquePointer? = nil
+//        var questions: Int = 0
+//    }
 }

@@ -32,6 +32,9 @@ class AdminViewController: UIViewController {
 
         for u in 1...20 {
             db.deleteByID(id: u)
+            db.deleteByIDandTable(id: u, table: "Answers")
+            db.deleteByIDandTable(id: u, table: "Questions")
+
         }
 
 
@@ -43,7 +46,7 @@ class AdminViewController: UIViewController {
 
         db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
         db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-
+        print("LAST ID -------------------------------------------------------")
         db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
         db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
         db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
@@ -56,20 +59,9 @@ class AdminViewController: UIViewController {
         db.insertQuizSessions(userId: 2, score: 5, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 2, score: 2, sessionDate: "Mar-17-2022", subjectName: "Science")
         db.insertQuizSessions(userId: 2, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
-        
-        
-        
-//        getRankBySubject()
+
     }
 
-    func getRankBySubject() {
-        var topUsersBySubject = [Int: [String: Int]]()
-        
-        for q in quizSessions {
-            topUsersBySubject[q.userId]![q.subjectName]! += q.score
-        }
-        print(topUsersBySubject)
-    }
 
 
 

@@ -56,22 +56,44 @@ class CreateQuizViewController: FormViewController {
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
 
             }
+            <<< IntRow("Correct#\(index)") { row in
+                row.title = "Enter Correct Answer #"
+                row.placeholder = "0"
+
+            }
 
         }
         form +++ Section("Submit All")
         <<< ButtonRow("my Button") { row in
-            row.title = "Button"
-            
-            let userId: TextRow? = form.rowBy(tag: "MyRowTag")
-            let value = row.value
+            row.title = "Submit"
 
-//            db.insertQuestions()
-//            db.insertAnswers(answerId: <#T##Int#>, answerText: <#T##String#>, sequence: <#T##Int#>)
+
+            row.onCellSelection { cell, row in
+                let valuesDictionary = self.form.values()
+                print(valuesDictionary)
+
+                let subjectName = valuesDictionary["Quiz Subject"] as? String ?? "No SubJect Entered"
+
+                for i in 1...(((valuesDictionary.count - 2) / 5) - 1) {
+                    let question = valuesDictionary["Question #\(i)"] as? String ?? ""
+                    let questionId = Int(self.db.getLastInsertedId())
+                    let answer1 = valuesDictionary["Answer #\(i) - 1"] as? String ?? ""
+                    let answer2 = valuesDictionary["Answer #\(i) - 2"] as? String ?? ""
+                    let answer3 = valuesDictionary["Answer #\(i) - 3"] as? String ?? ""
+                    let answer4 = valuesDictionary["Answer #\(i) - 4"] as? String ?? ""
+                    let correctAnswer = valuesDictionary["Correct#\(i)"] as? Int ?? 0
+
+                    self.db.insertQuestions(subjectName: subjectName, questionText: question, correctAnswer: correctAnswer)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer1, sequence: 1)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer2, sequence: 2)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer3, sequence: 3)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer4, sequence: 4)
+  
+                }
+
+            }
+
         }
-//            .onCellSelection { cell, row in
-//            //do whatever you want  }
-//        }
-
     }
 
 

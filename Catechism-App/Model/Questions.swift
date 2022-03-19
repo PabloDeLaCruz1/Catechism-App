@@ -8,8 +8,8 @@
 import Foundation
 class Questions {
     var id: Int = 0
-    var subject_name: String = ""
-    var question_text: String = ""
+    var subject_name: String
+    var question_text: String
     var corrrect_answer: String
 
     init(id: Int, subject_name: String, question_text: String, corrrect_answer: String)

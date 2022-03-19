@@ -27,13 +27,13 @@ extension DBHelper{
         sqlite3_finalize(createTableStatement)
     }
     
-    func insertAnswers(answerId: Int, answerText: String, sequence: Int) {
+    func insertAnswers(questionId: Int, answerText: String, sequence: Int) {
         
-        let insertStatementString = "INSERT INTO Answers(answer_id, answer_text, sequence) VALUES (?, ?, ?);"
+        let insertStatementString = "INSERT INTO Answers(question_id, answer_text, sequence) VALUES (?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_int(insertStatement, 0, Int32(answerId))
+            sqlite3_bind_int(insertStatement, 0, Int32(questionId))
             sqlite3_bind_text(insertStatement, 1, (answerText as NSString).utf8String, -1, nil)
             sqlite3_bind_int(insertStatement, 2, Int32(sequence))
 
