@@ -9,10 +9,10 @@ import Foundation
 
 
 class Users {
-    var id: Int = 0
-    var name: String = ""
-    var password: String = ""
-    var subscriptionType: Int = 0 // 0: free, 1: paid, 2: admin, 3: blocked
+    var id: Int
+    var name: String
+    var password: String
+    var subscriptionType: Int  // 0: free, 1: paid, 2: admin, 3: blocked
 
     init(id: Int, name: String, password: String, subscriptionType: Int)
     {

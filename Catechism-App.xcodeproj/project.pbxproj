@@ -38,8 +38,8 @@
 		FE74DE7B27E404F900F33D69 /* QuizSessionsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7A27E404F900F33D69 /* QuizSessionsHelpers.swift */; };
 		FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7D27E4122D00F33D69 /* QuestionsHelpers.swift */; };
 		FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */; };
-		FE74DE8227E430E800F33D69 /* CreateQuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8127E430E800F33D69 /* CreateQuizTableViewCell.swift */; };
-		FE74DE8427E431C000F33D69 /* CreateQuizTVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8327E431C000F33D69 /* CreateQuizTVC.swift */; };
+		FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */; };
+		FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8827E53D8C00F33D69 /* Answers.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,8 +78,8 @@
 		FE74DE7A27E404F900F33D69 /* QuizSessionsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizSessionsHelpers.swift; sourceTree = "<group>"; };
 		FE74DE7D27E4122D00F33D69 /* QuestionsHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuestionsHelpers.swift; sourceTree = "<group>"; };
 		FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizViewController.swift; sourceTree = "<group>"; };
-		FE74DE8127E430E800F33D69 /* CreateQuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizTableViewCell.swift; sourceTree = "<group>"; };
-		FE74DE8327E431C000F33D69 /* CreateQuizTVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizTVC.swift; sourceTree = "<group>"; };
+		FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHelpers.swift; sourceTree = "<group>"; };
+		FE74DE8827E53D8C00F33D69 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -146,6 +146,7 @@
 			children = (
 				FE74DE7C27E40EBA00F33D69 /* DBHelpers */,
 				FE74DE0727E1F7A400F33D69 /* Users.swift */,
+				FE74DE8827E53D8C00F33D69 /* Answers.swift */,
 				22D2074327E380D7004D96B8 /* Questions.swift */,
 				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
@@ -201,8 +202,6 @@
 				FE74DE7627E3CA8800F33D69 /* HeaderTableViewCell.swift */,
 				FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */,
 				FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */,
-				FE74DE8127E430E800F33D69 /* CreateQuizTableViewCell.swift */,
-				FE74DE8327E431C000F33D69 /* CreateQuizTVC.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -211,6 +210,7 @@
 			isa = PBXGroup;
 			children = (
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
+				FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */,
 				FE74DE7A27E404F900F33D69 /* QuizSessionsHelpers.swift */,
 				FE74DE7D27E4122D00F33D69 /* QuestionsHelpers.swift */,
 			);
@@ -336,7 +336,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74DE8227E430E800F33D69 /* CreateQuizTableViewCell.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
@@ -350,12 +349,13 @@
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
+				FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */,
 				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
-				FE74DE8427E431C000F33D69 /* CreateQuizTVC.swift in Sources */,
 				FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */,
 				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,

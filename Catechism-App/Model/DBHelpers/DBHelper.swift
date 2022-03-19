@@ -15,6 +15,7 @@ class DBHelper {
         db = openDatabase()
         createUsersTable()
         createQuizSessionsTable()
+        createQuestionsTable()
     }
 
     let dbPath: String = "catechism.sqlite"

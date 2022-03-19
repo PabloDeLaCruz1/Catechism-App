@@ -21,11 +21,33 @@ extension DBHelper {
                 print("Questions table could not be created.")
             }
         } else {
-            print("CREATE TABLE   Questions statement could not be prepared.")
+            print("CREATE TABLE Questions statement could not be prepared.")
         }
         sqlite3_finalize(createTableStatement)
     }
 
+    func insertQuestions(answerId: Int, answerText: String, sequence: Int) {
+        
+        let insertStatementString = "INSERT INTO Answers(subject_name, question_text, correct_answer) VALUES (?, ?, ?);"
+        var insertStatement: OpaquePointer? = nil
+        
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(insertStatement, 0, Int32(answerId))
+            sqlite3_bind_text(insertStatement, 1, (answerText as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 2, Int32(sequence))
+
+
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("Successfully inserted Answer row.")
+            } else {
+                print("Could not insert Answer row.")
+            }
+        } else {
+            print("Answer Sessions INSERT statement could not be prepared.")
+        }
+        sqlite3_finalize(insertStatement)
+    }
+    
     func getQuestions() -> [Questions] {
         let queryStatementString = "SELECT * FROM Questions;"
         var queryStatement: OpaquePointer? = nil

@@ -9,19 +9,16 @@ import UIKit
 import Eureka
 
 class CreateQuizViewController: FormViewController {
-
+    let db = DBHelper.init()
     var questionCount = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
         animateScroll = true
         rowKeyboardSpacing = 20
-//        TextAreaHeight.fixed(cellHeight: 44)
-//        TextAreaCell.height = 20
-//
-//         =
-//        MyTextAreaRow.textAreaHeight = TextAreaHeight.fixed(cellHeight: 40)
-        
+
+
+
         form +++ Section("Create Quiz")
         <<< TextRow("Quiz Subject") { row in
             row.title = "Quiz Subject"
@@ -57,10 +54,23 @@ class CreateQuizViewController: FormViewController {
                 row.title = "Answer #\(index) - 4"
                 row.placeholder = "Answer 4"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-                
+
             }
 
         }
+        form +++ Section("Submit All")
+        <<< ButtonRow("my Button") { row in
+            row.title = "Button"
+            
+            let userId: TextRow? = form.rowBy(tag: "MyRowTag")
+            let value = row.value
+
+//            db.insertQuestions()
+//            db.insertAnswers(answerId: <#T##Int#>, answerText: <#T##String#>, sequence: <#T##Int#>)
+        }
+//            .onCellSelection { cell, row in
+//            //do whatever you want  }
+//        }
 
     }
 

@@ -14,7 +14,7 @@ class ViewUsersTableViewController: UITableViewController {
     let db = DBHelper.init()
     let Users = DBHelper.init().getUsers()
     let quizSessions = DBHelper.init().getQuizSessions()
-
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -125,6 +125,23 @@ class ViewUsersTableViewController: UITableViewController {
             }
         }
         return score;
+    }
+    func getUserTotalScoreBySubjectById(id: Int) -> [String : Int] {
+        var score = 0
+        var userScoreBySubject = [String: Int]()
+
+        for q in quizSessions {
+            if q.userId == id {
+                score += q.score
+
+                if userScoreBySubject[q.subjectName] == nil {
+                    userScoreBySubject[q.subjectName] = q.score
+                } else {
+                    userScoreBySubject[q.subjectName]! += q.score
+                }
+            }
+        }
+        return userScoreBySubject;
     }
 
     func createFanMenu(cell: AnyObject, userId: Int, indexPath: IndexPath) {
