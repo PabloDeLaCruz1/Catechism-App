@@ -25,7 +25,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XDb-D9-Z94" userLabel="signUptButton">
-                                <rect key="frame" x="134" y="491" width="147" height="41"/>
+                                <rect key="frame" x="134" y="490" width="147" height="41"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBlueColor"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -115,7 +115,7 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="whZ-WD-xT4">
-                                <rect key="frame" x="95" y="540" width="208" height="31"/>
+                                <rect key="frame" x="103" y="551" width="208" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -128,13 +128,23 @@
                                     <action selector="activeMicro:" destination="Jsa-KF-f5s" eventType="touchUpInside" id="TLs-XV-td1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rz-bH-kTx">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Say" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rz-bH-kTx">
                                 <rect key="frame" x="95" y="630" width="208" height="70"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="21H-hC-Xpw" customClass="FBSDKLoginButton">
+                                <rect key="frame" x="124" y="620" width="166" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="filled" title="Fb login"/>
+                            </button>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="meta" translatesAutoresizingMaskIntoConstraints="NO" id="t0t-0E-MTD">
+                                <rect key="frame" x="160" y="615" width="79" height="46"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MH2-w9-H87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -144,6 +154,7 @@
                         <outlet property="error" destination="i8E-tr-BWe" id="us1-d5-FAh"/>
                         <outlet property="hidePas" destination="dUZ-87-W1b" id="43H-FJ-ET7"/>
                         <outlet property="label" destination="1rz-bH-kTx" id="JJo-74-TUS"/>
+                        <outlet property="lgbtn" destination="21H-hC-Xpw" id="adw-1N-O8k"/>
                         <outlet property="loginB" destination="gWe-wf-RBE" id="6wq-Y7-M6x"/>
                         <outlet property="micro" destination="whZ-WD-xT4" id="4hl-xG-lV8"/>
                         <outlet property="showP" destination="Ur3-Tr-b3c" id="hiw-yw-EDG"/>
@@ -473,10 +484,11 @@
         <image name="free" width="225" height="225"/>
         <image name="imageCatechism" width="890" height="838"/>
         <image name="lock.icloud" catalog="system" width="128" height="88"/>
+        <image name="meta" width="222" height="136"/>
         <image name="mic.fill" catalog="system" width="108" height="128"/>
         <image name="money" width="219" height="230"/>
         <image name="person.icloud" catalog="system" width="128" height="88"/>
-        <image name="selected1" width="165" height="158"/>
+        <image name="selected1" width="330" height="316"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
