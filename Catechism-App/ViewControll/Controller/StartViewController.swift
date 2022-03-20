@@ -7,8 +7,12 @@
 
 import UIKit
 import Speech
+import FacebookLogin
 
-class StartViewController: UIViewController {
+class StartViewController: UIViewController, LoginButtonDelegate {
+   
+    
+    
     // MARK: GCD
     // GCD
     let firstD = DispatchQueue(label: "first queue", qos: .userInitiated)
@@ -39,11 +43,63 @@ class StartViewController: UIViewController {
     var rTask: SFSpeechRecognitionTask!
 
     @IBOutlet weak var label: UILabel!
-
+    
+    @IBOutlet weak var lgbtn: FBLoginButton!
+    
+    // MARK: FBLoginButton
+    func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
+       let token =  result?.token?.tokenString
+           let req = FBSDKLoginKit.GraphRequest(graphPath: "me", parameters: ["fields": "email,name"],
+                                        tokenString: token, version: nil, httpMethod: .get)
+           req.start{
+               conne, result, error in
+               print(result)
+           }
+    }
+    
+    func loginButtonDidLogOut(_ loginButton: FBLoginButton) {
+    }
+    
+    
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        print("22222222222222")
+        var tokenF = ""
+        if let token1 = AccessToken.current   , !token1.isExpired{
+            var token =  token1.tokenString
+            tokenF = token
+            print("33333333333")
+                let req = FacebookLogin.GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name"],
+                                             tokenString: token, version: nil, httpMethod: .get)
+                
+                req.start{
+                    conne, result, error in
+                    print("result",result)
+                }
+            }
+            
+            
+        else{
+            print("444444444")
+
+            self.lgbtn.delegate = self
+            lgbtn.permissions = ["public_profile","email"]
+          //  let token2 = AccessToken.current
+         //   let token2 =  token.tokenString
+            
+            let req = FacebookLogin.GraphRequest(graphPath: "me", parameters: ["fields": "email,first_name"],
+                                         tokenString: nil
+                                                 , version: tokenF , httpMethod: .get)
+            
+            req.start{
+                conne, result, error in
+                print("result",result)
+            }
+            
+        }
+        print("*****************************")
+     //   print(request)
         
         DispatchQueue.main.async {
             for i in 31..<36{
@@ -51,8 +107,8 @@ class StartViewController: UIViewController {
             }
             self.getData()
         }
-        firstQueue()
-        testQoS()
+      //  firstQueue()
+     //   testQoS()
         
      
         loginB.layer.cornerRadius = 20
@@ -61,6 +117,9 @@ class StartViewController: UIViewController {
         userPasswordText.text = password
 
     }
+    
+    
+    
     
     // Queue GCD  QoS
     func getData(){
@@ -89,20 +148,16 @@ class StartViewController: UIViewController {
     // aply  QoS (Quality of Services) :- 6ways(UserInteractive, UserInitiated etc.)
     
     func testQoS(){
-      
-        
         firstD.async {
             for i in 10..<16{
                 print("in first que",i )
             }
         }
-        
         firstD.async {
             for i in 1..<6{
                 print("hello",i )
             }
         }
-        
         secondD.async {
             for i in 10..<16{
                 print("seconde que", i)
@@ -112,12 +167,7 @@ class StartViewController: UIViewController {
     }
     
     // ***************************************************************************
-    
-    
-    
-    
-    
-    
+      
     // MARK: IBActions
     @IBAction func showPass(_ sender: Any) {
         print("Change passs")
@@ -157,7 +207,6 @@ class StartViewController: UIViewController {
           //  sender.setTitle("start", for: .normal)
         }
     }
-    
     
     @IBAction func loginButton(_ sender: Any) {
 
@@ -200,9 +249,7 @@ class StartViewController: UIViewController {
             print("no")
         }
     }
-
-
-    
+   
     func validateData() -> Bool {
         if userText.text! == "" {
             error.text = "Enter the user"
