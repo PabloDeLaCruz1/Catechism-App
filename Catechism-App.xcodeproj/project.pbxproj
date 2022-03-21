@@ -312,7 +312,6 @@
 				FE74DD8927DCD0F400F33D69 /* Products */,
 				009ADB339B27EBF95707FE11 /* Pods */,
 				62B3D618664BEA39E7AAF59B /* Frameworks */,
-				7818854D27E8DD7C007E7F58 /* utility */,
 			);
 			sourceTree = "<group>";
 		};
@@ -335,6 +334,7 @@
 				2247308327E10D6C009085D5 /* Model */,
 				2201373127DCDB4F000F0C7C /* ViewControll */,
 				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
+				7818854D27E8DD7C007E7F58 /* utility */,
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
 				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
