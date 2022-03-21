@@ -60,9 +60,6 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
                                 <buttonConfiguration key="configuration" style="filled" title="Admin Testing"/>
-                                <connections>
-                                    <segue destination="ega-wD-rBN" kind="show" id="UmK-eP-GOe"/>
-                                </connections>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="A series of fixed questions, answers, or precepts used for instruction in other situations." textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Iz0-dr-DII">
                                 <rect key="frame" x="108" y="147" width="240" height="119"/>
@@ -98,16 +95,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wqL-ma-9xT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="954" y="481"/>
-        </scene>
-        <!--AdminStoryBoard-->
-        <scene sceneID="VRl-PF-DiT">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AdminStoryBoard" id="ega-wD-rBN" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="k2U-tW-x2e"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="eT4-Hg-OLH" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="912" y="773"/>
         </scene>
     </scenes>
     <resources>
