@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ResultVC: UIViewController {
+class QuizSessionResult: UIViewController {
     
     var score: Int?
     var totalScore: Int?

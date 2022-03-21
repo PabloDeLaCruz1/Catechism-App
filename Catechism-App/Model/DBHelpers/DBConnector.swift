@@ -4,6 +4,7 @@
 //
 //  Created by Young Ju on 3/17/22.
 //
+// MARK: temp use and to be deleted.
 
 import Foundation
 import SQLite3
@@ -53,13 +54,13 @@ class DBConnector
     }
     
 
-    func get5Quizes(type: Int) -> [Question] {
+    func get5Quizes(type: Int) -> [QuestionSet] {
 
         let queryQuizString =      //"select * from users"
         "SELECT q.question_text AS 'question', q.correct_answer AS 'correct', 0 AS 'wrong', false AS 'tried', MAX(CASE WHEN a.answer_seq = 1 THEN a.answer_text  END) AS 'first', MAX(CASE WHEN a.answer_seq = 2 THEN a.answer_text  END) AS 'secon',MAX(CASE WHEN a.answer_seq = 3 THEN a.answer_text  END) AS 'third', MAX(CASE WHEN a.answer_seq = 4 THEN a.answer_text  END) AS 'fourth' FROM questions q INNER JOIN answers a ON  q.question_id = a.question_id WHERE q.question_type = ? AND q.question_id IN (SELECT question_id FROM questions WHERE question_type = ? ORDER BY random() LIMIT 5) GROUP BY question, correct, wrong, tried;"
 
         var queryStatement: OpaquePointer? = nil
-        var questions : [Question] = []
+        var questions : [QuestionSet] = []
         
         if sqlite3_prepare_v2(db, queryQuizString, -1, &queryStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(queryStatement, 1, Int32(type))
@@ -71,7 +72,7 @@ class DBConnector
                 let thirdAnswerColumn = String(describing: String(cString: sqlite3_column_text(queryStatement, 6)))
                 let fourthAnswerColumn = String(describing: String(cString: sqlite3_column_text(queryStatement, 7)))
                 let correctAnswerColumn = sqlite3_column_int(queryStatement, 1)
-                questions.append(Question(question: String(questionColumn), correctAnswer: Int(correctAnswerColumn),  wrongAnswer: 0, isAnswered: false, firstAnswer: String(firstAnswerColumn), secondAnswer: String(secondAnswerColumn), thirdAnswer: String(thirdAnswerColumn), fourthAnswer: String(fourthAnswerColumn)))
+                questions.append(QuestionSet(question: String(questionColumn), correctAnswer: Int(correctAnswerColumn),  wrongAnswer: 0, isAnswered: false, firstAnswer: String(firstAnswerColumn), secondAnswer: String(secondAnswerColumn), thirdAnswer: String(thirdAnswerColumn), fourthAnswer: String(fourthAnswerColumn)))
                 print("Query Result: \(questionColumn):( \(correctAnswerColumn) ) \n \(firstAnswerColumn) \n \(secondAnswerColumn) \n \(thirdAnswerColumn) \n \(fourthAnswerColumn)")
             }
         } else {

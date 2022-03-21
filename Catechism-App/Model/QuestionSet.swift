@@ -7,7 +7,7 @@
 
 import Foundation
 
-class Question
+class QuestionSet
 {
 
     var question: String = ""

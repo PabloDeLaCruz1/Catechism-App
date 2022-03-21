@@ -21,7 +21,7 @@ struct QuestionFetched {
 
 class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 //    var db = DBConnector()
-    var questions = Array<Question>()
+    var questions = Array<QuestionSet>()
     var answersCV: UICollectionView!
     var questionsArray = [QuestionFetched]()
     var score: Int = 0
@@ -90,7 +90,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc func btnPrevNextAction(sender: UIButton) {
         if sender == btnNext && currentQuestionNumber == questionsArray.count {
-            let nextVC=ResultVC()
+            let nextVC=QuizSessionResult()
             nextVC.score = score
             nextVC.totalScore = questionsArray.count
             self.navigationController?.pushViewController(nextVC, animated: false)
