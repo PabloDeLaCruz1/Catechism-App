@@ -12,6 +12,11 @@
 		2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */; };
 		22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */; };
 		22132BC427E0B45800642694 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22132BC327E0B45800642694 /* QuizViewController.swift */; };
+		2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */; };
+		2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */; };
+		2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */; };
+		2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */; };
+		2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */; };
 		2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308427E10DB2009085D5 /* StartStoryboard.storyboard */; };
 		2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */; };
 		2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */; };
@@ -21,6 +26,12 @@
 		2247309827E11313009085D5 /* MenuViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2247309727E11313009085D5 /* MenuViewController.swift */; };
 		22D2074427E380D7004D96B8 /* Questions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D2074327E380D7004D96B8 /* Questions.swift */; };
 		22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */; };
+		22E35A8B27E4F7CD004D237D /* Catechism_AppTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35A8A27E4F7CD004D237D /* Catechism_AppTests.swift */; };
+		22E35A9827E4F820004D237D /* Catechism_AppUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35A9727E4F820004D237D /* Catechism_AppUITests.swift */; };
+		22E35A9A27E4F820004D237D /* Catechism_AppUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35A9927E4F820004D237D /* Catechism_AppUITestsLaunchTests.swift */; };
+		22E35AA327E4F872004D237D /* XCTestUIValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35AA227E4F872004D237D /* XCTestUIValidation.swift */; };
+		22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35AA427E4FD79004D237D /* ValidateApp.swift */; };
+		22E3AAC827E6966600982183 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 22E3AAC727E6966600982183 /* FacebookLogin */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
 		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
 		A49B9BD4B1643BF81BA72FB1 /* Pods_Catechism_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */; };
@@ -42,12 +53,34 @@
 		FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8827E53D8C00F33D69 /* Answers.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		22E35A8C27E4F7CD004D237D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE74DD8027DCD0F400F33D69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE74DD8727DCD0F400F33D69;
+			remoteInfo = "Catechism-App";
+		};
+		22E35A9B27E4F820004D237D /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = FE74DD8027DCD0F400F33D69 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = FE74DD8727DCD0F400F33D69;
+			remoteInfo = "Catechism-App";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXFileReference section */
 		2201373527DCE197000F0C7C /* TestMeCoreData.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = TestMeCoreData.xcdatamodel; sourceTree = "<group>"; };
 		2201373A27DD0B8D000F0C7C /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
 		2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersonTableViewCell.swift; sourceTree = "<group>"; };
 		22132BC127E0AA1C00642694 /* QuizStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = QuizStoryboard.storyboard; sourceTree = "<group>"; };
 		22132BC327E0B45800642694 /* QuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizViewController.swift; sourceTree = "<group>"; };
+		2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimeView.swift; sourceTree = "<group>"; };
+		2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRankGraphData.swift; sourceTree = "<group>"; };
+		2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimePresenter.swift; sourceTree = "<group>"; };
+		2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GraphRunningTimeViewController.swift; sourceTree = "<group>"; };
+		2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunningTimeRepository.swift; sourceTree = "<group>"; };
 		2247308427E10DB2009085D5 /* StartStoryboard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = StartStoryboard.storyboard; sourceTree = "<group>"; };
 		2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AdminStoryBoard.storyboard; sourceTree = "<group>"; };
 		2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = DashboardStoryBoard.storyboard; sourceTree = "<group>"; };
@@ -57,6 +90,13 @@
 		2247309727E11313009085D5 /* MenuViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuViewController.swift; sourceTree = "<group>"; };
 		22D2074327E380D7004D96B8 /* Questions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Questions.swift; sourceTree = "<group>"; };
 		22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchViewController.swift; sourceTree = "<group>"; };
+		22E35A8827E4F7CD004D237D /* Catechism-AppTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Catechism-AppTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E35A8A27E4F7CD004D237D /* Catechism_AppTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catechism_AppTests.swift; sourceTree = "<group>"; };
+		22E35A9527E4F820004D237D /* Catechism-AppUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Catechism-AppUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		22E35A9727E4F820004D237D /* Catechism_AppUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catechism_AppUITests.swift; sourceTree = "<group>"; };
+		22E35A9927E4F820004D237D /* Catechism_AppUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Catechism_AppUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		22E35AA227E4F872004D237D /* XCTestUIValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestUIValidation.swift; sourceTree = "<group>"; };
+		22E35AA427E4FD79004D237D /* ValidateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateApp.swift; sourceTree = "<group>"; };
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catechism_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -83,10 +123,25 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		22E35A8527E4F7CD004D237D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E35A9227E4F820004D237D /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE74DD8527DCD0F400F33D69 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				22E3AAC827E6966600982183 /* FacebookLogin in Frameworks */,
 				A49B9BD4B1643BF81BA72FB1 /* Pods_Catechism_App.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -116,6 +171,7 @@
 			isa = PBXGroup;
 			children = (
 				FE74DE7127E38DBF00F33D69 /* Admin */,
+				2226EE7A27E5493A00A0B628 /* Rank */,
 				22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */,
 				FE74DD8F27DCD0F400F33D69 /* ViewController.swift */,
 				2201373C27DD1126000F0C7C /* PersonTableViewCell.swift */,
@@ -141,6 +197,18 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		2226EE7A27E5493A00A0B628 /* Rank */ = {
+			isa = PBXGroup;
+			children = (
+				2226EE7B27E5499D00A0B628 /* GraphRunningTimeView.swift */,
+				2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */,
+				2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */,
+				2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */,
+				2226EE7F27E549F700A0B628 /* UserRankGraphData.swift */,
+			);
+			path = Rank;
+			sourceTree = "<group>";
+		};
 		2247308327E10D6C009085D5 /* Model */ = {
 			isa = PBXGroup;
 			children = (
@@ -151,6 +219,24 @@
 				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		22E35A8927E4F7CD004D237D /* Catechism-AppTests */ = {
+			isa = PBXGroup;
+			children = (
+				22E35A8A27E4F7CD004D237D /* Catechism_AppTests.swift */,
+			);
+			path = "Catechism-AppTests";
+			sourceTree = "<group>";
+		};
+		22E35A9627E4F820004D237D /* Catechism-AppUITests */ = {
+			isa = PBXGroup;
+			children = (
+				22E35AA227E4F872004D237D /* XCTestUIValidation.swift */,
+				22E35A9727E4F820004D237D /* Catechism_AppUITests.swift */,
+				22E35A9927E4F820004D237D /* Catechism_AppUITestsLaunchTests.swift */,
+			);
+			path = "Catechism-AppUITests";
 			sourceTree = "<group>";
 		};
 		62B3D618664BEA39E7AAF59B /* Frameworks */ = {
@@ -165,6 +251,8 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD8A27DCD0F400F33D69 /* Catechism-App */,
+				22E35A8927E4F7CD004D237D /* Catechism-AppTests */,
+				22E35A9627E4F820004D237D /* Catechism-AppUITests */,
 				FE74DD8927DCD0F400F33D69 /* Products */,
 				009ADB339B27EBF95707FE11 /* Pods */,
 				62B3D618664BEA39E7AAF59B /* Frameworks */,
@@ -175,6 +263,8 @@
 			isa = PBXGroup;
 			children = (
 				FE74DD8827DCD0F400F33D69 /* Catechism-App.app */,
+				22E35A8827E4F7CD004D237D /* Catechism-AppTests.xctest */,
+				22E35A9527E4F820004D237D /* Catechism-AppUITests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -184,6 +274,7 @@
 			children = (
 				FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */,
 				FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */,
+				22E35AA427E4FD79004D237D /* ValidateApp.swift */,
 				2247308327E10D6C009085D5 /* Model */,
 				2201373127DCDB4F000F0C7C /* ViewControll */,
 				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
@@ -220,6 +311,42 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		22E35A8727E4F7CD004D237D /* Catechism-AppTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E35A8E27E4F7CD004D237D /* Build configuration list for PBXNativeTarget "Catechism-AppTests" */;
+			buildPhases = (
+				22E35A8427E4F7CD004D237D /* Sources */,
+				22E35A8527E4F7CD004D237D /* Frameworks */,
+				22E35A8627E4F7CD004D237D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22E35A8D27E4F7CD004D237D /* PBXTargetDependency */,
+			);
+			name = "Catechism-AppTests";
+			productName = "Catechism-AppTests";
+			productReference = 22E35A8827E4F7CD004D237D /* Catechism-AppTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		22E35A9427E4F820004D237D /* Catechism-AppUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 22E35A9D27E4F820004D237D /* Build configuration list for PBXNativeTarget "Catechism-AppUITests" */;
+			buildPhases = (
+				22E35A9127E4F820004D237D /* Sources */,
+				22E35A9227E4F820004D237D /* Frameworks */,
+				22E35A9327E4F820004D237D /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				22E35A9C27E4F820004D237D /* PBXTargetDependency */,
+			);
+			name = "Catechism-AppUITests";
+			productName = "Catechism-AppUITests";
+			productReference = 22E35A9527E4F820004D237D /* Catechism-AppUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
 		FE74DD8727DCD0F400F33D69 /* Catechism-App */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = FE74DD9C27DCD0F800F33D69 /* Build configuration list for PBXNativeTarget "Catechism-App" */;
@@ -235,6 +362,9 @@
 			dependencies = (
 			);
 			name = "Catechism-App";
+			packageProductDependencies = (
+				22E3AAC727E6966600982183 /* FacebookLogin */,
+			);
 			productName = "Catechism-App";
 			productReference = FE74DD8827DCD0F400F33D69 /* Catechism-App.app */;
 			productType = "com.apple.product-type.application";
@@ -249,6 +379,14 @@
 				LastSwiftUpdateCheck = 1300;
 				LastUpgradeCheck = 1320;
 				TargetAttributes = {
+					22E35A8727E4F7CD004D237D = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = FE74DD8727DCD0F400F33D69;
+					};
+					22E35A9427E4F820004D237D = {
+						CreatedOnToolsVersion = 13.0;
+						TestTargetID = FE74DD8727DCD0F400F33D69;
+					};
 					FE74DD8727DCD0F400F33D69 = {
 						CreatedOnToolsVersion = 13.2.1;
 					};
@@ -263,16 +401,35 @@
 				Base,
 			);
 			mainGroup = FE74DD7F27DCD0F400F33D69;
+			packageReferences = (
+				22E3AAC627E6966600982183 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */,
+			);
 			productRefGroup = FE74DD8927DCD0F400F33D69 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				FE74DD8727DCD0F400F33D69 /* Catechism-App */,
+				22E35A8727E4F7CD004D237D /* Catechism-AppTests */,
+				22E35A9427E4F820004D237D /* Catechism-AppUITests */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		22E35A8627E4F7CD004D237D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E35A9327E4F820004D237D /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE74DD8627DCD0F400F33D69 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -332,25 +489,49 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		22E35A8427E4F7CD004D237D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E35A8B27E4F7CD004D237D /* Catechism_AppTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		22E35A9127E4F820004D237D /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				22E35AA327E4F872004D237D /* XCTestUIValidation.swift in Sources */,
+				22E35A9A27E4F820004D237D /* Catechism_AppUITestsLaunchTests.swift in Sources */,
+				22E35A9827E4F820004D237D /* Catechism_AppUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		FE74DD8427DCD0F400F33D69 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FE74DE8227E430E800F33D69 /* CreateQuizTableViewCell.swift in Sources */,
+				22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
 				FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */,
 				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
 				FE74DE7B27E404F900F33D69 /* QuizSessionsHelpers.swift in Sources */,
+				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,
 				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
+				2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
 				FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */,
+				2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */,
+				2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */,
 				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
@@ -358,6 +539,7 @@
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
 				FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */,
 				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
+				2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,
@@ -365,6 +547,19 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		22E35A8D27E4F7CD004D237D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE74DD8727DCD0F400F33D69 /* Catechism-App */;
+			targetProxy = 22E35A8C27E4F7CD004D237D /* PBXContainerItemProxy */;
+		};
+		22E35A9C27E4F820004D237D /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = FE74DD8727DCD0F400F33D69 /* Catechism-App */;
+			targetProxy = 22E35A9B27E4F820004D237D /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		FE74DD9127DCD0F400F33D69 /* Main.storyboard */ = {
@@ -386,6 +581,100 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
+		22E35A8F27E4F7CD004D237D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2REF7KEJN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "team-dream.Catechism-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Catechism-App.app/Catechism-App";
+			};
+			name = Debug;
+		};
+		22E35A9027E4F7CD004D237D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2REF7KEJN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "team-dream.Catechism-AppTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Catechism-App.app/Catechism-App";
+			};
+			name = Release;
+		};
+		22E35A9E27E4F820004D237D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2REF7KEJN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "team-dream.Catechism-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Catechism-App";
+			};
+			name = Debug;
+		};
+		22E35A9F27E4F820004D237D /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = L2REF7KEJN;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = "team-dream.Catechism-AppUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = NO;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = "Catechism-App";
+			};
+			name = Release;
+		};
 		FE74DD9A27DCD0F800F33D69 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -513,6 +802,8 @@
 				DEVELOPMENT_TEAM = L2REF7KEJN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Catechism-App/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = myMicro;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -543,6 +834,8 @@
 				DEVELOPMENT_TEAM = L2REF7KEJN;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Catechism-App/Info.plist";
+				INFOPLIST_KEY_NSMicrophoneUsageDescription = myMicro;
+				INFOPLIST_KEY_NSSpeechRecognitionUsageDescription = "";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UIMainStoryboardFile = Main;
@@ -565,6 +858,24 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		22E35A8E27E4F7CD004D237D /* Build configuration list for PBXNativeTarget "Catechism-AppTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E35A8F27E4F7CD004D237D /* Debug */,
+				22E35A9027E4F7CD004D237D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		22E35A9D27E4F820004D237D /* Build configuration list for PBXNativeTarget "Catechism-AppUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				22E35A9E27E4F820004D237D /* Debug */,
+				22E35A9F27E4F820004D237D /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		FE74DD8327DCD0F400F33D69 /* Build configuration list for PBXProject "Catechism-App" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
@@ -584,6 +895,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		22E3AAC627E6966600982183 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/facebook/facebook-ios-sdk";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 9.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		22E3AAC727E6966600982183 /* FacebookLogin */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 22E3AAC627E6966600982183 /* XCRemoteSwiftPackageReference "facebook-ios-sdk" */;
+			productName = FacebookLogin;
+		};
+/* End XCSwiftPackageProductDependency section */
 
 /* Begin XCVersionGroup section */
 		2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */ = {
