@@ -21,6 +21,8 @@
 			</array>
 		</dict>
 	</dict>
+	<key>NSCalendarsUsageDescription</key>
+	<string>myCalendar</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
