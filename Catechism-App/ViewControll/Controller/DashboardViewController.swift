@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import UserNotifications
+import EventKit
 
 class DashboardViewController: UIViewController {
     
@@ -19,18 +21,129 @@ class DashboardViewController: UIViewController {
     
     @IBOutlet weak var technology: UILabel!
     
+    @IBOutlet weak var susO: UIButton!
+    @IBAction func susB(_ sender: Any) {
+        
+        sendNotification()
+        getAuth()
+        susO .isEnabled = false
+    }
     
     var imageV1 : UIView!
     var imageV2 : UIView!
     var imageV3 : UIView!
     override func viewDidLoad() {
         super.viewDidLoad()
+        UNUserNotificationCenter.current().delegate = self
         technology.text = "I O S"
-      //  graph()
+        //  graph()
         rank()
-         
+        
     }
     
+    
+    // MARK: CALENDAR
+    
+    func getAuth(){
+        let eStore = EKEventStore()
+        switch EKEventStore.authorizationStatus(for: .event){
+        case .authorized :
+            addEvent(est: eStore)
+            print("accses  ")
+        case .denied:
+            print("accses denied")
+        case .notDetermined :
+            eStore.requestAccess(to: .event, completion: {granted, err in
+                if granted {
+                    self.addEvent(est: eStore)
+                }
+                else{
+                    print("no acces granted")
+                }
+            })
+        default:
+            print("")
+        }
+    }
+    
+    func addEvent(est : EKEventStore){
+        let cl = est.calendars(for: .event)
+        for c in cl{
+            if c.title == "Calendar"{
+                let sdt = Date()
+                let edt = sdt.addingTimeInterval(200)
+                let event = EKEvent(eventStore: est)
+                event.calendar = c
+                let intr : TimeInterval = -2 * 60
+                let alrm = EKAlarm(relativeOffset: intr)
+                event.alarms = [ alrm ]
+                event.title = "Initial Catechism, Suscription Free"
+                event.startDate = sdt
+                event.endDate = edt
+                do {
+                    try est.save(event, span: .thisEvent)
+                }
+                catch{
+                }
+            }
+        }
+    }
+    
+    
+    
+    // MARK: NOTIFICATION USER
+    
+    
+    func sendNotification(){
+        print("Notification ini")
+        UNUserNotificationCenter.current().getNotificationSettings{ notifs in
+            
+            switch notifs.authorizationStatus{
+            case .notDetermined :
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]){
+                    granted , err in
+                    if let error = err {
+                        print("request faile", error)
+                    }
+                    self.generateNotification()
+                }
+                
+            case .authorized:
+                
+                self.generateNotification()
+            case .denied :
+                print("app not allowed")
+            default :
+                print("")
+            }
+            
+        }
+    }
+    
+    func generateNotification(){
+        let ncont = UNMutableNotificationContent()
+        print("generateNotification ini")
+        ncont.title = "Congratulation"
+        ncont.subtitle = "from Catechism"
+        ncont.body = "You win a Free Suscription for 3 months, we will add the starting date to your calendar"
+        
+        let ntrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
+        let nreq = UNNotificationRequest(identifier: "User_Local_notification", content: ncont, trigger: ntrigger)
+        
+        UNUserNotificationCenter.current().add(nreq) { err in
+            if let error = err {
+                print("can add notification request", error )
+            }
+        }
+        
+    }
+    
+    
+    
+    
+    
+    
+    //MARK: GRAPH
     func graph(){
         //
         imageV1 = UIView()
@@ -78,5 +191,10 @@ class DashboardViewController: UIViewController {
     
 }
 
+extension DashboardViewController : UNUserNotificationCenterDelegate{
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {  print("userNotificationCenter ini")
+        completionHandler([.alert])
+    }
+}
 
 
