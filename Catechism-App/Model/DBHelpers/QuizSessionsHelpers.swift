@@ -13,7 +13,7 @@ import SQLite3
 extension DBHelper{
     
     func createQuizSessionsTable() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Quiz_Sessions(Id INTEGER PRIMARY KEY,user_id INTEGER, score INTEGER, session_date TEXT, subject_name TEXT);"
+        let createTableString = "CREATE TABLE IF NOT EXISTS Quiz_Sessions(Id INTEGER PRIMARY KEY AUTOINCREMENT,user_id INTEGER, score INTEGER, session_date TEXT, subject_name TEXT);"
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK
         {
@@ -29,25 +29,16 @@ extension DBHelper{
         sqlite3_finalize(createTableStatement)
     }
     
-    func insertQuizSessions(id: Int, userId: Int, score: Int, sessionDate: String, subjectName: String)
-    {
-        let quiz = getUsers()
-        for q in quiz
-        {
-            if q.id == id
-            {
-                return
-            }
-        }
-        let insertStatementString = "INSERT INTO Quiz_Sessions(Id, user_id, score, session_date, subject_name) VALUES (?, ?, ?, ?, ?);"
+    func insertQuizSessions(userId: Int, score: Int, sessionDate: String, subjectName: String) {
+        
+        let insertStatementString = "INSERT INTO Quiz_Sessions(user_id, score, session_date, subject_name) VALUES (?, ?, ?, ?);"
         var insertStatement: OpaquePointer? = nil
+        
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_int(insertStatement, 1, Int32(id))
-            sqlite3_bind_int(insertStatement, 2, Int32(userId))
-            sqlite3_bind_int(insertStatement, 3, Int32(score))
-            sqlite3_bind_text(insertStatement, 4, (sessionDate as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(insertStatement, 5, (subjectName as NSString).utf8String, -1, nil)
-
+            sqlite3_bind_int(insertStatement, 1, Int32(userId))
+            sqlite3_bind_int(insertStatement, 2, Int32(score))
+            sqlite3_bind_text(insertStatement, 3, (sessionDate as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 4, (subjectName as NSString).utf8String, -1, nil)
 
             if sqlite3_step(insertStatement) == SQLITE_DONE {
                 print("Successfully inserted quiz row.")

@@ -9,19 +9,16 @@ import UIKit
 import Eureka
 
 class CreateQuizViewController: FormViewController {
-
+    let db = DBHelper.init()
     var questionCount = 5
 
     override func viewDidLoad() {
         super.viewDidLoad()
         animateScroll = true
         rowKeyboardSpacing = 20
-//        TextAreaHeight.fixed(cellHeight: 44)
-//        TextAreaCell.height = 20
-//
-//         =
-//        MyTextAreaRow.textAreaHeight = TextAreaHeight.fixed(cellHeight: 40)
-        
+
+
+
         form +++ Section("Create Quiz")
         <<< TextRow("Quiz Subject") { row in
             row.title = "Quiz Subject"
@@ -57,11 +54,46 @@ class CreateQuizViewController: FormViewController {
                 row.title = "Answer #\(index) - 4"
                 row.placeholder = "Answer 4"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-                
+
+            }
+            <<< IntRow("Correct#\(index)") { row in
+                row.title = "Enter Correct Answer #"
+                row.placeholder = "0"
+
             }
 
         }
+        form +++ Section("Submit All")
+        <<< ButtonRow("my Button") { row in
+            row.title = "Submit"
 
+
+            row.onCellSelection { cell, row in
+                let valuesDictionary = self.form.values()
+                print(valuesDictionary)
+
+                let subjectName = valuesDictionary["Quiz Subject"] as? String ?? "No SubJect Entered"
+
+                for i in 1...(((valuesDictionary.count - 2) / 5) - 1) {
+                    let question = valuesDictionary["Question #\(i)"] as? String ?? ""
+                    let questionId = Int(self.db.getLastInsertedId())
+                    let answer1 = valuesDictionary["Answer #\(i) - 1"] as? String ?? ""
+                    let answer2 = valuesDictionary["Answer #\(i) - 2"] as? String ?? ""
+                    let answer3 = valuesDictionary["Answer #\(i) - 3"] as? String ?? ""
+                    let answer4 = valuesDictionary["Answer #\(i) - 4"] as? String ?? ""
+                    let correctAnswer = valuesDictionary["Correct#\(i)"] as? Int ?? 0
+
+                    self.db.insertQuestions(subjectName: subjectName, questionText: question, correctAnswer: correctAnswer)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer1, sequence: 1)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer2, sequence: 2)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer3, sequence: 3)
+                    self.db.insertAnswers(questionId: questionId, answerText: answer4, sequence: 4)
+  
+                }
+
+            }
+
+        }
     }
 
 

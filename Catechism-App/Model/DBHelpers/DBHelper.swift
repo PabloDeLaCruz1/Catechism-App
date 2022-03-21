@@ -15,6 +15,8 @@ class DBHelper {
         db = openDatabase()
         createUsersTable()
         createQuizSessionsTable()
+        createQuestionsTable()
+        createAnswersTable()
     }
 
     let dbPath: String = "catechism.sqlite"
@@ -93,8 +95,25 @@ class DBHelper {
         return psns
     }
 
+    func getLastInsertedId() -> Int32 {
+        let queryStatementString = "SELECT LAST_INSERT_ROWID();"
+        var queryStatement: OpaquePointer? = nil
+        var lastId: Int32 = 0
+
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                lastId = sqlite3_column_int(queryStatement, 0)
+            }
+        } else {
+            print("SELECT Last ID statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        print("last ID: ", lastId)
+        return lastId
+    }
+
     func deleteByID(id: Int) {
-        let deleteStatementStirng = "DELETE FROM users WHERE Id = ?;"
+        let deleteStatementStirng = "DELETE FROM Users WHERE Id = ?;"
         var deleteStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, deleteStatementStirng, -1, &deleteStatement, nil) == SQLITE_OK {
             sqlite3_bind_int(deleteStatement, 1, Int32(id))
@@ -107,6 +126,22 @@ class DBHelper {
             print("DELETE statement could not be prepared")
         }
         sqlite3_finalize(deleteStatement)
+    }
+
+    func blockUserById(id: Int) {
+        let updateStatementStirng = "UPDATE Users SET subscriptionType = 3 WHERE Id = ?;"
+        var updateStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, updateStatementStirng, -1, &updateStatement, nil) == SQLITE_OK {
+            sqlite3_bind_int(updateStatement, 1, Int32(id))
+            if sqlite3_step(updateStatement) == SQLITE_DONE {
+                print("Successfully blocked user with ID: \(id)")
+            } else {
+                print("Could not block user with ID: \(id)")
+            }
+        } else {
+            print("Block user with ID: \(id) statement could not be prepared")
+        }
+        sqlite3_finalize(updateStatement)
     }
 
 }
