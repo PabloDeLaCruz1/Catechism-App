@@ -30,7 +30,7 @@ class AdminViewController: UIViewController {
 //        usersTable.delegate = self
 //        usersTable.dataSource = self
 
-        for u in 1...20 {
+        for u in 1...30 {
             db.deleteByID(id: u)
             db.deleteByIDandTable(id: u, table: "Answers")
             db.deleteByIDandTable(id: u, table: "Questions")

@@ -33,9 +33,9 @@ extension DBHelper{
         var insertStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_int(insertStatement, 0, Int32(questionId))
-            sqlite3_bind_text(insertStatement, 1, (answerText as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(insertStatement, 2, Int32(sequence))
+            sqlite3_bind_int(insertStatement, 1, Int32(questionId))
+            sqlite3_bind_text(insertStatement, 2, (answerText as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 3, Int32(sequence))
 
 
             if sqlite3_step(insertStatement) == SQLITE_DONE {

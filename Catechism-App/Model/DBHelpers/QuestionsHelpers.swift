@@ -12,7 +12,7 @@ import SQLite3
 extension DBHelper {
 
     func createQuestionsTable() {
-        let createTableString = "CREATE TABLE IF NOT EXISTS Questions(Id INTEGER PRIMARY KEY, subject_name TEXT, question_text TEXT, correct_answer TEXT);"
+        let createTableString = "CREATE TABLE IF NOT EXISTS Questions(Id INTEGER PRIMARY KEY, subject_name TEXT, question_text TEXT, correct_answer INTEGER);"
         var createTableStatement: OpaquePointer? = nil
         if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
             if sqlite3_step(createTableStatement) == SQLITE_DONE {
@@ -32,9 +32,9 @@ extension DBHelper {
         var insertStatement: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
-            sqlite3_bind_text(insertStatement, 0, (subjectName as NSString).utf8String, -1, nil)
-            sqlite3_bind_text(insertStatement, 1, (questionText as NSString).utf8String, -1, nil)
-            sqlite3_bind_int(insertStatement, 2, Int32(correctAnswer))
+            sqlite3_bind_text(insertStatement, 1, (subjectName as NSString).utf8String, -1, nil)
+            sqlite3_bind_text(insertStatement, 2, (questionText as NSString).utf8String, -1, nil)
+            sqlite3_bind_int(insertStatement, 3, Int32(correctAnswer))
 
 
             if sqlite3_step(insertStatement) == SQLITE_DONE {
