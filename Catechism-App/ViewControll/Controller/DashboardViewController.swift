@@ -33,17 +33,18 @@ class DashboardViewController: UIViewController {
     var imageV2 : UIView!
     var imageV3 : UIView!
     
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UNUserNotificationCenter.current().delegate = self
         technology.text = "I O S"
         //  graph()
-        rank()
+        rankT1(t: "IOS")
         getScoreData()
         
     }
     
-    
+    var ScoreArray :  [String] = ["95","80","70","80","78","68","100","80","70"]
     // MARK: CALENDAR
     
     func getAuth(){
@@ -174,8 +175,20 @@ class DashboardViewController: UIViewController {
         }
     }
   
+    @IBAction func t1B(_ sender: Any) {
+        rankT1(t : "IOS")
+    }
     
-    func rank(){
+    @IBAction func t2B(_ sender: Any) {
+        rankT2(t : "MATH")
+    }
+    
+    
+    @IBAction func t3B(_ sender: Any) {
+        rankT3(t : "JAVA")
+    }
+    // ***********************************************
+    func rankT1( t : String){
         //DBHELPER
         var cont = 1
         for d in quizSessions {
@@ -183,8 +196,8 @@ class DashboardViewController: UIViewController {
             switch cont{
               
             case 1:
-                technology.text = d.subjectName
-                scoreFirst.text = "95"
+                technology.text = t //d.subjectName
+                scoreFirst.text = ScoreArray[0]
                 let getUserById1  = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "David"
                 for n in getUserById1 {
@@ -195,7 +208,7 @@ class DashboardViewController: UIViewController {
                 cont = cont + 1
             case 2:
                 nameSecond.text = "Pablo"
-                scoreSecond.text = "80"
+                scoreSecond.text =  ScoreArray[1]
                 let getUserById2  = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
                     nameSecond.text =   n.name // "Pablo"//d.name
@@ -203,7 +216,7 @@ class DashboardViewController: UIViewController {
         
                 cont = cont + 1
             case 3:
-                scordThird.text = "70"
+                scordThird.text = ScoreArray[2]
                 nameThird.text = "Young"
                 let getUserById3  = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
@@ -216,6 +229,90 @@ class DashboardViewController: UIViewController {
             
         }
     }
+    
+    func rankT2( t : String){
+        //DBHELPER
+        var cont = 1
+        for d in quizSessions {
+            print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
+            switch cont{
+              
+            case 1:
+                technology.text = t //d.subjectName
+                scoreFirst.text =  ScoreArray[3]
+                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                nameFirst.text = "Luis"
+                for n in getUserById1 {
+                    print("Entrooooooo00000000000000000000000000o")
+                    nameFirst.text =   n.name // "Pablo"//d.name
+                }
+              
+                cont = cont + 1
+            case 2:
+                nameSecond.text = "Daniel"
+                scoreSecond.text =  ScoreArray[4]
+                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById2 {
+                    nameSecond.text =   n.name // "Pablo"//d.name
+                }
+        
+                cont = cont + 1
+            case 3:
+                scordThird.text =  ScoreArray[5]
+                nameThird.text = "Melany"
+                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById3 {
+                    nameThird.text =   n.name // "Pablo"//d.name
+                }
+                cont = cont + 1
+            default :
+                print("f")
+            }
+            
+        }
+    }
+    
+    func rankT3( t : String){
+        //DBHELPER
+        var cont = 1
+        for d in quizSessions {
+            switch cont{
+              
+            case 1:
+                technology.text = t //d.subjectName
+                scoreFirst.text =  ScoreArray[6]
+                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                nameFirst.text = "Richard"
+                for n in getUserById1 {
+                    nameFirst.text =   n.name // "Pablo"//d.name
+                }
+              
+                cont = cont + 1
+            case 2:
+                nameSecond.text = "Analy"
+                scoreSecond.text =  ScoreArray[7]
+                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById2 {
+                    nameSecond.text =   n.name // "Pablo"//d.name
+                }
+        
+                cont = cont + 1
+            case 3:
+                scordThird.text =  ScoreArray[8]
+                nameThird.text = "Boris"
+                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById3 {
+                    nameThird.text =   n.name // "Pablo"//d.name
+                }
+                cont = cont + 1
+            default :
+                print("f")
+            }
+            
+        }
+    }
+    
+    
     
 }
 
