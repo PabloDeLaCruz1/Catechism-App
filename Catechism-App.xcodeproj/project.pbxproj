@@ -61,6 +61,7 @@
 		FE74DEB427EA215C00F33D69 /* QuizCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */; };
 		FE74DEB527EA216300F33D69 /* DBConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854627E8DD7C007E7F58 /* DBConnector.swift */; };
 		FE74DEB627EA218100F33D69 /* AudioSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855527E8DD7C007E7F58 /* AudioSounds.swift */; };
+		FE74DEBE27EA453900F33D69 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE74DEBD27EA453900F33D69 /* appIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -145,6 +146,7 @@
 		FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHelpers.swift; sourceTree = "<group>"; };
 		FE74DE8827E53D8C00F33D69 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
 		FE74DE8A27E8DE3400F33D69 /* Catechism-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Catechism-App.entitlements"; sourceTree = "<group>"; };
+		FE74DEBD27EA453900F33D69 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -336,6 +338,7 @@
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
 				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
+				FE74DEBD27EA453900F33D69 /* appIcon.png */,
 			);
 			path = "Catechism-App";
 			sourceTree = "<group>";
@@ -494,6 +497,7 @@
 				7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */,
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
+				FE74DEBE27EA453900F33D69 /* appIcon.png in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
 				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
 				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
