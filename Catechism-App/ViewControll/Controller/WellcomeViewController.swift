@@ -26,6 +26,10 @@ class WellcomeViewController: UIViewController {
         super.viewDidLoad()
         userName.text! = userWellcome
         suscriptionL.text! = susWellcome
+        quizB.layer.cornerRadius = 20
+        dashB.layer.cornerRadius = 20
+        adminB.layer.cornerRadius = 20
+        
         
         if (suscriptionL.text == "0"){
             adminB.isEnabled = false
