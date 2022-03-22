@@ -75,6 +75,37 @@ extension DBHelper{
         sqlite3_finalize(queryStatement)
         return quizSessions
     }
+        
+    func getQuizSessionsScore() -> [QuizSessions] {
+        
+        
+        
+        let queryStatementString = "SELECT * FROM Quiz_Sessions where id in (select min(id) from Quiz_Sessions group by user_id, subject_name  order by score) order by  subject_name,  score desc;"
+        var queryStatement: OpaquePointer? = nil
+        var quizSessions: [QuizSessions] = []
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let id = sqlite3_column_int(queryStatement, 0)
+                let userId = sqlite3_column_int(queryStatement, 1)
+
+                let score = sqlite3_column_int(queryStatement, 2)
+                let sessionDate = String(describing: String(cString: sqlite3_column_text(queryStatement, 3)))
+                let subjectName = String(describing: String(cString: sqlite3_column_text(queryStatement, 4)))
+
+                quizSessions.append(QuizSessions(id: Int(id), userId: Int(userId), score: Int(score), sessionDate: sessionDate, subjectName: subjectName))
+           
+                print("Quiz Sessions Query Result:")
+                print("\(id) | \(userId) | \(score) | \(sessionDate) | \(subjectName)")
+            }
+        } else {
+            print("Quiz Sessions SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return quizSessions
+    }
+    
+    
+    
     
     func deleteByIDandTable(id: Int, table: String) {
         let deleteStatementStirng = "DELETE FROM \(table) WHERE Id = ?;"

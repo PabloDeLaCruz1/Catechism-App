@@ -8,7 +8,7 @@
 import UIKit
 import Eureka
 
-class CreateQuizViewController: FormViewController {
+class CreateQuizViewController: FormViewController, UNUserNotificationCenterDelegate {
     let db = DBHelper.init()
     var questionCount = 5
 
@@ -16,6 +16,7 @@ class CreateQuizViewController: FormViewController {
         super.viewDidLoad()
         animateScroll = true
         rowKeyboardSpacing = 20
+        UNUserNotificationCenter.current().delegate = self
 
 
 
@@ -92,13 +93,51 @@ class CreateQuizViewController: FormViewController {
                 }
 
             }
+            
+            
 
         }
     }
 
+    func sendNotificationToAllUsers(){
+        UNUserNotificationCenter.current().getNotificationSettings { notifS in
+            switch notifS.authorizationStatus {
+            case .notDetermined:
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) { granted, err in
+                    if let error = err {
+                        print("Request Failed: ", error)
+                    }
+
+
+                }
+            case .authorized:
+                self.generateNotification()
+            default:
+                print("Defaulted notification request failed.")
+            }
+
+        }
+    }
+    
+    func generateNotification(){
+        let notiContent = UNMutableNotificationContent()
+        notiContent.title = "Quiz App"
+        notiContent.subtitle = "New Quiz!"
+        notiContent.body = "You have a new quiz waiting for you!"
+        
+        let notiTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
+        let notiRequest = UNNotificationRequest(identifier: "User_Local_Notification", content: notiContent, trigger: notiTrigger)
+        
+        UNUserNotificationCenter.current().add(notiRequest){ err in
+            if let error = err {
+                print("cannot add notification request", error)
+            }
+        }
+        
+    }
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert])
+    }
 
 }
 
-class myTextAreaRow: _TextAreaRow {
-//    textAreaHeight = TextAreaHeight.fixed(cellHeight: 40)
-}

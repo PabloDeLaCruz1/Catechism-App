@@ -28,16 +28,18 @@ class DashboardViewController: UIViewController {
         getAuth()
         susO .isEnabled = false
     }
-    
+    let quizSessions = DBHelper.init().getQuizSessionsScore()
     var imageV1 : UIView!
     var imageV2 : UIView!
     var imageV3 : UIView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         UNUserNotificationCenter.current().delegate = self
         technology.text = "I O S"
         //  graph()
         rank()
+        getScoreData()
         
     }
     
@@ -164,23 +166,49 @@ class DashboardViewController: UIViewController {
         
     }
     // ************
+    // Queue GCD  QoS
+    func getScoreData(){
+        // ***
+        for d in quizSessions {
+            print("DispatchQueue.main.async:", d.id, "userId: ", d.userId, "score:", d.score, "Technology",d.subjectName)
+        }
+    }
+  
+    
     func rank(){
         //DBHELPER
         var cont = 1
-        let data = DBHelper.init().getUsers() //  .inst.read()
-        for d in data {
+        for d in quizSessions {
+            print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
             switch cont{
+              
             case 1:
+                technology.text = d.subjectName
                 scoreFirst.text = "95"
-                nameFirst.text = d.name
+                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                nameFirst.text = "David"
+                for n in getUserById1 {
+                    print("Entrooooooo00000000000000000000000000o")
+                    nameFirst.text =   n.name // "Pablo"//d.name
+                }
+              
                 cont = cont + 1
             case 2:
+                nameSecond.text = "Pablo"
                 scoreSecond.text = "80"
-                nameSecond.text = d.name
+                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById2 {
+                    nameSecond.text =   n.name // "Pablo"//d.name
+                }
+        
                 cont = cont + 1
             case 3:
                 scordThird.text = "70"
-                nameThird.text = d.name
+                nameThird.text = "Young"
+                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                for n in getUserById3 {
+                    nameThird.text =   n.name // "Pablo"//d.name
+                }
                 cont = cont + 1
             default :
                 print("f")
