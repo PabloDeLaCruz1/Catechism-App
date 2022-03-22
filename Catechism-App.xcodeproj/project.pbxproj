@@ -34,6 +34,21 @@
 		22E3AAC827E6966600982183 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 22E3AAC727E6966600982183 /* FacebookLogin */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
 		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
+		7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */; };
+		7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */; };
+		7818855B27E8DD7C007E7F58 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854227E8DD7C007E7F58 /* QuizVC.swift */; };
+		7818855E27E8DD7C007E7F58 /* DBConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854627E8DD7C007E7F58 /* DBConnector.swift */; };
+		7818855F27E8DD7C007E7F58 /* QuestionSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854727E8DD7C007E7F58 /* QuestionSet.swift */; };
+		7818856027E8DD7C007E7F58 /* DB0.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 7818854827E8DD7C007E7F58 /* DB0.sqlite */; };
+		7818856127E8DD7C007E7F58 /* QuizCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */; };
+		7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */; };
+		7818856627E8DD7C007E7F58 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7818855027E8DD7C007E7F58 /* Assets.xcassets */; };
+		7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7818855227E8DD7C007E7F58 /* incorrect.wav */; };
+		7818856827E8DD7C007E7F58 /* correct.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7818855327E8DD7C007E7F58 /* correct.mp3 */; };
+		7818856927E8DD7C007E7F58 /* bensound-thelounge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */; };
+		7818856A27E8DD7C007E7F58 /* AudioSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855527E8DD7C007E7F58 /* AudioSounds.swift */; };
+		7818856B27E8DD7C007E7F58 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855627E8DD7C007E7F58 /* CustomError.swift */; };
+
 		A49B9BD4B1643BF81BA72FB1 /* Pods_Catechism_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
@@ -100,6 +115,21 @@
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
 		4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catechism_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionResult.swift; sourceTree = "<group>"; };
+		7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseQuizTypeVC.swift; sourceTree = "<group>"; };
+		7818854227E8DD7C007E7F58 /* QuizVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizVC.swift; sourceTree = "<group>"; };
+		7818854627E8DD7C007E7F58 /* DBConnector.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DBConnector.swift; sourceTree = "<group>"; };
+		7818854727E8DD7C007E7F58 /* QuestionSet.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionSet.swift; sourceTree = "<group>"; };
+		7818854827E8DD7C007E7F58 /* DB0.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB0.sqlite; sourceTree = "<group>"; };
+		7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCVCell.swift; sourceTree = "<group>"; };
+		7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Extension.swift"; sourceTree = "<group>"; };
+		7818855027E8DD7C007E7F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		7818855227E8DD7C007E7F58 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
+		7818855327E8DD7C007E7F58 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
+		7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-thelounge.mp3"; sourceTree = "<group>"; };
+		7818855527E8DD7C007E7F58 /* AudioSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSounds.swift; sourceTree = "<group>"; };
+		7818855627E8DD7C007E7F58 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
+
 		B012A9788669DFC17739C623 /* Pods-Catechism-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.debug.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC20E09FAFD36B2CF9DA98E /* Pods-Catechism-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.release.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.release.xcconfig"; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -171,6 +201,9 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */,
+				7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */,
+				7818854227E8DD7C007E7F58 /* QuizVC.swift */,
 				FE74DE7127E38DBF00F33D69 /* Admin */,
 				2226EE7A27E5493A00A0B628 /* Rank */,
 				22D9C1F827E2C426007D6B89 /* LaunchViewController.swift */,
@@ -189,6 +222,7 @@
 		2201373727DCEF37000F0C7C /* View */ = {
 			isa = PBXGroup;
 			children = (
+				7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */,
 				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
 				2247308427E10DB2009085D5 /* StartStoryboard.storyboard */,
 				2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */,
@@ -217,6 +251,7 @@
 				FE74DE0727E1F7A400F33D69 /* Users.swift */,
 				FE74DE8827E53D8C00F33D69 /* Answers.swift */,
 				22D2074327E380D7004D96B8 /* Questions.swift */,
+				7818854727E8DD7C007E7F58 /* QuestionSet.swift */,
 				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
 			path = Model;
@@ -248,6 +283,30 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		7818854D27E8DD7C007E7F58 /* utility */ = {
+			isa = PBXGroup;
+			children = (
+				7818854827E8DD7C007E7F58 /* DB0.sqlite */,
+				7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */,
+				7818855027E8DD7C007E7F58 /* Assets.xcassets */,
+				7818855127E8DD7C007E7F58 /* sounds */,
+				7818855527E8DD7C007E7F58 /* AudioSounds.swift */,
+				7818855627E8DD7C007E7F58 /* CustomError.swift */,
+			);
+			path = utility;
+			sourceTree = "<group>";
+		};
+		7818855127E8DD7C007E7F58 /* sounds */ = {
+			isa = PBXGroup;
+			children = (
+				7818855227E8DD7C007E7F58 /* incorrect.wav */,
+				7818855327E8DD7C007E7F58 /* correct.mp3 */,
+				7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */,
+			);
+			path = sounds;
+			sourceTree = "<group>";
+		};
+
 		FE74DD7F27DCD0F400F33D69 = {
 			isa = PBXGroup;
 			children = (
@@ -273,6 +332,7 @@
 		FE74DD8A27DCD0F400F33D69 /* Catechism-App */ = {
 			isa = PBXGroup;
 			children = (
+
 				FE74DE8A27E8DE3400F33D69 /* Catechism-App.entitlements */,
 				FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */,
 				FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */,
@@ -280,6 +340,7 @@
 				2247308327E10D6C009085D5 /* Model */,
 				2201373127DCDB4F000F0C7C /* ViewControll */,
 				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
+				7818854D27E8DD7C007E7F58 /* utility */,
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
 				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
@@ -303,6 +364,7 @@
 			isa = PBXGroup;
 			children = (
 				2201373A27DD0B8D000F0C7C /* DBHelper.swift */,
+				7818854627E8DD7C007E7F58 /* DBConnector.swift */,
 				FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */,
 				FE74DE7A27E404F900F33D69 /* QuizSessionsHelpers.swift */,
 				FE74DE7D27E4122D00F33D69 /* QuestionsHelpers.swift */,
@@ -437,11 +499,16 @@
 			buildActionMask = 2147483647;
 			files = (
 				FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */,
+				7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */,
+
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
 				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
 				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
+				7818856027E8DD7C007E7F58 /* DB0.sqlite in Resources */,
+
+
 				2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -514,6 +581,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */,
+				7818855B27E8DD7C007E7F58 /* QuizVC.swift in Sources */,
+				7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */,
+
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
 				22132BC427E0B45800642694 /* QuizViewController.swift in Sources */,
@@ -523,6 +593,9 @@
 				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,
 				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
+				7818855F27E8DD7C007E7F58 /* QuestionSet.swift in Sources */,
+				7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */,
+
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
 				2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,
@@ -530,6 +603,8 @@
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
+				7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */,
+
 				FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */,
 				2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */,
 				2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */,
@@ -798,6 +873,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+
 				CODE_SIGN_ENTITLEMENTS = "Catechism-App/Catechism-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -819,6 +895,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pdelac.Catechism-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -831,6 +908,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+
 				CODE_SIGN_ENTITLEMENTS = "Catechism-App/Catechism-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
@@ -852,6 +930,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "pdelac.Catechism-App";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
