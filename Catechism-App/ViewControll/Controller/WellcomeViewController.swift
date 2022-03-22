@@ -26,7 +26,8 @@ class WellcomeViewController: UIViewController {
         super.viewDidLoad()
         userName.text! = userWellcome
         suscriptionL.text! = susWellcome
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         if (suscriptionL.text == "0"){
             adminB.isEnabled = false
             dashB.isEnabled = false

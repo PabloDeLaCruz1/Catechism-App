@@ -17,6 +17,7 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
         animateScroll = true
         rowKeyboardSpacing = 20
         UNUserNotificationCenter.current().delegate = self
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
 
 
@@ -69,6 +70,8 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
             row.title = "Submit"
 
             row.onCellSelection { cell, row in
+                self.sendNotificationToAllUsers()
+
                 let valuesDictionary = self.form.values()
                 print(valuesDictionary)
 
@@ -90,7 +93,6 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                     self.db.insertAnswers(questionId: questionId, answerText: answer4, sequence: 4)
                 }
             }
-            sendNotificationToAllUsers()
         }
     }
 

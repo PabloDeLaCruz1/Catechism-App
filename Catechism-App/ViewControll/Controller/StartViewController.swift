@@ -60,6 +60,8 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         // Login Button made by Facebook
         let loginButton = FBLoginButton()
         // Optional: Place the button in the center of your view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         loginButton.permissions = ["public_profile", "email"]
         loginButton.center = view.center
         loginButton.delegate = self
@@ -218,7 +220,9 @@ class StartViewController: UIViewController, LoginButtonDelegate {
             
             displayVC.userWellcome = userText.text!
             
-            self.present(displayVC, animated: true, completion: nil)
+//            self.present(displayVC, animated: true, completion: nil)
+            self.showDetailViewController(displayVC, sender: self)
+
         } else {
             print("no")
         }

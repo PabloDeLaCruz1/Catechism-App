@@ -37,7 +37,8 @@ class SignUpViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         subB.layer.cornerRadius = 20
-        
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         
         
         //  print("selectedName:",userWellcome)
@@ -128,6 +129,7 @@ class SignUpViewController: UIViewController {
             // displayVC.userWellcome   = userName.text!
             
             self.present(displayVC, animated: true, completion: nil)
+            
         }
     }
     

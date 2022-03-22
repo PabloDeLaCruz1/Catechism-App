@@ -12,10 +12,18 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var startB: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
-        startB.layer.cornerRadius = 20
-        // Do any additional setup after loading the view.
+//        startB.layer.cornerRadius = 20
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
     }
     
+    @IBAction func startButtonPressed(_ sender: Any) {
+          
+            let storyBoard : UIStoryboard = UIStoryboard(name: "StartStoryboard", bundle:nil)
+            let nextViewController = storyBoard.instantiateViewController(withIdentifier: "loginView") as! StartViewController
+
+        nextViewController.modalPresentationStyle = .fullScreen
+            present(nextViewController, animated: true)
+    }
     
 
     /*

@@ -18,6 +18,8 @@ class AdminViewController: UIViewController {
         print("Hello Admin!!!-------------------")
         // Do any additional setup after loading the view.
         populateDataForTesting()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
     }
 
 
