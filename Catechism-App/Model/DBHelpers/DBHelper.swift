@@ -94,7 +94,36 @@ class DBHelper {
         sqlite3_finalize(queryStatement)
         return psns
     }
+    
+    func getUserById(id: Int) -> [Users] {
+        let queryStatementString = "SELECT * FROM users WHERE Id = \(id) ;"
+        var queryStatement: OpaquePointer? = nil
+        var psns: [Users] = []
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+           
+            
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+                let id = sqlite3_column_int(queryStatement, 0)
+                let name = String(describing: String(cString: sqlite3_column_text(queryStatement, 1)))
+                let password = String(describing: String(cString: sqlite3_column_text(queryStatement, 2)))
 
+                let subscriptionType = sqlite3_column_int(queryStatement, 3)
+                psns.append(Users(id: Int(id), name: name, password: password, subscriptionType: Int(subscriptionType)))
+                print("Query Result:")
+                print("\(id) | \(name) | \(password) | \(subscriptionType)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        print("User by ID",queryStatementString)
+        return psns
+    }
+    
+    
+    
+    
+    
     func getLastInsertedId() -> Int32 {
         let queryStatementString = "SELECT LAST_INSERT_ROWID();"
         var queryStatement: OpaquePointer? = nil
