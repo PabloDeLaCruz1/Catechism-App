@@ -30,18 +30,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         )
     }
     
-    
     func isLoggedIn() -> Bool {
             let accessToken = AccessToken.current
             let isLoggedIn = accessToken != nil && !(accessToken?.isExpired ?? false)
             return isLoggedIn
         }
-    
-    
-    
-    
-    
-    
     
 }
 
