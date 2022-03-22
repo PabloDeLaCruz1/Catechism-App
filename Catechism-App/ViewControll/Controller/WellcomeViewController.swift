@@ -37,7 +37,7 @@ class WellcomeViewController: UIViewController {
             quizB.isEnabled = true
         }else if (suscriptionL.text == "1"){
             adminB.isEnabled = false
-            dashB.isEnabled = false
+            dashB.isEnabled = true
         }else if (suscriptionL.text == "2"){
             adminB.isEnabled = true
             dashB.isEnabled = true
