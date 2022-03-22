@@ -92,7 +92,7 @@ class LaunchViewController: UIViewController {
 //
 //    }
     
- 
+
 
     
     override func viewDidLoad() {
@@ -103,6 +103,9 @@ class LaunchViewController: UIViewController {
         // Do any additional setup after loading the view.
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+        
+
+       
     }
 
 }

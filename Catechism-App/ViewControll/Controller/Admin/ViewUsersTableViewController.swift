@@ -90,16 +90,22 @@ class ViewUsersTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowOneUserViewController" {
+            if let nextVC = segue.destination as? ShowOneUserViewController {
+                      nextVC.User = sender as! Users
+                  }
+              }
+        
+        
+        
     }
-    */
-//
+    
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //
 //    }
@@ -115,6 +121,9 @@ class ViewUsersTableViewController: UITableViewController {
 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
+        let Users = Users[indexPath.row]
+        self.performSegue(withIdentifier: "ShowOneUserViewController", sender: Users)
 
     }
 

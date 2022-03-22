@@ -200,10 +200,28 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" id="C21-d9-jJB"/>
+                    <connections>
+                        <segue destination="w3d-YF-AWd" kind="showDetail" identifier="ShowOneUserViewController" id="nAb-mI-vY5"/>
+                    </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gW3-il-Snp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="943.47826086956525" y="-370.3125"/>
+        </scene>
+        <!--Show One User View Controller-->
+        <scene sceneID="4uu-cT-3ap">
+            <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="GZL-mk-d7g" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <viewController id="w3d-YF-AWd" customClass="ShowOneUserViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="MWq-uv-Xgi">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <viewLayoutGuide key="safeArea" id="qla-y0-lUS"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+            </objects>
+            <point key="canvasLocation" x="1824" y="-353"/>
         </scene>
     </scenes>
     <resources>

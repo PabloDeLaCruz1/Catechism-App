@@ -21,4 +21,11 @@ class Users {
         self.password = password
         self.subscriptionType = subscriptionType
     }
+    
+    init() {
+        self.id = 0
+        self.name = "name"
+        self.password = "password"
+        self.subscriptionType = 4
+    }
 }
