@@ -107,15 +107,18 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                     if let error = err {
                         print("Request Failed: ", error)
                     }
-
-
                 }
             case .authorized:
                 self.generateNotification()
+                DispatchQueue.main.async {
+                  UIApplication.shared.registerForRemoteNotifications()
+                }
             default:
                 print("Defaulted notification request failed.")
             }
-
+            
+//            guard settings.authorizationStatus == .authorized else { return }
+           
         }
     }
     
