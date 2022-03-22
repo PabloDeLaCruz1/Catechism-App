@@ -120,6 +120,7 @@
 		FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateQuizViewController.swift; sourceTree = "<group>"; };
 		FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHelpers.swift; sourceTree = "<group>"; };
 		FE74DE8827E53D8C00F33D69 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
+		FE74DE8A27E8DE3400F33D69 /* Catechism-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Catechism-App.entitlements"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -272,6 +273,7 @@
 		FE74DD8A27DCD0F400F33D69 /* Catechism-App */ = {
 			isa = PBXGroup;
 			children = (
+				FE74DE8A27E8DE3400F33D69 /* Catechism-App.entitlements */,
 				FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */,
 				FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */,
 				22E35AA427E4FD79004D237D /* ValidateApp.swift */,
@@ -511,7 +513,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FE74DE8227E430E800F33D69 /* CreateQuizTableViewCell.swift in Sources */,
 				22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
@@ -797,9 +798,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Catechism-App/Catechism-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L2REF7KEJN;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Catechism-App/Info.plist";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = myMicro;
@@ -829,9 +831,10 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_ENTITLEMENTS = "Catechism-App/Catechism-App.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = L2REF7KEJN;
+				DEVELOPMENT_TEAM = "";
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = "Catechism-App/Info.plist";
 				INFOPLIST_KEY_NSMicrophoneUsageDescription = myMicro;
