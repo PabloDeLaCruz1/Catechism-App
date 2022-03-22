@@ -26,6 +26,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var questionsArray = [QuestionFetched]()
     var score: Int = 0
     var currentQuestionNumber = 1
+    var typeChosen = 0
+    
 //            let    questions = DBConnector.init().get5Quizes()
    // let users =  DBHelper.init().getUsers()
     var window: UIWindow?
@@ -41,7 +43,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         
-        questions = DBConnector.init().get5Quizes(type: 1)  //TODO To accept the parameter value from users.
+        questions = DBConnector.init().get5Quizes(type: typeChosen)  //TODO To accept the parameter value from users.
 
         answersCV=UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), collectionViewLayout: layout)
         answersCV.delegate=self
