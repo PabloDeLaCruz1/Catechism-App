@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Jsa-KF-f5s">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19162" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="g9u-sx-Uc9">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19144"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
@@ -158,7 +158,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gi-2o-Hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1846.376811594203" y="686.38392857142856"/>
+            <point key="canvasLocation" x="-936.23188405797111" y="686.38392857142856"/>
         </scene>
         <!--Sign Up View Controller-->
         <scene sceneID="JQF-ut-kNh">
@@ -343,6 +343,10 @@
                                 <rect key="frame" x="250" y="541" width="27" height="42"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView hidden="YES" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="selected1" translatesAutoresizingMaskIntoConstraints="NO" id="GdB-iX-7wu" userLabel="selected3">
+                                <rect key="frame" x="230" y="689" width="27" height="42"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="4xS-OV-H0V"/>
                         <color key="backgroundColor" systemColor="secondarySystemGroupedBackgroundColor"/>
@@ -359,6 +363,7 @@
                         <outlet property="passT" destination="pm6-6N-ppR" id="cns-jw-b15"/>
                         <outlet property="selected1" destination="LLL-cF-jvk" id="C4e-Ss-oEM"/>
                         <outlet property="selected2" destination="GL8-py-tde" id="Teg-js-2wP"/>
+                        <outlet property="selected3" destination="GdB-iX-7wu" id="SXU-wD-0rD"/>
                         <outlet property="showPB" destination="ezY-ZD-GAQ" id="I8a-1v-cdS"/>
                         <outlet property="subB" destination="m3c-Vl-hOM" id="c0L-g2-44a"/>
                         <outlet property="subscriptionType" destination="mSY-JP-MP0" id="7hN-i5-6Do"/>
@@ -366,7 +371,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-WM-II5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262.31884057971018" y="685.71428571428567"/>
+            <point key="canvasLocation" x="647.82608695652175" y="685.71428571428567"/>
         </scene>
         <!--Wellcome View Controller-->
         <scene sceneID="FcQ-uF-aII">
@@ -466,7 +471,25 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtS-h3-lCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-997.10144927536237" y="685.71428571428567"/>
+            <point key="canvasLocation" x="-86.956521739130437" y="685.71428571428567"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="edy-n8-ZXw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="g9u-sx-Uc9" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="d8p-Te-vhC">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="Jsa-KF-f5s" kind="relationship" relationship="rootViewController" id="W1Q-a1-4bh"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="BVX-oX-Er7" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1846.376811594203" y="686.38392857142856"/>
         </scene>
     </scenes>
     <resources>

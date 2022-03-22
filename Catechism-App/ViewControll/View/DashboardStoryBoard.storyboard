@@ -92,6 +92,19 @@
                                 <rect key="frame" x="0.0" y="33" width="75" height="52"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="exit" translatesAutoresizingMaskIntoConstraints="NO" id="CTz-Hb-eBH">
+                                <rect key="frame" x="352" y="44" width="36" height="23"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fLy-bz-sNU">
+                                <rect key="frame" x="269" y="40" width="110" height="31"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Sign out"/>
+                                <connections>
+                                    <segue destination="IRs-Ua-ptq" kind="presentation" id="hZz-hT-7OA"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="cNz-Og-2mb"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -228,8 +241,17 @@
             </objects>
             <point key="canvasLocation" x="680.43478260869574" y="-201.5625"/>
         </scene>
+        <!--StartStoryboard-->
+        <scene sceneID="8kp-Sg-yUg">
+            <objects>
+                <viewControllerPlaceholder storyboardName="StartStoryboard" id="IRs-Ua-ptq" sceneMemberID="viewController"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3xm-q2-dKn" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-618" y="-777"/>
+        </scene>
     </scenes>
     <resources>
+        <image name="exit" width="225" height="225"/>
         <image name="imageCatechism" width="890" height="838"/>
         <image name="rank" width="220" height="216"/>
         <namedColor name="AccentColor">

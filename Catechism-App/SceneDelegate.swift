@@ -22,7 +22,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
             /// MARK: for upload 03/21/2022
             
-                    guard let windowScene = (scene as? UIWindowScene) else { return }
+                /*    guard let windowScene = (scene as? UIWindowScene) else { return }
             
                     let window = UIWindow(windowScene: windowScene)
                     let viewController = StartQuizVC()
@@ -32,7 +32,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
             
                     self.window = window
                     window.makeKeyAndVisible()
-                    window.backgroundColor = UIColor.white
+                    window.backgroundColor = UIColor.white*/
 
     }
 

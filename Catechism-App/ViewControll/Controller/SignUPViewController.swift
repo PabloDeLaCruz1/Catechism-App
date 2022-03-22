@@ -26,6 +26,8 @@ class SignUpViewController: UIViewController {
     
     @IBOutlet weak var selected2: UIImageView!
     
+    @IBOutlet weak var selected3: UIImageView!
+    
     
     
     // Suscription
@@ -49,6 +51,7 @@ class SignUpViewController: UIViewController {
         subscriptionType.text = "0"
         selected1.isHidden = false
         selected2.isHidden = true
+        selected3.isHidden = true
         print("free")
     }
     
@@ -57,12 +60,16 @@ class SignUpViewController: UIViewController {
         subscriptionType.text = "1"
         selected1.isHidden = true
         selected2.isHidden = false
+        selected3.isHidden = true
         print("paid")
     }
     
     
     @IBAction func BAdmin(_ sender: Any) {
         subscriptionType.text = "2"
+        selected1.isHidden = true
+        selected2.isHidden = true
+        selected3.isHidden = false
         print("admin")
     }
     
