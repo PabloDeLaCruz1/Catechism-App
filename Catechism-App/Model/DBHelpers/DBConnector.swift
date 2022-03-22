@@ -81,7 +81,37 @@ class DBConnector
         sqlite3_finalize(queryStatement)
         return questions
     }
-      
+    
+    func startQuizSession(uid: Int, type: Int, date: String) {
+        let insertSessionString =
+    "INSERT INTO quiz_sessions(user_id, subject_name, session_date values(?, ?, ?)"
+        
+        var insertStatement: OpaquePointer? = nil
+        var questions : [QuestionSet] = []
+        
+//        if sqlite3_prepare_v2(db, queryQuizString, -1, &insertStatement, nil) == SQLITE_OK {
+//            sqlite3_bind_int(insertStatement, 1, Int32(type))
+//            sqlite3_bind_int(insertStatement, 2, Int32(type))
+//            sqlite3_bind_text(insertStatement, 3, (date as NSString).utf8String, -1, nil)
+//
+//            if sqlite3_step(insertStatement) == SQLITE_DONE {
+//                print("Successfully inserted row.")
+//            } else {
+//                print("Could not insert row.")
+//            }
+// 
+//            
+//        } else {
+//            NSLog("Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db))
+//        }
+//        sqlite3_finalize(queryStatement)
+//        return questions
+
+    }
+
+    func recordSessionScore() {
+    "UPDATE quiz_sessions(user_id, subject_name, score, session_date, login_timestamp)values(9, 3, 0, '', 'login_timestamp')"
+    }
 
 }
 
