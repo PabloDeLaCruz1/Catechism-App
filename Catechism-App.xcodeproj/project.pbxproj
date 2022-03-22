@@ -62,6 +62,10 @@
 		FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */; };
 		FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */; };
 		FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE8827E53D8C00F33D69 /* Answers.swift */; };
+		FE74DEB427EA215C00F33D69 /* QuizCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */; };
+		FE74DEB527EA216300F33D69 /* DBConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854627E8DD7C007E7F58 /* DBConnector.swift */; };
+		FE74DEB627EA218100F33D69 /* AudioSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855527E8DD7C007E7F58 /* AudioSounds.swift */; };
+		FE74DEBE27EA453900F33D69 /* appIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = FE74DEBD27EA453900F33D69 /* appIcon.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -146,6 +150,7 @@
 		FE74DE8627E53D2100F33D69 /* AnswersHelpers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswersHelpers.swift; sourceTree = "<group>"; };
 		FE74DE8827E53D8C00F33D69 /* Answers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Answers.swift; sourceTree = "<group>"; };
 		FE74DE8A27E8DE3400F33D69 /* Catechism-App.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Catechism-App.entitlements"; sourceTree = "<group>"; };
+		FE74DEBD27EA453900F33D69 /* appIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = appIcon.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -337,6 +342,7 @@
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
 				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
+				FE74DEBD27EA453900F33D69 /* appIcon.png */,
 			);
 			path = "Catechism-App";
 			sourceTree = "<group>";
@@ -495,6 +501,7 @@
 				7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */,
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
+				FE74DEBE27EA453900F33D69 /* appIcon.png in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
 				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
 				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
@@ -587,6 +594,7 @@
 				7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */,
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
 				2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */,
+				FE74DEB427EA215C00F33D69 /* QuizCVCell.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
@@ -601,10 +609,12 @@
 				222B021F27EA39130024E493 /* DBConnector.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
+				FE74DEB627EA218100F33D69 /* AudioSounds.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
 				FE74DE8027E4164500F33D69 /* CreateQuizViewController.swift in Sources */,
 				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
+				FE74DEB527EA216300F33D69 /* DBConnector.swift in Sources */,
 				2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */,
 				222B022027EA391C0024E493 /* AudioSounds.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,

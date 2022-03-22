@@ -68,7 +68,6 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
         <<< ButtonRow("my Button") { row in
             row.title = "Submit"
 
-
             row.onCellSelection { cell, row in
                 let valuesDictionary = self.form.values()
                 print(valuesDictionary)
@@ -89,13 +88,9 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                     self.db.insertAnswers(questionId: questionId, answerText: answer2, sequence: 2)
                     self.db.insertAnswers(questionId: questionId, answerText: answer3, sequence: 3)
                     self.db.insertAnswers(questionId: questionId, answerText: answer4, sequence: 4)
-  
                 }
-
             }
-            
-            
-
+            sendNotificationToAllUsers()
         }
     }
 
