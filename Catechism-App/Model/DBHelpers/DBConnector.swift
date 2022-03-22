@@ -87,7 +87,7 @@ class DBConnector
     "INSERT INTO quiz_sessions(user_id, subject_name, session_date values(?, ?, ?)"
         
         var insertStatement: OpaquePointer? = nil
-        var questions : [QuestionSet] = []
+//        var questions : [QuestionSet] = []
         
 //        if sqlite3_prepare_v2(db, queryQuizString, -1, &insertStatement, nil) == SQLITE_OK {
 //            sqlite3_bind_int(insertStatement, 1, Int32(type))
