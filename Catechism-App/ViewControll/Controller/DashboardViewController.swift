@@ -129,6 +129,7 @@ class DashboardViewController: UIViewController {
         ncont.title = "Congratulation"
         ncont.subtitle = "from Catechism"
         ncont.body = "You win a Free Suscription for 3 months, we will add the starting date to your calendar"
+       // ncont.sound = UNNotificationSound.default
         
         let ntrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
         let nreq = UNNotificationRequest(identifier: "User_Local_notification", content: ncont, trigger: ntrigger)
@@ -185,7 +186,7 @@ class DashboardViewController: UIViewController {
     
     
     @IBAction func t3B(_ sender: Any) {
-        rankT3(t : "JAVA")
+        rankT3(t : "DATA BASE")
     }
     // ***********************************************
     func rankT1( t : String){

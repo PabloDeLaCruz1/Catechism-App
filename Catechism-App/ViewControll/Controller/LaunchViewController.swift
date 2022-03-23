@@ -39,7 +39,7 @@ class LaunchViewController: UIViewController {
             timerCount += 1
             
             print(timerCount)
-            if(timerCount == 3){
+            if(timerCount == 2){
                 self.endAnimation()
                 timer.invalidate()
                 let navigateTime = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false){
