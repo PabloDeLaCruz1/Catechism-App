@@ -77,11 +77,14 @@ class WellcomeViewController: UIViewController {
     func goNextView(nameView : String) {
         if (nameView == "quiz") {
             
-            let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
+//            let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
             
            // displayVC.userWellcome   = userName.text!
-            displayVC.modalPresentationStyle = .fullScreen
-                self.present(displayVC, animated: true, completion: nil)
+            self.modalPresentationStyle = .fullScreen
+
+            self.present(StartQuizVC(), animated: true, completion: nil)
+//            displayVC.modalPresentationStyle = .fullScreen
+//                self.present(displayVC, animated: true, completion: nil)
         }
         
         if (nameView == "admin") {

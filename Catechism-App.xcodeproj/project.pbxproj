@@ -46,11 +46,12 @@
 		7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */; };
 		7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */ = {isa = PBXBuildFile; fileRef = 7818855227E8DD7C007E7F58 /* incorrect.wav */; };
 		A49B9BD4B1643BF81BA72FB1 /* Pods_Catechism_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */; };
+		FE35FD6427EB436C00A369D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE35FD6327EB436C00A369D2 /* Assets.xcassets */; };
+		FE35FD6627EB4EF400A369D2 /* ScoreBySubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD6527EB4EF400A369D2 /* ScoreBySubjectTableViewCell.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
 		FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9127DCD0F400F33D69 /* Main.storyboard */; };
-		FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9427DCD0F800F33D69 /* Assets.xcassets */; };
 		FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */; };
 		FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0727E1F7A400F33D69 /* Users.swift */; };
 		FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DE0927E200DF00F33D69 /* QuizSessions.swift */; };
@@ -124,7 +125,6 @@
 		7818854827E8DD7C007E7F58 /* DB0.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = DB0.sqlite; sourceTree = "<group>"; };
 		7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizCVCell.swift; sourceTree = "<group>"; };
 		7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "AVAudioPlayer+Extension.swift"; sourceTree = "<group>"; };
-		7818855027E8DD7C007E7F58 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7818855227E8DD7C007E7F58 /* incorrect.wav */ = {isa = PBXFileReference; lastKnownFileType = audio.wav; path = incorrect.wav; sourceTree = "<group>"; };
 		7818855327E8DD7C007E7F58 /* correct.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = correct.mp3; sourceTree = "<group>"; };
 		7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = "bensound-thelounge.mp3"; sourceTree = "<group>"; };
@@ -132,12 +132,13 @@
 		7818855627E8DD7C007E7F58 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		B012A9788669DFC17739C623 /* Pods-Catechism-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.debug.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC20E09FAFD36B2CF9DA98E /* Pods-Catechism-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.release.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.release.xcconfig"; sourceTree = "<group>"; };
+		FE35FD6327EB436C00A369D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
+		FE35FD6527EB4EF400A369D2 /* ScoreBySubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoreBySubjectTableViewCell.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8F27DCD0F400F33D69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		FE74DD9227DCD0F400F33D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		FE74DD9427DCD0F800F33D69 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		FE74DD9727DCD0F800F33D69 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		FE74DD9927DCD0F800F33D69 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FE74DE0727E1F7A400F33D69 /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -290,7 +291,6 @@
 			children = (
 				7818854827E8DD7C007E7F58 /* DB0.sqlite */,
 				7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */,
-				7818855027E8DD7C007E7F58 /* Assets.xcassets */,
 				7818855127E8DD7C007E7F58 /* sounds */,
 				7818855527E8DD7C007E7F58 /* AudioSounds.swift */,
 				7818855627E8DD7C007E7F58 /* CustomError.swift */,
@@ -339,11 +339,11 @@
 				22E35AA427E4FD79004D237D /* ValidateApp.swift */,
 				2247308327E10D6C009085D5 /* Model */,
 				2201373127DCDB4F000F0C7C /* ViewControll */,
-				FE74DD9427DCD0F800F33D69 /* Assets.xcassets */,
 				7818854D27E8DD7C007E7F58 /* utility */,
 				FE74DD9627DCD0F800F33D69 /* LaunchScreen.storyboard */,
 				2201373427DCE197000F0C7C /* TestMeCoreData.xcdatamodeld */,
 				FE74DD9927DCD0F800F33D69 /* Info.plist */,
+				FE35FD6327EB436C00A369D2 /* Assets.xcassets */,
 				FE74DEBD27EA453900F33D69 /* appIcon.png */,
 			);
 			path = "Catechism-App";
@@ -356,6 +356,7 @@
 				FE74DE7227E38DE600F33D69 /* ViewUsersTableViewController.swift */,
 				FE74DE7627E3CA8800F33D69 /* HeaderTableViewCell.swift */,
 				FE74DE7427E38F9100F33D69 /* UserTableViewCell.swift */,
+				FE35FD6527EB4EF400A369D2 /* ScoreBySubjectTableViewCell.swift */,
 				FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */,
 				FE74DEBF27EA66EC00F33D69 /* ShowOneUserViewController.swift */,
 			);
@@ -502,9 +503,9 @@
 			files = (
 				FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */,
 				7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */,
-				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
 				FE74DEBE27EA453900F33D69 /* appIcon.png in Resources */,
+				FE35FD6427EB436C00A369D2 /* Assets.xcassets in Resources */,
 				FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */,
 				2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */,
 				22132BC227E0AA1C00642694 /* QuizStoryboard.storyboard in Resources */,
@@ -593,6 +594,7 @@
 				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,
 				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
+				FE35FD6627EB4EF400A369D2 /* ScoreBySubjectTableViewCell.swift in Sources */,
 				7818855F27E8DD7C007E7F58 /* QuestionSet.swift in Sources */,
 				7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */,
 				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
