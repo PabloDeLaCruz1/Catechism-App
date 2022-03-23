@@ -43,8 +43,8 @@
                                     <action selector="activeMicro:" destination="Jsa-KF-f5s" eventType="touchUpInside" id="TLs-XV-td1"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Say" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rz-bH-kTx">
-                                <rect key="frame" x="95" y="630" width="208" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Student Feedback" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1rz-bH-kTx">
+                                <rect key="frame" x="63" y="630" width="305" height="63"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -139,6 +139,32 @@
                                 <rect key="frame" x="57" y="434" width="47" height="29"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tell us what is your experience" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mgm-er-aq0">
+                                <rect key="frame" x="103" y="527" width="232" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.10000000000000001" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="tech" translatesAutoresizingMaskIntoConstraints="NO" id="65a-XP-Ows">
+                                <rect key="frame" x="63" y="488" width="316" height="68"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXN-gH-4Vn" userLabel="Save">
+                                <rect key="frame" x="134" y="718" width="147" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SAVE">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="B:" destination="qbv-kQ-Wam" eventType="touchUpInside" id="cEy-C3-Xbd"/>
+                                    <action selector="saveF:" destination="qbv-kQ-Wam" eventType="touchUpInside" id="a5L-b4-IjR"/>
+                                    <action selector="saveFeedBack:" destination="Jsa-KF-f5s" eventType="touchUpInside" id="ako-Lg-alF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MH2-w9-H87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -147,16 +173,20 @@
                     <connections>
                         <outlet property="error" destination="i8E-tr-BWe" id="us1-d5-FAh"/>
                         <outlet property="hidePas" destination="dUZ-87-W1b" id="43H-FJ-ET7"/>
+                        <outlet property="imageL" destination="65a-XP-Ows" id="LuP-NP-Fh5"/>
                         <outlet property="label" destination="1rz-bH-kTx" id="JJo-74-TUS"/>
                         <outlet property="loginB" destination="gWe-wf-RBE" id="6wq-Y7-M6x"/>
                         <outlet property="micro" destination="whZ-WD-xT4" id="4hl-xG-lV8"/>
+                        <outlet property="saveB" destination="wXN-gH-4Vn" id="ElK-sS-gRF"/>
                         <outlet property="showP" destination="Ur3-Tr-b3c" id="hiw-yw-EDG"/>
                         <outlet property="signUpB" destination="XDb-D9-Z94" id="wyq-4W-Hc8"/>
+                        <outlet property="textFeedback" destination="mgm-er-aq0" id="dda-DW-4pj"/>
                         <outlet property="userPasswordText" destination="Agd-Dl-ifZ" id="k8Y-lF-jg6"/>
                         <outlet property="userText" destination="kXs-nN-5JC" id="daV-M1-ySb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gi-2o-Hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qbv-kQ-Wam" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-936.23188405797111" y="686.38392857142856"/>
         </scene>
@@ -506,6 +536,7 @@
         <image name="person.icloud" catalog="system" width="128" height="88"/>
         <image name="selected1" width="330" height="316"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
+        <image name="tech" width="246" height="101"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>

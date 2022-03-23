@@ -38,6 +38,7 @@
 		22E3AAC827E6966600982183 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 22E3AAC727E6966600982183 /* FacebookLogin */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
 		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
+		22EE16F727EB5B82004D5F83 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE16F627EB5B82004D5F83 /* Feedback.swift */; };
 		7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */; };
 		7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */; };
 		7818855B27E8DD7C007E7F58 /* QuizVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854227E8DD7C007E7F58 /* QuizVC.swift */; };
@@ -116,6 +117,7 @@
 		22E35AA427E4FD79004D237D /* ValidateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateApp.swift; sourceTree = "<group>"; };
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
 		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
+		22EE16F627EB5B82004D5F83 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catechism_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionResult.swift; sourceTree = "<group>"; };
 		7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChooseQuizTypeVC.swift; sourceTree = "<group>"; };
@@ -254,6 +256,7 @@
 				FE74DE0727E1F7A400F33D69 /* Users.swift */,
 				FE74DE8827E53D8C00F33D69 /* Answers.swift */,
 				22D2074327E380D7004D96B8 /* Questions.swift */,
+				22EE16F627EB5B82004D5F83 /* Feedback.swift */,
 				7818854727E8DD7C007E7F58 /* QuestionSet.swift */,
 				FE74DE0927E200DF00F33D69 /* QuizSessions.swift */,
 			);
@@ -609,6 +612,7 @@
 				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
 				7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */,
 				FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */,
+				22EE16F727EB5B82004D5F83 /* Feedback.swift in Sources */,
 				2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */,
 				2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */,
 				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,

@@ -19,7 +19,16 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var nameSecond: UILabel!
     @IBOutlet weak var nameThird: UILabel!
     
+
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var technology: UILabel!
+    
+  
     
     @IBOutlet weak var susO: UIButton!
     @IBAction func susB(_ sender: Any) {
@@ -27,6 +36,9 @@ class DashboardViewController: UIViewController {
         sendNotification()
         getAuth()
         susO .isEnabled = false
+    }
+    @IBAction func goLogin(_ sender: Any) {
+        goNextView(nameView: "login")
     }
     let quizSessions = DBHelper.init().getQuizSessionsScore()
     var imageV1 : UIView!
@@ -48,6 +60,27 @@ class DashboardViewController: UIViewController {
     
     var ScoreArray :  [String] = ["95","80","70","80","78","68","100","80","70"]
     // MARK: CALENDAR
+    
+    
+    // MARK: FUNCTIONS
+    func goNextView(nameView: String) {
+        if (nameView == "login") {
+            
+            let displayVC: StartViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "loginView") as! StartViewController
+            
+            displayVC.showFeedback = true
+    
+            self.present(displayVC, animated: true, completion: nil)
+        } else {
+            print("no")
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     func getAuth(){
         let eStore = EKEventStore()
@@ -131,6 +164,7 @@ class DashboardViewController: UIViewController {
         ncont.title = "Congratulation"
         ncont.subtitle = "from Catechism"
         ncont.body = "You win a Free Suscription for 3 months, we will add the starting date to your calendar"
+       // ncont.sound = UNNotificationSound.default
         
         let ntrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
         let nreq = UNNotificationRequest(identifier: "User_Local_notification", content: ncont, trigger: ntrigger)
@@ -187,7 +221,7 @@ class DashboardViewController: UIViewController {
     
     
     @IBAction func t3B(_ sender: Any) {
-        rankT3(t : "JAVA")
+        rankT3(t : "DATA BASE")
     }
     // ***********************************************
     func rankT1( t : String){
