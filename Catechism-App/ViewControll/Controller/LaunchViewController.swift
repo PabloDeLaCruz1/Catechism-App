@@ -42,9 +42,9 @@ class LaunchViewController: UIViewController {
             if(timerCount == 2){
                 self.endAnimation()
                 timer.invalidate()
-//                let navigateTime = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false){
-//                    navigateTime in self.navigateToController()
-//                }
+                let navigateTime = Timer.scheduledTimer(withTimeInterval: 2.0, repeats: false){
+                    navigateTime in self.navigateToController()
+                }
             }
             var count = 3
             repeat{
@@ -80,32 +80,26 @@ class LaunchViewController: UIViewController {
     
    
 //    
-//    func navigateToController(){
-//        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
-////        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "menuSB") as! MenuViewController
+    func navigateToController(){
+        let storyBoard : UIStoryboard = UIStoryboard(name: "Main", bundle:nil)
+        let nextViewController = storyBoard.instantiateViewController(withIdentifier: "menuSB") as! MenuViewController
 //        let nextViewController = MenuViewController()
-////        self.present(nextViewController, animated:true, completion:nil)
+//        self.present(nextViewController, animated:true, completion:nil)
 //        nextViewController.modalTransitionStyle = .crossDissolve
-////        self.showDetailViewController(nextViewController, sender: self)
-////        present(nextViewController, animated: true)
-//        
-//
-//    }
+//        self.showDetailViewController(nextViewController, sender: self)
+        nextViewController.modalPresentationStyle = .fullScreen
+
+        present(nextViewController, animated: true)
+
+    }
     
 
-
-    
     override func viewDidLoad() {
         super.viewDidLoad()
             
         startAnimate()
-        //startSpeechRec()
-        // Do any additional setup after loading the view.
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
-        
-
-       
     }
 
 }
