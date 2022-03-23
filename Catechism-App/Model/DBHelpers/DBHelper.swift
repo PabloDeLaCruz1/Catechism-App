@@ -109,6 +109,27 @@ class DBHelper {
         sqlite3_finalize(insertStatement)
     }
 
+    func getFeedback() -> [Feedback] {
+        let queryStatementString = "SELECT * FROM feedback;"
+        var queryStatement: OpaquePointer? = nil
+        var psns: [Feedback] = []
+        if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+            while sqlite3_step(queryStatement) == SQLITE_ROW {
+             
+                let feedback = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
+               
+                psns.append(Feedback(feedback: feedback))
+               // psns.append(Users(id: Int(id), name: name, password: password, subscriptionType: Int(subscriptionType)))
+                print("Query Result Feedback:")
+                print("\(feedback)")
+            }
+        } else {
+            print("SELECT statement could not be prepared")
+        }
+        sqlite3_finalize(queryStatement)
+        return psns
+    }
+    
     func getUsers() -> [Users] {
         let queryStatementString = "SELECT * FROM users;"
         var queryStatement: OpaquePointer? = nil

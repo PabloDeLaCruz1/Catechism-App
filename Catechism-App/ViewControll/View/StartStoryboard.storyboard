@@ -150,6 +150,21 @@
                                 <rect key="frame" x="63" y="488" width="316" height="68"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wXN-gH-4Vn" userLabel="Save">
+                                <rect key="frame" x="134" y="718" width="147" height="41"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="SAVE">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="B:" destination="qbv-kQ-Wam" eventType="touchUpInside" id="cEy-C3-Xbd"/>
+                                    <action selector="saveF:" destination="qbv-kQ-Wam" eventType="touchUpInside" id="a5L-b4-IjR"/>
+                                    <action selector="saveFeedBack:" destination="Jsa-KF-f5s" eventType="touchUpInside" id="ako-Lg-alF"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="MH2-w9-H87"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -162,6 +177,7 @@
                         <outlet property="label" destination="1rz-bH-kTx" id="JJo-74-TUS"/>
                         <outlet property="loginB" destination="gWe-wf-RBE" id="6wq-Y7-M6x"/>
                         <outlet property="micro" destination="whZ-WD-xT4" id="4hl-xG-lV8"/>
+                        <outlet property="saveB" destination="wXN-gH-4Vn" id="ElK-sS-gRF"/>
                         <outlet property="showP" destination="Ur3-Tr-b3c" id="hiw-yw-EDG"/>
                         <outlet property="signUpB" destination="XDb-D9-Z94" id="wyq-4W-Hc8"/>
                         <outlet property="textFeedback" destination="mgm-er-aq0" id="dda-DW-4pj"/>
@@ -170,6 +186,7 @@
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Gi-2o-Hp8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+                <exit id="qbv-kQ-Wam" userLabel="Exit" sceneMemberID="exit"/>
             </objects>
             <point key="canvasLocation" x="-936.23188405797111" y="686.38392857142856"/>
         </scene>

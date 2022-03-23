@@ -19,7 +19,16 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var nameSecond: UILabel!
     @IBOutlet weak var nameThird: UILabel!
     
+
+    
+    
+    
+    
+    
+    
     @IBOutlet weak var technology: UILabel!
+    
+  
     
     @IBOutlet weak var susO: UIButton!
     @IBAction func susB(_ sender: Any) {
