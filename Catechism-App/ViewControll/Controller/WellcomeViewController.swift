@@ -73,7 +73,7 @@ class WellcomeViewController: UIViewController {
             
            // displayVC.userWellcome   = userName.text!
                     
-                self.present(displayVC, animated: true, completion: nil)
+//                self.present(QuizVC, animated: true, completion: nil)
         }
         
         if (nameView == "admin") {

@@ -5,6 +5,9 @@
 //  Created by Abdinasir Hussein on 25/02/2018.
 //  Copyright © 2018 Abdinasir Hussein. All rights reserved.
 //
+//
+//Adapted by Ju on 3/12/2022 for non commercial purpose.
+// All rights of the creator respected.
 
 import UIKit
 
@@ -14,10 +17,7 @@ protocol QuizCVCellDelegate: AnyObject {
 
 class QuizCVCell: UICollectionViewCell {
     
-    var btn1: UIButton!
-    var btn2: UIButton!
-    var btn3: UIButton!
-    var btn4: UIButton!
+    var btn1, btn2, btn3, btn4: UIButton!
     var btnsArray = [UIButton]()
     
     weak var delegate: QuizCVCellDelegate?
@@ -25,7 +25,6 @@ class QuizCVCell: UICollectionViewCell {
     var question: QuestionFetched? {
         didSet {
             guard let unwrappedQue = question else { return }
-//            guard let unwrappedQue = firstAnswer else { return }
             lblQue.text = unwrappedQue.question
             btn1.setTitle(unwrappedQue.choices[0], for: .normal)
             btn2.setTitle(unwrappedQue.choices[1], for: .normal)
@@ -77,12 +76,12 @@ class QuizCVCell: UICollectionViewCell {
         btn1.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn2 = getButton(tag: 1)
-        addSubview(btn2)
+      addSubview(btn2)
         NSLayoutConstraint.activate([btn2.topAnchor.constraint(equalTo: btn1.topAnchor), btn2.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: 10), btn2.widthAnchor.constraint(equalToConstant: btnWidth), btn2.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn2.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn3 = getButton(tag: 2)
-        addSubview(btn3)
+       addSubview(btn3)
         NSLayoutConstraint.activate([btn3.topAnchor.constraint(equalTo: btn1.bottomAnchor, constant: 20), btn3.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn3.widthAnchor.constraint(equalToConstant: btnWidth), btn3.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn3.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
