@@ -19,8 +19,6 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
         UNUserNotificationCenter.current().delegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
-
-
         form +++ Section("Create Quiz")
         <<< TextRow("Quiz Subject") { row in
             row.title = "Quiz Subject"

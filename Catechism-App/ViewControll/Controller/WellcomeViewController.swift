@@ -58,6 +58,9 @@ class WellcomeViewController: UIViewController {
     }
     
     //MARK: IBAction
+    @IBAction func logoutBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
     @IBAction func quizB(_ sender: Any) {
         goNextView(nameView : "quiz")
     }

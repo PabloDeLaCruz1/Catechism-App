@@ -32,7 +32,10 @@ class AdminViewController: UIViewController {
     @IBAction func createQuiz(_ sender: Any) {
 
     }
-
+    @IBAction func logoutBtn(_ sender: Any) {
+        self.dismiss(animated: true, completion: nil)
+    }
+    
     func populateDataForTesting() {
 //        usersTable.register(UITableViewCell.self, forCellReuseIdentifier: cellReuseIdentifier)
 //        usersTable.delegate = self
