@@ -28,6 +28,11 @@ class WellcomeViewController: UIViewController {
         
         userName.text! = userWellcome
         suscriptionL.text! = susWellcome
+        quizB.layer.cornerRadius = 20
+        dashB.layer.cornerRadius = 20
+        adminB.layer.cornerRadius = 20
+        
+        
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
         if (suscriptionL.text == "0"){
@@ -36,7 +41,7 @@ class WellcomeViewController: UIViewController {
             quizB.isEnabled = true
         }else if (suscriptionL.text == "1"){
             adminB.isEnabled = false
-            dashB.isEnabled = false
+            dashB.isEnabled = true
         }else if (suscriptionL.text == "2"){
             adminB.isEnabled = true
             dashB.isEnabled = true

@@ -17,6 +17,10 @@
 		2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8127E54A5A00A0B628 /* GraphRunningTimePresenter.swift */; };
 		2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8527E54B3200A0B628 /* GraphRunningTimeViewController.swift */; };
 		2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2226EE8727E54B6800A0B628 /* RunningTimeRepository.swift */; };
+		222B021F27EA39130024E493 /* DBConnector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854627E8DD7C007E7F58 /* DBConnector.swift */; };
+		222B022027EA391C0024E493 /* AudioSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855527E8DD7C007E7F58 /* AudioSounds.swift */; };
+		222B022127EA391F0024E493 /* CustomError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855627E8DD7C007E7F58 /* CustomError.swift */; };
+		222B022227EA394F0024E493 /* QuizCVCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */; };
 		2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308427E10DB2009085D5 /* StartStoryboard.storyboard */; };
 		2247308B27E10E71009085D5 /* AdminStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */; };
 		2247308D27E10E80009085D5 /* DashboardStoryBoard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2247308C27E10E80009085D5 /* DashboardStoryBoard.storyboard */; };
@@ -578,6 +582,7 @@
 			files = (
 				22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */,
 				7818855B27E8DD7C007E7F58 /* QuizVC.swift in Sources */,
+				222B022127EA391F0024E493 /* CustomError.swift in Sources */,
 				7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
@@ -598,12 +603,14 @@
 				FE74DEC027EA66EC00F33D69 /* ShowOneUserViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
+				222B022227EA394F0024E493 /* QuizCVCell.swift in Sources */,
 				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
 				7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */,
 				FE74DE8727E53D2100F33D69 /* AnswersHelpers.swift in Sources */,
 				2226EE8627E54B3200A0B628 /* GraphRunningTimeViewController.swift in Sources */,
 				2226EE8227E54A5A00A0B628 /* GraphRunningTimePresenter.swift in Sources */,
 				FE74DE7527E38F9100F33D69 /* UserTableViewCell.swift in Sources */,
+				222B021F27EA39130024E493 /* DBConnector.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
 				FE74DEB627EA218100F33D69 /* AudioSounds.swift in Sources */,
@@ -613,6 +620,7 @@
 				FE74DE7727E3CA8800F33D69 /* HeaderTableViewCell.swift in Sources */,
 				FE74DEB527EA216300F33D69 /* DBConnector.swift in Sources */,
 				2226EE8027E549F700A0B628 /* UserRankGraphData.swift in Sources */,
+				222B022027EA391C0024E493 /* AudioSounds.swift in Sources */,
 				FE74DE7327E38DE600F33D69 /* ViewUsersTableViewController.swift in Sources */,
 				FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */,
 				22D9C1F927E2C426007D6B89 /* LaunchViewController.swift in Sources */,
