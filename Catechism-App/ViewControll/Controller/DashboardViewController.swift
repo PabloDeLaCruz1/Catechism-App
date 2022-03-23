@@ -28,6 +28,9 @@ class DashboardViewController: UIViewController {
         getAuth()
         susO .isEnabled = false
     }
+    @IBAction func goLogin(_ sender: Any) {
+        goNextView(nameView: "login")
+    }
     let quizSessions = DBHelper.init().getQuizSessionsScore()
     var imageV1 : UIView!
     var imageV2 : UIView!
@@ -46,6 +49,27 @@ class DashboardViewController: UIViewController {
     
     var ScoreArray :  [String] = ["95","80","70","80","78","68","100","80","70"]
     // MARK: CALENDAR
+    
+    
+    // MARK: FUNCTIONS
+    func goNextView(nameView: String) {
+        if (nameView == "login") {
+            
+            let displayVC: StartViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "loginView") as! StartViewController
+            
+            displayVC.showFeedback = true
+    
+            self.present(displayVC, animated: true, completion: nil)
+        } else {
+            print("no")
+        }
+    }
+    
+    
+    
+    
+    
+    
     
     func getAuth(){
         let eStore = EKEventStore()

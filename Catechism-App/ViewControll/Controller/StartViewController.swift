@@ -38,6 +38,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     // MARK: Variables
     var loginChecked = false
     var signupChecked = true
+    var  showFeedback = false
     var email = ""
     var password = ""
     
@@ -68,6 +69,15 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         loginButton.delegate = self
         loginButton.layer.cornerRadius = 20
         loginButton.layer.cornerRadius = 20
+        
+        if !showFeedback {
+        imageL.isHidden  = true
+        label.isHidden   = true
+        textFeedback.isHidden = true
+        micro.isHidden = true
+        }
+        
+        
         
         view.addSubview(loginButton)
         
