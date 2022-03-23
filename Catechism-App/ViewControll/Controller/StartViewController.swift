@@ -30,6 +30,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var loginB: UIButton!
     @IBOutlet weak var signUpB: UIButton!
     
+    @IBOutlet weak var saveB: UIButton!
     @IBOutlet weak var imageL: UIImageView!
     
     @IBOutlet weak var textFeedback: UILabel!
@@ -75,6 +76,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         label.isHidden   = true
         textFeedback.isHidden = true
         micro.isHidden = true
+        saveB.isHidden = true
         }
         
         
@@ -96,6 +98,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         
         loginB.layer.cornerRadius = 20
         signUpB.layer.cornerRadius = 20
+        saveB.layer.cornerRadius = 20
         userText.text = email
         userPasswordText.text = password
         
@@ -205,6 +208,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         label.isHidden   = false
                         textFeedback.isHidden = false
                         micro.isHidden = false
+                        saveB.isHidden = false
                         let displayVC: WellcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WellcomeSB") as! WellcomeViewController
                         displayVC.userWellcome = userText.text!
                         displayVC.susWellcome = String(d.subscriptionType)
@@ -225,6 +229,12 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     
     
     
+    @IBAction func saveFeedBack(_ sender: Any) {
+//        cancellSpeechRec()
+//        micro.setTitle("start", for: .normal)
+//        micro.tintColor = .red
+        db.insertFeedback(feedback: label.text!)
+    }
     
     
     // MARK: FUNCTIONS
