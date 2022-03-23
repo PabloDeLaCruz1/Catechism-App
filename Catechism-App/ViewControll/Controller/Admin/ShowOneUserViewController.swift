@@ -33,6 +33,7 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
     override func viewDidLoad() {
         super.viewDidLoad()
         tableView.estimatedRowHeight = 50
+        
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
         tableView.delegate = self

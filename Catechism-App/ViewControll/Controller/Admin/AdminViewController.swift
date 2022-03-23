@@ -15,6 +15,7 @@ class AdminViewController: UIViewController {
     @IBOutlet weak var adminLogo: UIImageView!
     @IBOutlet weak var createQuizBtn: UIButton!
     @IBOutlet weak var userScoresBtn: UIButton!
+    @IBOutlet weak var feedbackBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -25,6 +26,8 @@ class AdminViewController: UIViewController {
         
         createQuizBtn.layer.cornerRadius = 40
         userScoresBtn.layer.cornerRadius =  40
+        feedbackBtn.layer.cornerRadius = 40
+
         adminLogo.layer.cornerRadius = 15
     }
 
@@ -64,7 +67,15 @@ class AdminViewController: UIViewController {
 
         db.insertUsers(name: "Young", password: "123", subscriptionType: 2)
         db.insertUsers(name: "David", password: "123", subscriptionType: 0)
-
+        
+        db.insertFeedback(feedback: "Pablo is the best developer in the world!")
+        
+        db.insertFeedback(feedback: "The Dream Team is ALIVE")
+        
+        db.insertFeedback(feedback: "Steak on Young. Thank you!")
+        
+        
+        db.insertFeedback(feedback: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.")
         db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "English")
         db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Science")

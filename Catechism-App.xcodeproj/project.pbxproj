@@ -50,6 +50,8 @@
 		FE35FD6427EB436C00A369D2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FE35FD6327EB436C00A369D2 /* Assets.xcassets */; };
 		FE35FD7027EB900100A369D2 /* ScoresBySubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD6F27EB900100A369D2 /* ScoresBySubjectTableViewCell.swift */; };
 		FE35FD7227EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7127EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift */; };
+		FE35FD7427EBBFF200A369D2 /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7327EBBFF200A369D2 /* FeedbackTableViewCell.swift */; };
+		FE35FD7627EBC01600A369D2 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
@@ -138,6 +140,8 @@
 		FE35FD6327EB436C00A369D2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = SOURCE_ROOT; };
 		FE35FD6F27EB900100A369D2 /* ScoresBySubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScoresBySubjectTableViewCell.swift; sourceTree = "<group>"; };
 		FE35FD7127EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellForDetailTableViewCell.swift; sourceTree = "<group>"; };
+		FE35FD7327EBBFF200A369D2 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
+		FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -365,6 +369,8 @@
 				FE74DE7F27E4164500F33D69 /* CreateQuizViewController.swift */,
 				FE74DEBF27EA66EC00F33D69 /* ShowOneUserViewController.swift */,
 				FE35FD6F27EB900100A369D2 /* ScoresBySubjectTableViewCell.swift */,
+				FE35FD7327EBBFF200A369D2 /* FeedbackTableViewCell.swift */,
+				FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */,
 			);
 			path = Admin;
 			sourceTree = "<group>";
@@ -601,6 +607,7 @@
 				FE35FD7027EB900100A369D2 /* ScoresBySubjectTableViewCell.swift in Sources */,
 				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,
 				FE74DE0A27E200DF00F33D69 /* QuizSessions.swift in Sources */,
+				FE35FD7427EBBFF200A369D2 /* FeedbackTableViewCell.swift in Sources */,
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
 				7818855F27E8DD7C007E7F58 /* QuestionSet.swift in Sources */,
 				7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */,
@@ -611,6 +618,7 @@
 				2247309827E11313009085D5 /* MenuViewController.swift in Sources */,
 				FE74DEC027EA66EC00F33D69 /* ShowOneUserViewController.swift in Sources */,
 				22D2074427E380D7004D96B8 /* Questions.swift in Sources */,
+				FE35FD7627EBC01600A369D2 /* FeedbackTableViewController.swift in Sources */,
 				FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */,
 				222B022227EA394F0024E493 /* QuizCVCell.swift in Sources */,
 				FE74DE8927E53D8C00F33D69 /* Answers.swift in Sources */,
