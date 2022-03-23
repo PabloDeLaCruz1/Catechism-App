@@ -14,6 +14,7 @@ class DBHelper {
     init() {
         db = openDatabase()
         createUsersTable()
+        createFeedbackTable()
         createQuizSessionsTable()
         createQuestionsTable()
         createAnswersTable()
@@ -51,6 +52,41 @@ class DBHelper {
         }
         sqlite3_finalize(createTableStatement)
     }
+    
+    func createFeedbackTable() {
+        let createTableString = "CREATE TABLE IF NOT EXISTS Feedback(feedback TEXT);"
+        var createTableStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+            if sqlite3_step(createTableStatement) == SQLITE_DONE {
+                print("Feedback table created.")
+            } else {
+                print("Feedback table could not be created.")
+            }
+        } else {
+            print("CREATE TABLE statement could not be prepared.")
+        }
+        sqlite3_finalize(createTableStatement)
+    }
+    
+    func insertFeedback(feedback: String ) {
+        let insertStatementString = "INSERT INTO Feedback( feedback) VALUES (?);"
+        var insertStatement: OpaquePointer? = nil
+        if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+//            sqlite3_bind_int(insertStatement, 1, Int32(id))
+            sqlite3_bind_text(insertStatement, 1, (feedback  as NSString).utf8String, -1, nil)
+          
+
+            if sqlite3_step(insertStatement) == SQLITE_DONE {
+                print("Successfully inserted row in feedback.")
+            } else {
+                print("Could not insert row.")
+            }
+        } else {
+            print("INSERT statement could not be prepared.")
+        }
+        sqlite3_finalize(insertStatement)
+    }
+    
 
     func insertUsers(name: String, password: String, subscriptionType: Int) {
         let insertStatementString = "INSERT INTO Users( name, password, subscriptionType) VALUES (?, ?, ?);"
