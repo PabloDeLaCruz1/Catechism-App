@@ -13,7 +13,7 @@ class Users {
     var name: String
     var password: String
     var subscriptionType: Int  // 0: free, 1: paid, 2: admin, 3: blocked
-    var scoresBySubject = [String: Any]()
+    var scoresBySubject = [String: Int]()
     init(id: Int, name: String, password: String, subscriptionType: Int)
     {
         self.id = id

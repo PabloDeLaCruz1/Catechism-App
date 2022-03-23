@@ -9,14 +9,20 @@ import UIKit
 import MapKit
 import Eureka
 
-class ShowOneUserViewController: UIViewController  {
-
-
+class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
+    
     var User = Users()
 
-    @IBOutlet weak var scoreUIView: UIView!
+    @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileAvatar: UIImageView!
     @IBOutlet weak var mkMapView: MKMapView!
+
+    @IBOutlet weak var userNameLabel: UILabel!
+    struct Scores {
+        var subjectsLabel  : String
+        var scoresLabel: String
+       
+    }
 
     let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
     let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
@@ -26,44 +32,54 @@ class ShowOneUserViewController: UIViewController  {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        tableView.estimatedRowHeight = 50
 
-//        scoresTableView.delegate = self
-//        scoresTableView.dataSource = self
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+        tableView.delegate = self
+        tableView.dataSource = self
 
         mkMapView.addAnnotations([london, oslo, paris, rome, washington])
 
         profileAvatar.layer.cornerRadius = profileAvatar.frame.size.width / 2
         profileAvatar.clipsToBounds = true
         // Do any additional setup after loading the view.
-        print("----------------------------User Id:")
         print(User.id)
-        
-//
-//        form +++ Section("Create Quiz")
-//        <<< TextRow("Quiz Subject") { row in
-//            row.title = "Quiz Subject"
-//            row.placeholder = "iOS, Database, GCD"
-//        }
-//        for index in 1...1 {
-//            form +++ Section("Question \(index)")
-//            <<< TextAreaRow("Question #\(index)") { row in
-//                row.title = "Question #\(index)"
-//                row.placeholder = "Enter Your Question"
-//                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-//            }
-//            //Answers:
-//            <<< TextAreaRow("Answer #\(index) - 1") { row in
-//                row.title = "Answer #\(index) - 1"
-//                row.placeholder = "Answer 1"
-//                row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-//
-//            }
-//
-//        }
+        userNameLabel.text = "\(User.name)'s Detail View!"
 
+        self.view.addSubview(tableView)
 
     }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return Array(User.scoresBySubject).count
+    }
+    
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "ScoresBySubjectTableViewCell") as! ScoresBySubjectTableViewCell
+//        Array(myDict)[index].key
+        print(Array(User.scoresBySubject)[indexPath.row].key, Array(User.scoresBySubject)[indexPath.row].value, Array(User.scoresBySubject).count, "====================================")
+//        cell.subjectLabel.text = "hello"
+//        cell.scoreLabel.text = "score"
+        
+//        cell.subjectsLabel?.text = "hello"
+        var subjectsKey = Array(User.scoresBySubject)[indexPath.row].key
+        cell.subjectLabel.text = subjectsKey
+        cell.scoreLabel.text = "\(User.scoresBySubject[subjectsKey]!)"
 
+        return cell
+    }
+    
+     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        let headerCell = tableView.dequeueReusableCell(withIdentifier: "HCell") as! HeaderCellForDetailTableViewCell
+        headerCell.backgroundColor = UIColor.systemBlue
+
+   
+
+        return headerCell
+    }
 
 
     class Capital: NSObject, MKAnnotation {

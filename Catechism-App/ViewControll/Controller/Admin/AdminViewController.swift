@@ -63,6 +63,10 @@ class AdminViewController: UIViewController {
         db.insertUsers(name: "David", password: "123", subscriptionType: 0)
 
         db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
+        db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "English")
+        db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Science")
+        db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Science")
+        db.insertQuizSessions(userId: 1, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 1, score: 3, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 2, score: 5, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 2, score: 2, sessionDate: "Mar-17-2022", subjectName: "Science")
