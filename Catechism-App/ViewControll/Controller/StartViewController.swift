@@ -61,10 +61,12 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // **************************************
-        
+
         // Login Button made by Facebook
         let loginButton = FBLoginButton()
         // Optional: Place the button in the center of your view.
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         loginButton.permissions = ["public_profile", "email"]
         loginButton.center = view.center
         loginButton.delegate = self
@@ -212,7 +214,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         let displayVC: WellcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WellcomeSB") as! WellcomeViewController
                         displayVC.userWellcome = userText.text!
                         displayVC.susWellcome = String(d.subscriptionType)
-                        
+                        displayVC.modalPresentationStyle = .fullScreen
                         self.present(displayVC, animated: true, completion: nil)
                         print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
                     } // ****
@@ -236,16 +238,17 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         db.insertFeedback(feedback: label.text!)
     }
     
-    
     // MARK: FUNCTIONS
     func goNextView(nameView: String) {
         if (nameView == "signUp") {
             
             let displayVC: SignUpViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "signUpSB") as! SignUpViewController
             
-            displayVC.userWellcome = userText.text!
             
-            self.present(displayVC, animated: true, completion: nil)
+            displayVC.userWellcome = userText.text!
+            displayVC.modalPresentationStyle = .fullScreen
+//            self.present(displayVC, animated: true, completion: nil)
+            self.showDetailViewController(displayVC, sender: self)
         } else {
             print("no")
         }

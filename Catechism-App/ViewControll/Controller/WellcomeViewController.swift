@@ -24,6 +24,8 @@ class WellcomeViewController: UIViewController {
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         userName.text! = userWellcome
         suscriptionL.text! = susWellcome
         quizB.layer.cornerRadius = 20
@@ -31,6 +33,8 @@ class WellcomeViewController: UIViewController {
         adminB.layer.cornerRadius = 20
         
         
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         if (suscriptionL.text == "0"){
             adminB.isEnabled = false
             dashB.isEnabled = false
@@ -73,17 +77,21 @@ class WellcomeViewController: UIViewController {
     func goNextView(nameView : String) {
         if (nameView == "quiz") {
             
-            let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
+//            let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
             
            // displayVC.userWellcome   = userName.text!
-                    
-                self.present(displayVC, animated: true, completion: nil)
+            self.modalPresentationStyle = .fullScreen
+
+            self.present(StartQuizVC(), animated: true, completion: nil)
+//            displayVC.modalPresentationStyle = .fullScreen
+//                self.present(displayVC, animated: true, completion: nil)
         }
         
         if (nameView == "admin") {
             
             let displayVC : AdminViewController  = UIStoryboard(name: "AdminStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "adminSB") as!  AdminViewController
-            
+            displayVC.modalPresentationStyle = .fullScreen
+
        //     displayVC.userWellcome   = userText.text!
                     
                 self.present(displayVC, animated: true, completion: nil)
@@ -93,7 +101,8 @@ class WellcomeViewController: UIViewController {
             
             let displayVC :
             DashboardViewController = UIStoryboard(name: "DashboardStoryBoard", bundle: nil).instantiateViewController(withIdentifier: "dashBoardSB") as!  DashboardViewController
-            
+            displayVC.modalPresentationStyle = .fullScreen
+
        //     displayVC.userWellcome   = userText.text!
                     
                 self.present(displayVC, animated: true, completion: nil)

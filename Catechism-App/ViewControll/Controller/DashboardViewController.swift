@@ -53,6 +53,8 @@ class DashboardViewController: UIViewController {
         //  graph()
         rankT1(t: "IOS")
         getScoreData()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
         
     }
     

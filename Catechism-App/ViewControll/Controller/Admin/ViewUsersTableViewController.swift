@@ -14,7 +14,8 @@ class ViewUsersTableViewController: UITableViewController {
     let db = DBHelper.init()
     let Users = DBHelper.init().getUsers()
     let quizSessions = DBHelper.init().getQuizSessions()
-    
+//    var selectedPerson: NSManagedObject?
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -23,6 +24,7 @@ class ViewUsersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
 
     }
@@ -89,16 +91,22 @@ class ViewUsersTableViewController: UITableViewController {
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Get the new view controller using segue.destination.
         // Pass the selected object to the new view controller.
+        if segue.identifier == "ShowOneUserViewController" {
+            if let nextVC = segue.destination as? ShowOneUserViewController {
+                nextVC.User = sender as! Users
+            }
+        }
+
+
+
     }
-    */
-//
+
 //    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
 //
 //    }
@@ -115,6 +123,12 @@ class ViewUsersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 
+//        let Users = Users[indexPath.row]
+//        Users.scoresBySubject = getUserTotalScoreBySubjectById(id: Users.id)
+//        self.performSegue(withIdentifier: "ShowOneUserViewController", sender: Users)
+//
+//
+
     }
 
     func getTotalScoreById(id: Int) -> Int {
@@ -126,7 +140,7 @@ class ViewUsersTableViewController: UITableViewController {
         }
         return score;
     }
-    func getUserTotalScoreBySubjectById(id: Int) -> [String : Int] {
+    func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
         var score = 0
         var userScoreBySubject = [String: Int]()
 
@@ -160,15 +174,23 @@ class ViewUsersTableViewController: UITableViewController {
                 id: "promote_user_id",
                 image: UIImage(systemName: "person.fill.checkmark"),
                 color: Color(val: 0xF55B58)
-            )]
+            )
+                
+        ]
         // call before animation
         cell.fanMenu.onItemDidClick = { button in
             print("ItemDidClick: \(button.id)")
-            
+
             if button.id == "block_user_id" {
                 self.db.blockUserById(id: userId)
                 print("blocking user\(userId)")
                 cell.subType.text = String(3)
+            }
+
+            if button.id == "promote_user_id" {
+                let Users = self.Users[indexPath.row]
+                Users.scoresBySubject = self.getUserTotalScoreBySubjectById(id: Users.id)
+                self.performSegue(withIdentifier: "ShowOneUserViewController", sender: Users)
             }
         }
         // call after animation

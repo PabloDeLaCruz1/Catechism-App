@@ -12,12 +12,20 @@ class AdminViewController: UIViewController {
     let users = DBHelper.init().getUsers()
     let quizSessions = DBHelper.init().getQuizSessions()
 
+    @IBOutlet weak var adminLogo: UIImageView!
+    @IBOutlet weak var createQuizBtn: UIButton!
+    @IBOutlet weak var userScoresBtn: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
 
         print("Hello Admin!!!-------------------")
         // Do any additional setup after loading the view.
         populateDataForTesting()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+        
+        createQuizBtn.layer.cornerRadius = 40
+        userScoresBtn.layer.cornerRadius =  40
+        adminLogo.layer.cornerRadius = 15
     }
 
 
