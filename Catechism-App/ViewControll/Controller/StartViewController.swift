@@ -30,6 +30,9 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var loginB: UIButton!
     @IBOutlet weak var signUpB: UIButton!
     
+    @IBOutlet weak var imageL: UIImageView!
+    
+    @IBOutlet weak var textFeedback: UILabel!
     
     
     // MARK: Variables
@@ -188,6 +191,10 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                 
                 if (d.name == userText.text!) && (userText.text! != "") {
                     if (d.password == userPasswordText.text!) {
+                        imageL.isHidden  = false
+                        label.isHidden   = false
+                        textFeedback.isHidden = false
+                        micro.isHidden = false
                         let displayVC: WellcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WellcomeSB") as! WellcomeViewController
                         displayVC.userWellcome = userText.text!
                         displayVC.susWellcome = String(d.subscriptionType)
@@ -261,6 +268,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
             }
             let msg = resp?.bestTranscription.formattedString
             self.label.text = msg!
+            
             
             var str: String = ""
             for seg in resp!.bestTranscription.segments {
