@@ -16,6 +16,5 @@ class ValidateApp{
             print("************************   false      ********************")
             return false
         }
-        
     }
 }
