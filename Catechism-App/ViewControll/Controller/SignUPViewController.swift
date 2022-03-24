@@ -11,7 +11,7 @@ import SwiftUI
 class SignUpViewController: UIViewController {
     // MARK: Variables
     var db: DBHelper = DBHelper()
-    var userWelcome = ""
+    var userWellcome = ""
     // MARK: IBOutlet
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passT: UITextField!
