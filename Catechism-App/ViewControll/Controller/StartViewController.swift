@@ -212,6 +212,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         micro.isHidden = false
                         saveB.isHidden = false
                         let displayVC: WelcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as! WelcomeViewController
+                        displayVC.userData = d
                         displayVC.userWelcome = userText.text!
                         displayVC.susWelcome = String(d.subscriptionType)
                         displayVC.modalPresentationStyle = .fullScreen

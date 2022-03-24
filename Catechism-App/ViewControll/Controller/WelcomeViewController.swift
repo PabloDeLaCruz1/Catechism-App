@@ -7,12 +7,12 @@
 
 import UIKit
 
-class WelcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
    
     //MARK: Variables
     var userWelcome = ""
     var susWelcome = ""
-    
+    var userData = Users()
     //MARK: IBOutlet
     @IBOutlet weak var userName: UILabel!
     @IBOutlet weak var suscriptionL: UILabel!
@@ -21,6 +21,7 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var adminB: UIButton!
     @IBOutlet weak var paidB: UIButton!
     
+    @IBOutlet weak var userProfile: UIImageView!
     
     //MARK: Functions
     override func viewDidLoad() {
@@ -32,6 +33,16 @@ class WelcomeViewController: UIViewController {
         dashB.layer.cornerRadius = 20
         adminB.layer.cornerRadius = 20
         paidB.layer.cornerRadius = 20
+        
+//        var UITapRecognizer = UITapGestureRecognizer(target: self, action: Selector("tappedUserProfile"))
+        
+        var UITapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedUserProfile))
+        
+        UITapRecognizer.delegate = self
+        
+        self.userProfile.addGestureRecognizer(UITapRecognizer)
+
+        self.userProfile.isUserInteractionEnabled = true
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
@@ -63,6 +74,18 @@ class WelcomeViewController: UIViewController {
         print("userWelcome:",userWelcome)
         // Do any additional setup after loading the view.
     }
+    
+
+    @objc func tappedUserProfile(sender: AnyObject) {
+        print("User profile clicked for \(userWelcome)")
+    
+//        self.present(ShowOneUserViewController(), animated: true, completion: nil)
+        self.performSegue(withIdentifier: "userProfileSegue", sender: userData)
+
+    }
+    
+    
+    
     @IBAction func paidBtn(_ sender: UIButton) {
         goNextView(nameView : "paidQuiz")
 

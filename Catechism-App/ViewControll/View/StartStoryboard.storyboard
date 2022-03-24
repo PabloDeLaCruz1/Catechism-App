@@ -403,6 +403,16 @@
             </objects>
             <point key="canvasLocation" x="647.82608695652175" y="685.71428571428567"/>
         </scene>
+        <!--userScoreSB-->
+        <scene sceneID="lgr-2k-CiC">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="userScoreSB" storyboardName="AdminStoryBoard" referencedIdentifier="userScoreSB" id="tpY-hy-MIR" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="2Tb-PR-dfE"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1vt-dT-OtM" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-345" y="241"/>
+        </scene>
         <!--Welcome View Controller-->
         <scene sceneID="FcQ-uF-aII">
             <objects>
@@ -411,6 +421,15 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="userAvi" translatesAutoresizingMaskIntoConstraints="NO" id="BCW-e8-xsB">
+                                <rect key="frame" x="35" y="168" width="56" height="56"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <accessibility key="accessibilityConfiguration">
+                                    <accessibilityTraits key="traits" button="YES" image="YES"/>
+                                    <bool key="isElement" value="NO"/>
+                                </accessibility>
+                                <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="YcT-YM-Ixd" userLabel="TakeQuiz">
                                 <rect key="frame" x="50" y="628" width="127" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -424,13 +443,19 @@
                                     <action selector="quizB:" destination="SHE-Zr-5xX" eventType="touchUpInside" id="h7S-o5-t1B"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh7-ap-AgB" userLabel="userName">
-                                <rect key="frame" x="104" y="186" width="207" height="21"/>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FH-TX-6fo" userLabel="Admin">
+                                <rect key="frame" x="50" y="686" width="127" height="40"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <color key="backgroundColor" systemColor="systemBlueColor"/>
+                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <state key="normal" title="Button"/>
+                                <buttonConfiguration key="configuration" style="plain" title="ADMIN">
+                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
+                                </buttonConfiguration>
+                                <connections>
+                                    <action selector="adminB:" destination="SHE-Zr-5xX" eventType="touchUpInside" id="xvD-L0-K0z"/>
+                                </connections>
+                            </button>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="imageCatechism" translatesAutoresizingMaskIntoConstraints="NO" id="Sp1-b2-c6j">
                                 <rect key="frame" x="35" y="256" width="344" height="364"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -500,19 +525,13 @@
                                     <action selector="paidBtn:" destination="SHE-Zr-5xX" eventType="touchUpInside" id="pOR-Ba-mPu"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7FH-TX-6fo" userLabel="Admin">
-                                <rect key="frame" x="50" y="686" width="127" height="40"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Bh7-ap-AgB" userLabel="userName">
+                                <rect key="frame" x="104" y="203" width="207" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <color key="backgroundColor" systemColor="systemBlueColor"/>
-                                <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="ADMIN">
-                                    <fontDescription key="titleFontDescription" type="boldSystem" pointSize="20"/>
-                                </buttonConfiguration>
-                                <connections>
-                                    <action selector="adminB:" destination="SHE-Zr-5xX" eventType="touchUpInside" id="xvD-L0-K0z"/>
-                                </connections>
-                            </button>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e9m-KZ-osL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -525,6 +544,8 @@
                         <outlet property="quizB" destination="YcT-YM-Ixd" id="zcV-lT-qkG"/>
                         <outlet property="suscriptionL" destination="Z6p-Lj-RkA" id="601-vL-ofd"/>
                         <outlet property="userName" destination="Bh7-ap-AgB" id="e5g-Zl-yNM"/>
+                        <outlet property="userProfile" destination="BCW-e8-xsB" id="ApM-5R-tJ9"/>
+                        <segue destination="tpY-hy-MIR" kind="show" identifier="userProfileSegue" id="Qrc-5v-H8a"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtS-h3-lCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -566,6 +587,7 @@
         <image name="selected1" width="330" height="316"/>
         <image name="squareshape" catalog="system" width="128" height="114"/>
         <image name="tech" width="246" height="101"/>
+        <image name="userAvi" width="1280" height="1280"/>
         <namedColor name="AccentColor">
             <color red="0.0" green="0.46000000000000002" blue="0.89000000000000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
