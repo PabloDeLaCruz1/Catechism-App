@@ -265,6 +265,9 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         micro.isHidden = true
         textFeedback.isHidden = true
         imageL.isHidden = true
+        cancellSpeechRec()
+        micro.setTitle("start", for: .normal)
+        micro.tintColor = .red
     }
     
     // MARK: FUNCTIONS
