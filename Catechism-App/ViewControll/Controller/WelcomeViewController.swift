@@ -10,8 +10,8 @@ import UIKit
 class WelcomeViewController: UIViewController {
    
     //MARK: Variables
-    var userWellcome = ""
-    var susWellcome = ""
+    var userWelcome = ""
+    var susWelcome = ""
     
     //MARK: IBOutlet
     @IBOutlet weak var userName: UILabel!
@@ -19,19 +19,19 @@ class WelcomeViewController: UIViewController {
     @IBOutlet weak var quizB: UIButton!
     @IBOutlet weak var dashB: UIButton!
     @IBOutlet weak var adminB: UIButton!
+    @IBOutlet weak var paidB: UIButton!
     
     
     //MARK: Functions
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
-        userName.text! = userWellcome
-        suscriptionL.text! = susWellcome
+        userName.text! = userWelcome
+        suscriptionL.text! = susWelcome
         quizB.layer.cornerRadius = 20
         dashB.layer.cornerRadius = 20
         adminB.layer.cornerRadius = 20
-        
+        paidB.layer.cornerRadius = 20
         
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
@@ -39,22 +39,33 @@ class WelcomeViewController: UIViewController {
             adminB.isEnabled = false
             dashB.isEnabled = false
             quizB.isEnabled = true
+            paidB.isEnabled = false
         }else if (suscriptionL.text == "1"){
             adminB.isEnabled = false
             dashB.isEnabled = true
+            paidB.isEnabled = true
+
         }else if (suscriptionL.text == "2"){
             adminB.isEnabled = true
             dashB.isEnabled = true
             quizB.isEnabled = true
+            paidB.isEnabled = true
+
         }else if (suscriptionL.text == "3"){
             adminB.isEnabled = false
             dashB.isEnabled = false
             quizB.isEnabled = false
+            paidB.isEnabled = false
+
         }
         
         
-        print("userWellcome:",userWellcome)
+        print("userWelcome:",userWelcome)
         // Do any additional setup after loading the view.
+    }
+    @IBAction func paidBtn(_ sender: UIButton) {
+        goNextView(nameView : "paidQuiz")
+
     }
     
     //MARK: IBAction
@@ -65,6 +76,7 @@ class WelcomeViewController: UIViewController {
         goNextView(nameView : "quiz")
     }
     
+
     
     @IBAction func adminB(_ sender: Any) {
         goNextView(nameView : "admin")
@@ -79,6 +91,13 @@ class WelcomeViewController: UIViewController {
     
     func goNextView(nameView : String) {
         if (nameView == "quiz") {
+
+//            let displayVC : QuizzesViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizzesViewController
+//            displayVC.modalPresentationStyle = .fullScreen
+            self.present(StartQuizVC(), animated: true, completion: nil)
+
+        }
+        if (nameView == "paidQuiz") {
 
             let displayVC : QuizzesViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizzesViewController
             displayVC.modalPresentationStyle = .fullScreen
