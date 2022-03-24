@@ -211,19 +211,19 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         textFeedback.isHidden = false
                         micro.isHidden = false
                         saveB.isHidden = false
-                        let displayVC: WellcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WellcomeSB") as! WellcomeViewController
-                        displayVC.userWellcome = userText.text!
-                        displayVC.susWellcome = String(d.subscriptionType)
+                        let displayVC: WelcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as! WelcomeViewController
+                        displayVC.userWelcome = userText.text!
+                        displayVC.susWelcome = String(d.subscriptionType)
                         displayVC.modalPresentationStyle = .fullScreen
                         self.present(displayVC, animated: true, completion: nil)
-                        print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
+                        print("Exxiste  id:**********----------*************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
                     } // ****
                     else {
                         error.text = "Password not valid"
                     }
                 }
                 else {
-                    error.text = "User not valid"
+//                    error.text = "User not valid"
                 }
             }
         } // *******
@@ -245,7 +245,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
             let displayVC: SignUpViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "signUpSB") as! SignUpViewController
             
             
-            displayVC.userWellcome = userText.text!
+            displayVC.userWelcome = userText.text!
             displayVC.modalPresentationStyle = .fullScreen
 //            self.present(displayVC, animated: true, completion: nil)
             self.showDetailViewController(displayVC, sender: self)
