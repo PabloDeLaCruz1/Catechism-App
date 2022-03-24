@@ -52,6 +52,8 @@
 		FE35FD7227EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7127EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift */; };
 		FE35FD7427EBBFF200A369D2 /* FeedbackTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7327EBBFF200A369D2 /* FeedbackTableViewCell.swift */; };
 		FE35FD7627EBC01600A369D2 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */; };
+		FE35FD7927EC53C400A369D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */; };
+		FE6467E627EC582E00795DB2 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
@@ -142,6 +144,8 @@
 		FE35FD7127EBB91900A369D2 /* HeaderCellForDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderCellForDetailTableViewCell.swift; sourceTree = "<group>"; };
 		FE35FD7327EBBFF200A369D2 /* FeedbackTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewCell.swift; sourceTree = "<group>"; };
 		FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
+		FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
+		FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -212,6 +216,7 @@
 		2201373227DCDB8B000F0C7C /* Controller */ = {
 			isa = PBXGroup;
 			children = (
+				FE35FD7727EC539B00A369D2 /* Quiz */,
 				7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */,
 				7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */,
 				7818854227E8DD7C007E7F58 /* QuizVC.swift */,
@@ -315,6 +320,15 @@
 				7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */,
 			);
 			path = sounds;
+			sourceTree = "<group>";
+		};
+		FE35FD7727EC539B00A369D2 /* Quiz */ = {
+			isa = PBXGroup;
+			children = (
+				FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */,
+				FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */,
+			);
+			path = Quiz;
 			sourceTree = "<group>";
 		};
 		FE74DD7F27DCD0F400F33D69 = {
@@ -597,6 +611,7 @@
 				22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */,
 				7818855B27E8DD7C007E7F58 /* QuizVC.swift in Sources */,
 				222B022127EA391F0024E493 /* CustomError.swift in Sources */,
+				FE6467E627EC582E00795DB2 /* QuizzesViewController.swift in Sources */,
 				7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */,
 				2201373B27DD0B8D000F0C7C /* DBHelper.swift in Sources */,
 				2201373627DCE197000F0C7C /* TestMeCoreData.xcdatamodeld in Sources */,
@@ -631,6 +646,7 @@
 				222B021F27EA39130024E493 /* DBConnector.swift in Sources */,
 				FE74DE0827E1F7A400F33D69 /* Users.swift in Sources */,
 				FE74DE7E27E4122D00F33D69 /* QuestionsHelpers.swift in Sources */,
+				FE35FD7927EC53C400A369D2 /* QuizTableViewCell.swift in Sources */,
 				FE74DEB627EA218100F33D69 /* AudioSounds.swift in Sources */,
 				2247309627E10F44009085D5 /* DashboardViewController.swift in Sources */,
 				2201373D27DD1126000F0C7C /* PersonTableViewCell.swift in Sources */,
