@@ -212,18 +212,18 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         micro.isHidden = false
                         saveB.isHidden = false
                         let displayVC: WelcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as! WelcomeViewController
-                        displayVC.userWelcome = userText.text!
-                        displayVC.susWelcome = String(d.subscriptionType)
+                        displayVC.userWellcome = userText.text!
+                        displayVC.susWellcome = String(d.subscriptionType)
                         displayVC.modalPresentationStyle = .fullScreen
                         self.present(displayVC, animated: true, completion: nil)
-                        print("Exxiste  id:**********----------*************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
+                        print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
                     } // ****
                     else {
                         error.text = "Password not valid"
                     }
                 }
                 else {
-//                    error.text = "User not valid"
+                    error.text = "User not valid"
                 }
             }
         } // *******
@@ -245,7 +245,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
             let displayVC: SignUpViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "signUpSB") as! SignUpViewController
             
             
-            displayVC.userWelcome = userText.text!
+            displayVC.userWellcome = userText.text!
             displayVC.modalPresentationStyle = .fullScreen
 //            self.present(displayVC, animated: true, completion: nil)
             self.showDetailViewController(displayVC, sender: self)
