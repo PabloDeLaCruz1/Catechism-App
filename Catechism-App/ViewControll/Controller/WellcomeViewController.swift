@@ -69,10 +69,25 @@ class WellcomeViewController: UIViewController {
     func goNextView(nameView : String) {
         if (nameView == "quiz") {
             
-            let displayVC : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
+            let _ : QuizViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizViewController
+            var _:UIViewController = ChooseQuizTypeVC()
+            self.modalPresentationStyle = .fullScreen
             
-           // displayVC.userWellcome   = userName.text!
-                    
+            let modalStyle: UIModalTransitionStyle = UIModalTransitionStyle.crossDissolve
+                StartViewController().modalTransitionStyle = modalStyle
+            present(ChooseQuizTypeVC(), animated: true, completion: nil)
+            
+//            let VC1 = self.storyboard!.instantiateViewController(withIdentifier: "wcvc") as! ViewController
+//            let navController = UINavigationController(rootViewController: VC1) // Creating a navigation controller with VC1 at the root of the navigation stack.
+            let v=ChooseQuizTypeVC()
+//            DBHelper.init().createSessionRecord(uid: 0, type: type)
+//           navigationController?.pushViewController(v, animated: true)
+//            navigationController?.setNavigationBarHidden(true, animated: false)
+
+//            self.present(navController, animated:true, completion: nil)
+
+//            self.present(instVC, animated: true, completion: nil)
+
 //                self.present(QuizVC, animated: true, completion: nil)
         }
         

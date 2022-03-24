@@ -366,12 +366,12 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="24B-WM-II5" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-262.31884057971018" y="685.71428571428567"/>
+            <point key="canvasLocation" x="647.82608695652175" y="685.71428571428567"/>
         </scene>
         <!--Wellcome View Controller-->
         <scene sceneID="FcQ-uF-aII">
             <objects>
-                <viewController storyboardIdentifier="WellcomeSB" id="SHE-Zr-5xX" customClass="WellcomeViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController restorationIdentifier="wcvc" storyboardIdentifier="WellcomeSB" id="SHE-Zr-5xX" customClass="WellcomeViewController" customModule="Catechism_App" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="RCn-6o-zrB">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -466,7 +466,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BtS-h3-lCC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-997.10144927536237" y="685.71428571428567"/>
+            <point key="canvasLocation" x="-86.956521739130437" y="685.71428571428567"/>
         </scene>
     </scenes>
     <resources>

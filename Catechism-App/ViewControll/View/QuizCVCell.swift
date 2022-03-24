@@ -50,6 +50,7 @@ class QuizCVCell: UICollectionViewCell {
     @objc func btnOptionAction(sender: UIButton) {
         guard let unwrappedQue = question else { return }
         if !unwrappedQue.isAnswered {
+            print(sender.tag)
             delegate?.didChooseAnswer(btnIndex: sender.tag)
         }
     }
@@ -66,10 +67,10 @@ class QuizCVCell: UICollectionViewCell {
         lblQue.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-        lblQue.heightAnchor.constraint(equalToConstant: 300).isActive=true
+        lblQue.heightAnchor.constraint(equalToConstant: 200).isActive=true
         
-        let btnWidth: CGFloat = 160
-        let btnHeight: CGFloat = 160
+        let btnWidth: CGFloat = 150
+        let btnHeight: CGFloat = 150
         btn1 = getButton(tag: 0)
         addSubview(btn1)
         NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: lblQue.bottomAnchor, constant: 20), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
@@ -110,6 +111,7 @@ class QuizCVCell: UICollectionViewCell {
         btn.titleLabel?.minimumScaleFactor = 0.2;
         btn.titleLabel?.baselineAdjustment = .alignBaselines
 //            btn.titleLabel!.frame.size
+        
 
         return btn
     }
@@ -120,8 +122,8 @@ class QuizCVCell: UICollectionViewCell {
         lbl.text="This is a question and you have to answer it?"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 33)
-        lbl.numberOfLines=8
+        lbl.font = UIFont.systemFont(ofSize: 25)
+        lbl.numberOfLines=5
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()

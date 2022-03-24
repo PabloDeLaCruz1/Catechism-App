@@ -14,25 +14,25 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
+    static var scene : UIScene?
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
         // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
         guard let _ = (scene as? UIWindowScene) else { return }
             /// MARK: for upload 03/21/2022
-            
-                    guard let windowScene = (scene as? UIWindowScene) else { return }
-            
-                    let window = UIWindow(windowScene: windowScene)
-                    let viewController = StartQuizVC()
-            
-                    let navigation = UINavigationController(rootViewController: viewController)
-                    window.rootViewController = navigation
-            
-                    self.window = window
-                    window.makeKeyAndVisible()
-                    window.backgroundColor = UIColor.white
+        SceneDelegate.scene = scene
+//                    guard let windowScene = (scene as? UIWindowScene) else { return }
+//
+//                    let window = UIWindow(windowScene: windowScene)
+//                    let viewController = ChooseQuizTypeVC()
+//
+//                    let navigation = UINavigationController(rootViewController: viewController)
+//                    window.rootViewController = navigation
+//
+//                    self.window = window
+//                    window.makeKeyAndVisible()
+//                    window.backgroundColor = UIColor.white
 
     }
 
@@ -66,21 +66,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     
 
-    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-        guard let url = URLContexts.first?.url else {
-            return
-        }
-
-        ApplicationDelegate.shared.application(
-            UIApplication.shared,
-            open: url,
-            sourceApplication: nil,
-            annotation: [UIApplication.OpenURLOptionsKey.annotation]
-        )
-    }
+//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+//        guard let url = URLContexts.first?.url else {
+//            return
+//        }
+//
+//        ApplicationDelegate.shared.application(
+//            UIApplication.shared,
+//            open: url,
+//            sourceApplication: nil,
+//            annotation: [UIApplication.OpenURLOptionsKey.annotation]
+//        )
+//    }
 
 
 
 
 }
 
+//extension UIViewController {
+//     var appDelegate: AppDelegate {
+//     return UIApplication.shared.delegate as! AppDelegate
+// }
+//
+// var sceneDelegate: SceneDelegate? {
+//     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//         let delegate = windowScene.delegate as? SceneDelegate else { return nil }
+//      return delegate
+// }
+//}
+//
+//extension UIViewController {
+//    var window: UIWindow? {
+//        if #available(iOS 13, *) {
+//            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
+//                let delegate = windowScene.delegate as? SceneDelegate, let window = delegate.window else { return nil }
+//                   return window
+//        }
+//
+//        guard let delegate = UIApplication.shared.delegate as? AppDelegate, let window = delegate.window else { return nil }
+//        return window
+//    }
+//}

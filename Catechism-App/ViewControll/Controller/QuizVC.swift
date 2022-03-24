@@ -28,8 +28,10 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     var typeChosen = ""
     
     var window: UIWindow?
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func loadView() {
+        super.loadView()
+        print("quiz received")
         self.title="QuizOne"
         self.view.backgroundColor=UIColor.white
         
@@ -73,7 +75,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) { //TODO Investigating.
 //        setQuestionNumber()
 //    }
 //
@@ -110,9 +112,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func moveToFrame(contentOffset : CGFloat) {
-        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height)
-//        let frame: CGRect = CGRect(x : self.answersCV.contentOffset.x,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height)
-        self.answersCV.scrollRectToVisible(frame, animated: true)
+        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height) //TODO Some adjustment needed.
+        self.answersCV.scrollRectToVisible(frame, animated: true)  //TODO Some adjustment needed.
     }
     
     func setupViews() {

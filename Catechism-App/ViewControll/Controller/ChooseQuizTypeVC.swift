@@ -11,10 +11,11 @@
 import UIKit
 import SwiftUI
 
-class StartQuizVC: UIViewController {
-    
+class ChooseQuizTypeVC: UIViewController  {
+    public var loggedInUser = 4  //TODO temp for test
+
     var window: UIWindow?
-    var userID: Int = 0
+    var userID: Int = 0  //TODEL
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -29,6 +30,7 @@ class StartQuizVC: UIViewController {
     let  buttonSQLite = ReusableButton(frame: CGRect())
     
     @objc func solveAIX() {
+        print("tapped")
 //        prepareNext(uid: userID, type: "1")
         showNext(type: "1")
     }
@@ -69,24 +71,24 @@ class StartQuizVC: UIViewController {
         lblTitle.heightAnchor.constraint(equalToConstant: 80).isActive=true
     }
     
-//    func prepareNext(uid: Int, type: String)  {
-//        let date = Date()
-//        let dateFormatter = DateFormatter()
-//        let  todayString = dateFormatter.string(from: date)
-//        dateFormatter.dateFormat = "dd/MM/yyyy"
-//        DBConnector.init().createSessionRecord(uid: 0, type: type)  // date: todayString
-//     }
-    
     func showNext(type: String)  {
         let v=QuizVC()
         DBHelper.init().createSessionRecord(uid: 0, type: type)
-       navigationController?.pushViewController(v, animated: true)
-        navigationController?.setNavigationBarHidden(true, animated: false)
         v.typeChosen = type
+        navigationController?.pushViewController(v, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+                    guard let windowScene = (SceneDelegate.scene as? UIWindowScene) else { return }
+            
+                                        let window = UIWindow(windowScene: windowScene)
+            
+            
+                                        let navigation = UINavigationController(rootViewController: v)
+                                        window.rootViewController = navigation
+            
+                                        self.window = window
+                                        window.makeKeyAndVisible()
+                                        window.backgroundColor = UIColor.white
     }
-
-    func setButton(button: UIButton, pos: Int) {
-   }
         
     let lblTitle: UILabel = {
         let lbl=UILabel()
@@ -99,41 +101,5 @@ class StartQuizVC: UIViewController {
         return lbl
     }()
     
-
-
-//    let buttonAIX: UIButton = {
-//        let btn=UIButton()
-//        btn.setTitle("AIX", for: .normal)
-//        btn.setTitleColor(UIColor.white, for: .normal)
-//        btn.backgroundColor=UIColor.orange
-//        btn.layer.cornerRadius=5
-//        btn.layer.masksToBounds=true
-//        btn.translatesAutoresizingMaskIntoConstraints=false
-//        btn.addTarget(self, action: #selector(solveAIX), for: .touchUpInside)
-//        return btn
-//    }()
-//
-//    let buttonApple: UIButton = {
-//    let btn=UIButton()
-//    btn.setTitle("Apple", for: .normal)
-//    btn.setTitleColor(UIColor.white, for: .normal)
-//    btn.backgroundColor=UIColor.orange
-//    btn.layer.cornerRadius=5
-//    btn.layer.masksToBounds=true
-//    btn.translatesAutoresizingMaskIntoConstraints=false
-//    btn.addTarget(self, action: #selector(solveApple), for: .touchUpInside)
-//    return btn
-//}()
-//
-//    let buttonSQLite: UIButton = {
-//    let btn=UIButton()
-//    btn.setTitle("SQLite", for: .normal)
-//    btn.setTitleColor(UIColor.white, for: .normal)
-//    btn.backgroundColor=UIColor.orange
-//    btn.layer.cornerRadius=5
-//    btn.layer.masksToBounds=true
-//    btn.translatesAutoresizingMaskIntoConstraints=false
-//    btn.addTarget(self, action: #selector(solveSQLite), for: .touchUpInside)
-//    return btn
-//}()
 }
+

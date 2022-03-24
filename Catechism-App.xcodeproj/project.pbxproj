@@ -45,9 +45,7 @@
 		78EB652127EA343A00915F1B /* bensound-thelounge.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = 7818855427E8DD7C007E7F58 /* bensound-thelounge.mp3 */; };
 		78EB652227EA345B00915F1B /* AudioSounds.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818855527E8DD7C007E7F58 /* AudioSounds.swift */; };
 		78EB652627EA5C7600915F1B /* ReusableButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 78EB652527EA5C7600915F1B /* ReusableButton.swift */; };
-		78EB652F27EB93D100915F1B /* catechism.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78EB652E27EB93D100915F1B /* catechism.sqlite */; };
-		78EB653027EB93D100915F1B /* catechism.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78EB652E27EB93D100915F1B /* catechism.sqlite */; };
-		78EB653127EB93D100915F1B /* catechism.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78EB652E27EB93D100915F1B /* catechism.sqlite */; };
+		78EB653327EBA1BA00915F1B /* catechism.sqlite in Resources */ = {isa = PBXBuildFile; fileRef = 78EB653227EBA1BA00915F1B /* catechism.sqlite */; };
 		A49B9BD4B1643BF81BA72FB1 /* Pods_Catechism_App.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD8E27DCD0F400F33D69 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8D27DCD0F400F33D69 /* SceneDelegate.swift */; };
@@ -127,7 +125,7 @@
 		7818855527E8DD7C007E7F58 /* AudioSounds.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AudioSounds.swift; sourceTree = "<group>"; };
 		7818855627E8DD7C007E7F58 /* CustomError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CustomError.swift; sourceTree = "<group>"; };
 		78EB652527EA5C7600915F1B /* ReusableButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReusableButton.swift; sourceTree = "<group>"; };
-		78EB652E27EB93D100915F1B /* catechism.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = catechism.sqlite; sourceTree = "<group>"; };
+		78EB653227EBA1BA00915F1B /* catechism.sqlite */ = {isa = PBXFileReference; lastKnownFileType = file; path = catechism.sqlite; sourceTree = "<group>"; };
 		B012A9788669DFC17739C623 /* Pods-Catechism-App.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.debug.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.debug.xcconfig"; sourceTree = "<group>"; };
 		BCC20E09FAFD36B2CF9DA98E /* Pods-Catechism-App.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Catechism-App.release.xcconfig"; path = "Target Support Files/Pods-Catechism-App/Pods-Catechism-App.release.xcconfig"; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -285,7 +283,7 @@
 		7818854D27E8DD7C007E7F58 /* utility */ = {
 			isa = PBXGroup;
 			children = (
-				78EB652E27EB93D100915F1B /* catechism.sqlite */,
+				78EB653227EBA1BA00915F1B /* catechism.sqlite */,
 				7818854F27E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift */,
 				7818855027E8DD7C007E7F58 /* Assets.xcassets */,
 				7818855127E8DD7C007E7F58 /* sounds */,
@@ -480,7 +478,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78EB653027EB93D100915F1B /* catechism.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -488,7 +485,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				78EB653127EB93D100915F1B /* catechism.sqlite in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,8 +492,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				78EB653327EBA1BA00915F1B /* catechism.sqlite in Resources */,
 				FE74DD9827DCD0F800F33D69 /* LaunchScreen.storyboard in Resources */,
-				78EB652F27EB93D100915F1B /* catechism.sqlite in Resources */,
 				7818856727E8DD7C007E7F58 /* incorrect.wav in Resources */,
 				FE74DD9527DCD0F800F33D69 /* Assets.xcassets in Resources */,
 				2247308527E10DB2009085D5 /* StartStoryboard.storyboard in Resources */,
