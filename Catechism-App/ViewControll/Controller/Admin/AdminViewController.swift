@@ -58,15 +58,15 @@ class AdminViewController: UIViewController {
         db.deleteByIDandTable(id: 4, table: "Quiz_Sessions")
         db.deleteByIDandTable(id: 5, table: "Quiz_Sessions")
 
-        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-        print("LAST ID -------------------------------------------------------")
-        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-
-        db.insertUsers(name: "Young", password: "123", subscriptionType: 2)
-        db.insertUsers(name: "David", password: "123", subscriptionType: 0)
+//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+//        print("LAST ID -------------------------------------------------------")
+//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+//
+//        db.insertUsers(name: "Young", password: "123", subscriptionType: 2)
+//        db.insertUsers(name: "David", password: "123", subscriptionType: 0)
         
         db.insertFeedback(feedback: "Pablo is the best developer in the world!")
         
