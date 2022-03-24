@@ -12,6 +12,15 @@ class MenuViewController: UIViewController {
     @IBOutlet weak var startB: UIButton!
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
+            DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
+            DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)
+            DBHelper.init().insertQuestions(subjectName: "iOS", questionText: "what is ", correctAnswer: 1)
+            DBHelper.init().insertQuestions(subjectName: "GDC", questionText: "what is ", correctAnswer: 1)
+        
+        
+        
 //        startB.layer.cornerRadius = 20
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
     }
