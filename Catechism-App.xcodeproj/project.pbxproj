@@ -37,7 +37,7 @@
 		22E35AA527E4FD79004D237D /* ValidateApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22E35AA427E4FD79004D237D /* ValidateApp.swift */; };
 		22E3AAC827E6966600982183 /* FacebookLogin in Frameworks */ = {isa = PBXBuildFile; productRef = 22E3AAC727E6966600982183 /* FacebookLogin */; };
 		22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */; };
-		22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */; };
+		22ECB18F27E2A4BF00E61BC2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22ECB18E27E2A4BF00E61BC2 /* WelcomeViewController.swift */; };
 		22EE16F727EB5B82004D5F83 /* Feedback.swift in Sources */ = {isa = PBXBuildFile; fileRef = 22EE16F627EB5B82004D5F83 /* Feedback.swift */; };
 		7818855827E8DD7C007E7F58 /* QuizSessionResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */; };
 		7818855927E8DD7C007E7F58 /* ChooseQuizTypeVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7818854027E8DD7C007E7F58 /* ChooseQuizTypeVC.swift */; };
@@ -121,7 +121,7 @@
 		22E35AA227E4F872004D237D /* XCTestUIValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XCTestUIValidation.swift; sourceTree = "<group>"; };
 		22E35AA427E4FD79004D237D /* ValidateApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValidateApp.swift; sourceTree = "<group>"; };
 		22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SignUPViewController.swift; sourceTree = "<group>"; };
-		22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WellcomeViewController.swift; sourceTree = "<group>"; };
+		22ECB18E27E2A4BF00E61BC2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		22EE16F627EB5B82004D5F83 /* Feedback.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Feedback.swift; sourceTree = "<group>"; };
 		4AE603111E391B1DC3D0C6CA /* Pods_Catechism_App.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Catechism_App.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7818853F27E8DD7C007E7F58 /* QuizSessionResult.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizSessionResult.swift; sourceTree = "<group>"; };
@@ -228,7 +228,7 @@
 				2247309527E10F43009085D5 /* DashboardViewController.swift */,
 				2247309027E10ECA009085D5 /* StartViewController.swift */,
 				22ECB13D27E245DC00E61BC2 /* SignUPViewController.swift */,
-				22ECB18E27E2A4BF00E61BC2 /* WellcomeViewController.swift */,
+				22ECB18E27E2A4BF00E61BC2 /* WelcomeViewController.swift */,
 				2247309727E11313009085D5 /* MenuViewController.swift */,
 				22132BC327E0B45800642694 /* QuizViewController.swift */,
 			);
@@ -626,7 +626,7 @@
 				2247309427E10F26009085D5 /* AdminViewController.swift in Sources */,
 				7818855F27E8DD7C007E7F58 /* QuestionSet.swift in Sources */,
 				7818856527E8DD7C007E7F58 /* AVAudioPlayer+Extension.swift in Sources */,
-				22ECB18F27E2A4BF00E61BC2 /* WellcomeViewController.swift in Sources */,
+				22ECB18F27E2A4BF00E61BC2 /* WelcomeViewController.swift in Sources */,
 				2226EE8827E54B6800A0B628 /* RunningTimeRepository.swift in Sources */,
 				FE74DEB427EA215C00F33D69 /* QuizCVCell.swift in Sources */,
 				22ECB13E27E245DC00E61BC2 /* SignUPViewController.swift in Sources */,

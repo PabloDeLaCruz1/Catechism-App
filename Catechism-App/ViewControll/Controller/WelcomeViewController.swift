@@ -7,7 +7,7 @@
 
 import UIKit
 
-class WellcomeViewController: UIViewController {
+class WelcomeViewController: UIViewController {
    
     //MARK: Variables
     var userWellcome = ""
