@@ -57,7 +57,7 @@
                                 <rect key="frame" x="262" y="48" width="88" height="32"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Button"/>
-                                <buttonConfiguration key="configuration" style="plain" title="Logout"/>
+                                <buttonConfiguration key="configuration" style="plain" title="Main"/>
                                 <connections>
                                     <action selector="logoutBtn:" destination="Y6W-OH-hqX" eventType="touchUpInside" id="1qb-iN-231"/>
                                 </connections>
