@@ -33,6 +33,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     @IBOutlet weak var saveB: UIButton!
     @IBOutlet weak var imageL: UIImageView!
     
+    @IBOutlet weak var thanksI: UIImageView!
     @IBOutlet weak var textFeedback: UILabel!
     
     
@@ -61,7 +62,10 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         // **************************************
-
+        label.isHidden   = true
+        saveB.isHidden   = true
+        thanksI.isHidden = true
+        
         // Login Button made by Facebook
         let loginButton = FBLoginButton()
         // Optional: Place the button in the center of your view.
@@ -179,6 +183,12 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     
     
     @IBAction func activeMicro(_ sender: Any) {
+        label.isHidden   = false
+        saveB.isHidden   = false
+        
+   
+        
+        
         isStart = !isStart
         if isStart {
             startSpeechRec()
@@ -206,11 +216,14 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                 
                 if (d.name == userText.text!) && (userText.text! != "") {
                     if (d.password == userPasswordText.text!) {
+                        if (d.subscriptionType != 3){
+                            
+                        thanksI.isHidden = true
                         imageL.isHidden  = false
-                        label.isHidden   = false
+                        label.isHidden   = true
                         textFeedback.isHidden = false
                         micro.isHidden = false
-                        saveB.isHidden = false
+                        saveB.isHidden = true
                         let displayVC: WelcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as! WelcomeViewController
                         displayVC.userData = d
                         displayVC.userWelcome = userText.text!
@@ -218,6 +231,9 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         displayVC.modalPresentationStyle = .fullScreen
                         self.present(displayVC, animated: true, completion: nil)
                         print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
+                        }else{
+                            error.text = "User Blocked, call admin"
+                        }
                     } // ****
                     else {
                         error.text = "Password not valid"
@@ -225,6 +241,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                 }
                 else {
                     error.text = "User not valid"
+                    print("User not valid  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
                 }
             }
         } // *******
@@ -237,6 +254,12 @@ class StartViewController: UIViewController, LoginButtonDelegate {
 //        micro.setTitle("start", for: .normal)
 //        micro.tintColor = .red
         db.insertFeedback(feedback: label.text!)
+        saveB.isHidden = true
+        thanksI.isHidden = false
+        label.isHidden = true
+        micro.isHidden = true
+        textFeedback.isHidden = true
+        imageL.isHidden = true
     }
     
     // MARK: FUNCTIONS
