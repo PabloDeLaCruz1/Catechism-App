@@ -10,29 +10,29 @@ import UserNotifications
 import EventKit
 
 class DashboardViewController: UIViewController {
-    
-    
+
+
     @IBOutlet weak var scoreFirst: UILabel!
     @IBOutlet weak var scoreSecond: UILabel!
     @IBOutlet weak var scordThird: UILabel!
     @IBOutlet weak var nameFirst: UILabel!
     @IBOutlet weak var nameSecond: UILabel!
     @IBOutlet weak var nameThird: UILabel!
-    
 
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
+
     @IBOutlet weak var technology: UILabel!
-    
-  
-    
+
+
+
     @IBOutlet weak var susO: UIButton!
     @IBAction func susB(_ sender: Any) {
-        
+
         sendNotification()
         getAuth()
         susO .isEnabled = false
@@ -41,11 +41,13 @@ class DashboardViewController: UIViewController {
         goNextView(nameView: "login")
     }
     let quizSessions = DBHelper.init().getQuizSessionsScore()
-    var imageV1 : UIView!
-    var imageV2 : UIView!
-    var imageV3 : UIView!
-    
-    
+    let Users = DBHelper.init().getUsers()
+
+    var imageV1: UIView!
+    var imageV2: UIView!
+    var imageV3: UIView!
+    var UsersDict = [[String: Int]]()
+
     override func viewDidLoad() {
         super.viewDidLoad()
         UNUserNotificationCenter.current().delegate = self
@@ -55,47 +57,104 @@ class DashboardViewController: UIViewController {
         getScoreData()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
+        for (i, user) in Users.enumerated() {
+//            user.scoresBySubject = getUserTotalScoreBySubjectById(id: user.id)
+            print(user.scoresBySubject)
+            if user.scoresBySubject == [:] {break}
+//            for u in user.
+            UsersDict.append(user.scoresBySubject)
+//            print(UsersDict[i][""])
+            
+            print(Array(user.scoresBySubject)[i].key)
+//            , Array(User.scoresBySubject)[indexPath.row].value, Array(User.scoresBySubject).count,
+        }
+
+        print("Users Dictioanry ------", UsersDict)
+//        rankUsers(userDict: UsersDict)
+        
+        
+       
+//        print("SORTED Dictioanry ------", sortedByValueArray)
+
         
     }
-    
-    var ScoreArray :  [String] = ["95","80","70","80","78","68","100","80","70"]
+
+//    func rankUsers(userDict: [[String: Int]]) {
+//        var topBySubject = [String: Int]()
+//        for currentUser in userDict{
+//            for subjects in currentUser{
+//                if topBySubject[subjects.key] == nil{
+//                    topBySubject[subjects.key] == subjects.value
+//                } else {
+//                    if topBySubject[subjects.key]! < subjects.value{
+//                        topBySubject[subjects.key] = subjects.value
+//                    }
+//                }
+//                print(subjects.key)
+//                print(subjects.value)
+//
+//            }
+//        }
+//
+//        print(topBySubject)
+//    }
+
+//    func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
+//        var score = 0
+//        var userScoreBySubject = [String: Int]()
+//
+//        for q in quizSessions {
+//            if q.userId == id {
+//                score += q.score
+//
+//                if userScoreBySubject[q.subjectName] == nil {
+//                    userScoreBySubject[q.subjectName] = q.score
+//                } else {
+//                    userScoreBySubject[q.subjectName]! += q.score
+//                }
+//            }
+//        }
+//        return userScoreBySubject;
+//    }
+
+    var ScoreArray: [String] = ["95", "80", "70", "80", "78", "68", "100", "80", "70"]
     // MARK: CALENDAR
-    
-    
+
+
     // MARK: FUNCTIONS
     func goNextView(nameView: String) {
         if (nameView == "login") {
-            
+
             let displayVC: StartViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "loginView") as! StartViewController
-            
+
             displayVC.showFeedback = true
-    
+
             self.present(displayVC, animated: true, completion: nil)
         } else {
             print("no")
         }
     }
-    
-    
-    
-    
-    
-    
-    
-    func getAuth(){
+
+
+
+
+
+
+
+    func getAuth() {
         let eStore = EKEventStore()
-        switch EKEventStore.authorizationStatus(for: .event){
-        case .authorized :
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .authorized:
             addEvent(est: eStore)
             print("accses  ")
         case .denied:
             print("accses denied")
-        case .notDetermined :
-            eStore.requestAccess(to: .event, completion: {granted, err in
+        case .notDetermined:
+            eStore.requestAccess(to: .event, completion: { granted, err in
                 if granted {
                     self.addEvent(est: eStore)
                 }
-                else{
+                else {
                     print("no acces granted")
                 }
             })
@@ -103,257 +162,257 @@ class DashboardViewController: UIViewController {
             print("")
         }
     }
-    
-    func addEvent(est : EKEventStore){
+
+    func addEvent(est: EKEventStore) {
         let cl = est.calendars(for: .event)
-        for c in cl{
-            if c.title == "Calendar"{
+        for c in cl {
+            if c.title == "Calendar" {
                 let sdt = Date()
                 let edt = sdt.addingTimeInterval(200)
                 let event = EKEvent(eventStore: est)
                 event.calendar = c
-                let intr : TimeInterval = -2 * 60
+                let intr: TimeInterval = -2 * 60
                 let alrm = EKAlarm(relativeOffset: intr)
-                event.alarms = [ alrm ]
+                event.alarms = [alrm]
                 event.title = "Initial Catechism, Suscription Free"
                 event.startDate = sdt
                 event.endDate = edt
                 do {
                     try est.save(event, span: .thisEvent)
                 }
-                catch{
+                catch {
                 }
             }
         }
     }
-    
-    
-    
+
+
+
     // MARK: NOTIFICATION USER
-    
-    
-    func sendNotification(){
+
+
+    func sendNotification() {
         print("Notification ini")
-        UNUserNotificationCenter.current().getNotificationSettings{ notifs in
-            
-            switch notifs.authorizationStatus{
-            case .notDetermined :
-                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]){
-                    granted , err in
+        UNUserNotificationCenter.current().getNotificationSettings { notifs in
+
+            switch notifs.authorizationStatus {
+            case .notDetermined:
+                UNUserNotificationCenter.current().requestAuthorization(options: [.alert, .sound, .badge]) {
+                    granted, err in
                     if let error = err {
                         print("request faile", error)
                     }
                     self.generateNotification()
                 }
-                
+
             case .authorized:
-                
+
                 self.generateNotification()
-            case .denied :
+            case .denied:
                 print("app not allowed")
-            default :
+            default:
                 print("")
             }
-            
+
         }
     }
-    
-    func generateNotification(){
+
+    func generateNotification() {
         let ncont = UNMutableNotificationContent()
         print("generateNotification ini")
         ncont.title = "Congratulation"
         ncont.subtitle = "from Catechism"
         ncont.body = "You win a Free Suscription for 3 months, we will add the starting date to your calendar"
-       // ncont.sound = UNNotificationSound.default
-        
+        // ncont.sound = UNNotificationSound.default
+
         let ntrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
         let nreq = UNNotificationRequest(identifier: "User_Local_notification", content: ncont, trigger: ntrigger)
-        
+
         UNUserNotificationCenter.current().add(nreq) { err in
             if let error = err {
-                print("can add notification request", error )
+                print("can add notification request", error)
             }
         }
-        
+
     }
-    
-    
-    
-    
-    
-    
+
+
+
+
+
+
     //MARK: GRAPH
-    func graph(){
+    func graph() {
         //
         imageV1 = UIView()
         imageV1.backgroundColor = UIColor.blue
         imageV1.frame = CGRect(x: 80, y: 470, width: 50, height: 130)
         self.view.addSubview(imageV1)
-        
-        
+
+
         imageV2 = UIView()
         imageV2.backgroundColor = UIColor.blue
         imageV2.frame = CGRect(x: 185, y: 410, width: 50, height: 190)
         self.view.addSubview(imageV2)
-        
+
         imageV3 = UIView()
         imageV3.backgroundColor = UIColor.blue
         imageV3.frame = CGRect(x: 290, y: 500, width: 50, height: 100)
         self.view.addSubview(imageV3)
-        
+
     }
     // ************
     // Queue GCD  QoS
-    func getScoreData(){
+    func getScoreData() {
         // ***
         for d in quizSessions {
-            print("DispatchQueue.main.async:", d.id, "userId: ", d.userId, "score:", d.score, "Technology",d.subjectName)
+            print("DispatchQueue.main.async:", d.id, "userId: ", d.userId, "score:", d.score, "Technology", d.subjectName)
         }
     }
-  
+
     @IBAction func t1B(_ sender: Any) {
-        rankT1(t : "IOS")
+        rankT1(t: "IOS")
     }
-    
+
     @IBAction func t2B(_ sender: Any) {
-        rankT2(t : "MATH")
+        rankT2(t: "MATH")
     }
-    
-    
+
+
     @IBAction func t3B(_ sender: Any) {
-        rankT3(t : "DATA BASE")
+        rankT3(t: "DATA BASE")
     }
     // ***********************************************
-    func rankT1( t : String){
+    func rankT1(t: String) {
         //DBHELPER
         var cont = 1
         for d in quizSessions {
             print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
-            switch cont{
-              
+            switch cont {
+
             case 1:
                 technology.text = t //d.subjectName
                 scoreFirst.text = ScoreArray[0]
-                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "David"
                 for n in getUserById1 {
                     print("Entrooooooo00000000000000000000000000o")
-                    nameFirst.text =   n.name // "Pablo"//d.name
+                    nameFirst.text = n.name // "Pablo"//d.name
                 }
-              
+
                 cont = cont + 1
             case 2:
                 nameSecond.text = "Pablo"
-                scoreSecond.text =  ScoreArray[1]
-                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                scoreSecond.text = ScoreArray[1]
+                let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text =   n.name // "Pablo"//d.name
+                    nameSecond.text = n.name // "Pablo"//d.name
                 }
-        
+
                 cont = cont + 1
             case 3:
                 scordThird.text = ScoreArray[2]
                 nameThird.text = "Young"
-                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text =   n.name // "Pablo"//d.name
+                    nameThird.text = n.name // "Pablo"//d.name
                 }
                 cont = cont + 1
-            default :
+            default:
                 print("f")
             }
-            
+
         }
     }
-    
-    func rankT2( t : String){
+
+    func rankT2(t: String) {
         //DBHELPER
         var cont = 1
         for d in quizSessions {
             print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
-            switch cont{
-              
+            switch cont {
+
             case 1:
                 technology.text = t //d.subjectName
-                scoreFirst.text =  ScoreArray[3]
-                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                scoreFirst.text = ScoreArray[3]
+                let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "Luis"
                 for n in getUserById1 {
                     print("Entrooooooo00000000000000000000000000o")
-                    nameFirst.text =   n.name // "Pablo"//d.name
+                    nameFirst.text = n.name // "Pablo"//d.name
                 }
-              
+
                 cont = cont + 1
             case 2:
                 nameSecond.text = "Daniel"
-                scoreSecond.text =  ScoreArray[4]
-                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                scoreSecond.text = ScoreArray[4]
+                let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text =   n.name // "Pablo"//d.name
+                    nameSecond.text = n.name // "Pablo"//d.name
                 }
-        
+
                 cont = cont + 1
             case 3:
-                scordThird.text =  ScoreArray[5]
+                scordThird.text = ScoreArray[5]
                 nameThird.text = "Melany"
-                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text =   n.name // "Pablo"//d.name
+                    nameThird.text = n.name // "Pablo"//d.name
                 }
                 cont = cont + 1
-            default :
+            default:
                 print("f")
             }
-            
+
         }
     }
-    
-    func rankT3( t : String){
+
+    func rankT3(t: String) {
         //DBHELPER
         var cont = 1
         for d in quizSessions {
-            switch cont{
-              
+            switch cont {
+
             case 1:
                 technology.text = t //d.subjectName
-                scoreFirst.text =  ScoreArray[6]
-                let getUserById1  = DBHelper.init().getUserById(id: d.userId)
+                scoreFirst.text = ScoreArray[6]
+                let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "Richard"
                 for n in getUserById1 {
-                    nameFirst.text =   n.name // "Pablo"//d.name
+                    nameFirst.text = n.name // "Pablo"//d.name
                 }
-              
+
                 cont = cont + 1
             case 2:
                 nameSecond.text = "Analy"
-                scoreSecond.text =  ScoreArray[7]
-                let getUserById2  = DBHelper.init().getUserById(id: d.userId)
+                scoreSecond.text = ScoreArray[7]
+                let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text =   n.name // "Pablo"//d.name
+                    nameSecond.text = n.name // "Pablo"//d.name
                 }
-        
+
                 cont = cont + 1
             case 3:
-                scordThird.text =  ScoreArray[8]
+                scordThird.text = ScoreArray[8]
                 nameThird.text = "Boris"
-                let getUserById3  = DBHelper.init().getUserById(id: d.userId)
+                let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text =   n.name // "Pablo"//d.name
+                    nameThird.text = n.name // "Pablo"//d.name
                 }
                 cont = cont + 1
-            default :
+            default:
                 print("f")
             }
-            
+
         }
     }
-    
-    
-    
+
+
+
 }
 
-extension DashboardViewController : UNUserNotificationCenterDelegate{
-    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {  print("userNotificationCenter ini")
+extension DashboardViewController: UNUserNotificationCenterDelegate {
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) { print("userNotificationCenter ini")
         completionHandler([.alert])
     }
 }
