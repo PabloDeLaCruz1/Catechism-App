@@ -207,17 +207,17 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     }
     
     @IBAction func loginButton(_ sender: Any) {
-        
+        var found = "N"
         if validateData() {
             // ***
             //DBHELPER
             let data = DBHelper.init().getUsers() //  .inst.read()
             for d in data {
-                
+                if  found == "N" {
                 if (d.name == userText.text!) && (userText.text! != "") {
                     if (d.password == userPasswordText.text!) {
                         if (d.subscriptionType != 3){
-                            
+                        found  = "S"
                         thanksI.isHidden = true
                         imageL.isHidden  = false
                         label.isHidden   = true
@@ -232,16 +232,21 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         self.present(displayVC, animated: true, completion: nil)
                         print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
                         }else{
+                            print("Bloked user")
                             error.text = "User Blocked, call admin"
+                           
                         }
                     } // ****
                     else {
                         error.text = "Password not valid"
+                        
                     }
                 }
                 else {
-                    error.text = "User not valid"
+                    error.text = "User not valid or blocked"
                     print("User not valid  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
+                    
+                }
                 }
             }
         } // *******
