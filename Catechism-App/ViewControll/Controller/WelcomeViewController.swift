@@ -10,9 +10,9 @@ import UIKit
 class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
    
     //MARK: Variables
-    var userWelcome = ""
-    var idWellcome = 0
-    var susWelcome = ""
+    var userWelcome = ""  // username comes login page
+    var idUserWelcome = 0   // id USer
+    var susWelcome = "" // suscription
     var userData = Users()
     //MARK: IBOutlet
     @IBOutlet weak var userName: UILabel!
@@ -30,7 +30,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         userName.text! = userWelcome
-        idUserL.text! = String(idWellcome)
+        idUserL.text! = String(idUserWelcome)
         suscriptionL.text! = susWelcome
         quizB.layer.cornerRadius = 20
         dashB.layer.cornerRadius = 20
