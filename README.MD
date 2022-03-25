@@ -5,13 +5,9 @@ Scrum Master & Product Owner: Pablo De La Cruz
 Developer: David Gonzales 
 Developer: Young 
 
-Discord
-Scrum Board
-Powerpoint
-
-
-
-![app icon](https://i.ibb.co/m57j04R/appIcon.png)
+[Discord](https://discord.gg/y97wuMPF).
+[Scrum Board](https://trello.com/b/3ZU4qfOY/agile-controller-board).
+[Powerpoint](https://revaturetech-my.sharepoint.com/:p:/g/personal/david623_revature_net/EVrcKQWz1ZJBmk9TqdAzpOQBCHEpvpRD9_gnyRvTrsCDSg?e=r0ncec).
 
 
 ##Group Norms:
@@ -26,14 +22,14 @@ If you see a problem that others haven't noticed, bring it to someone's attentio
 
 ##Solution:
 
+![app icon](https://i.ibb.co/ZYCxbty/simulator-screenshot-D66-D78-B4-93-D1-4-AC1-AB3-C-2-BA7-D09214-E2.png)
+
 ##Technology Stack:
 SQLite
 Swift
 SwiftLint 
 
-
 ##Requirements /Backlog
-
 
 List requirements. Break down big requirements into small parts that will allow us to write a user story for each requirement and add it to the Scrum Board under Backlog. 
 
@@ -51,6 +47,8 @@ Application View Flow Chart (StoryBoard):
 Boilerplate/ Skeleton (github) 
 Use Sketch to envision the final look of the product. (Optional)
 
+![app icon](https://i.ibb.co/znsG8C4/simulator-screenshot-1-C9-AE26-A-2586-4-F0-F-B8-AB-FDCB503-E3-A26.png)
+![app icon](https://i.ibb.co/61bzxj8/simulator-screenshot-98402539-7-C5-D-4878-846-B-675643-A628-B6.png)
 
 ##Development
 
