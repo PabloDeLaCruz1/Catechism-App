@@ -537,6 +537,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="idUser" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gm9-RF-fUC">
+                                <rect key="frame" x="57" y="791" width="50" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="e9m-KZ-osL"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -545,6 +552,7 @@
                     <connections>
                         <outlet property="adminB" destination="7FH-TX-6fo" id="8Qs-BD-xS4"/>
                         <outlet property="dashB" destination="neg-m8-YaK" id="f3F-Vt-PvV"/>
+                        <outlet property="idUserL" destination="Gm9-RF-fUC" id="J61-Dt-dVc"/>
                         <outlet property="paidB" destination="STN-mL-Huy" id="nLF-Vp-ZrF"/>
                         <outlet property="quizB" destination="YcT-YM-Ixd" id="zcV-lT-qkG"/>
                         <outlet property="suscriptionL" destination="Z6p-Lj-RkA" id="601-vL-ofd"/>

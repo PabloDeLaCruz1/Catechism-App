@@ -11,6 +11,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
    
     //MARK: Variables
     var userWelcome = ""
+    var idWellcome = 0
     var susWelcome = ""
     var userData = Users()
     //MARK: IBOutlet
@@ -21,6 +22,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
     @IBOutlet weak var adminB: UIButton!
     @IBOutlet weak var paidB: UIButton!
     
+    @IBOutlet weak var idUserL: UILabel!
     @IBOutlet weak var userProfile: UIImageView!
     
     //MARK: Functions
@@ -28,6 +30,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
         super.viewDidLoad()
         
         userName.text! = userWelcome
+        idUserL.text! = String(idWellcome)
         suscriptionL.text! = susWelcome
         quizB.layer.cornerRadius = 20
         dashB.layer.cornerRadius = 20
