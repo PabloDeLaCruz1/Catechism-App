@@ -5,6 +5,9 @@
 //  Created by Abdinasir Hussein on 25/02/2018.
 //  Copyright © 2018 Abdinasir Hussein. All rights reserved.
 //
+//
+//Adapted by Ju on 3/12/2022 for non commercial purpose.
+// All rights of the creator respected.
 
 import UIKit
 
@@ -14,10 +17,7 @@ protocol QuizCVCellDelegate: AnyObject {
 
 class QuizCVCell: UICollectionViewCell {
     
-    var btn1: UIButton!
-    var btn2: UIButton!
-    var btn3: UIButton!
-    var btn4: UIButton!
+    var btn1, btn2, btn3, btn4: UIButton!
     var btnsArray = [UIButton]()
     
     weak var delegate: QuizCVCellDelegate?
@@ -25,7 +25,6 @@ class QuizCVCell: UICollectionViewCell {
     var question: QuestionFetched? {
         didSet {
             guard let unwrappedQue = question else { return }
-//            guard let unwrappedQue = firstAnswer else { return }
             lblQue.text = unwrappedQue.question
             btn1.setTitle(unwrappedQue.choices[0], for: .normal)
             btn2.setTitle(unwrappedQue.choices[1], for: .normal)
@@ -51,6 +50,7 @@ class QuizCVCell: UICollectionViewCell {
     @objc func btnOptionAction(sender: UIButton) {
         guard let unwrappedQue = question else { return }
         if !unwrappedQue.isAnswered {
+            print(sender.tag)
             delegate?.didChooseAnswer(btnIndex: sender.tag)
         }
     }
@@ -67,22 +67,22 @@ class QuizCVCell: UICollectionViewCell {
         lblQue.topAnchor.constraint(equalTo: self.topAnchor, constant: 50).isActive=true
         lblQue.leftAnchor.constraint(equalTo: self.leftAnchor, constant: 12).isActive=true
         lblQue.rightAnchor.constraint(equalTo: self.rightAnchor, constant: -12).isActive=true
-        lblQue.heightAnchor.constraint(equalToConstant: 300).isActive=true
+        lblQue.heightAnchor.constraint(equalToConstant: 200).isActive=true
         
-        let btnWidth: CGFloat = 160
-        let btnHeight: CGFloat = 160
+        let btnWidth: CGFloat = 150
+        let btnHeight: CGFloat = 150
         btn1 = getButton(tag: 0)
         addSubview(btn1)
         NSLayoutConstraint.activate([btn1.topAnchor.constraint(equalTo: lblQue.bottomAnchor, constant: 20), btn1.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn1.widthAnchor.constraint(equalToConstant: btnWidth), btn1.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn1.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn2 = getButton(tag: 1)
-        addSubview(btn2)
+      addSubview(btn2)
         NSLayoutConstraint.activate([btn2.topAnchor.constraint(equalTo: btn1.topAnchor), btn2.leftAnchor.constraint(equalTo: self.centerXAnchor, constant: 10), btn2.widthAnchor.constraint(equalToConstant: btnWidth), btn2.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn2.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
         btn3 = getButton(tag: 2)
-        addSubview(btn3)
+       addSubview(btn3)
         NSLayoutConstraint.activate([btn3.topAnchor.constraint(equalTo: btn1.bottomAnchor, constant: 20), btn3.rightAnchor.constraint(equalTo: self.centerXAnchor, constant: -10), btn3.widthAnchor.constraint(equalToConstant: btnWidth), btn3.heightAnchor.constraint(equalToConstant: btnHeight)])
         btn3.addTarget(self, action: #selector(btnOptionAction), for: .touchUpInside)
         
@@ -111,6 +111,7 @@ class QuizCVCell: UICollectionViewCell {
         btn.titleLabel?.minimumScaleFactor = 0.2;
         btn.titleLabel?.baselineAdjustment = .alignBaselines
 //            btn.titleLabel!.frame.size
+        
 
         return btn
     }
@@ -121,8 +122,8 @@ class QuizCVCell: UICollectionViewCell {
         lbl.text="This is a question and you have to answer it?"
         lbl.textColor=UIColor.black
         lbl.textAlignment = .center
-        lbl.font = UIFont.systemFont(ofSize: 33)
-        lbl.numberOfLines=8
+        lbl.font = UIFont.systemFont(ofSize: 25)
+        lbl.numberOfLines=5
         lbl.translatesAutoresizingMaskIntoConstraints=false
         return lbl
     }()
