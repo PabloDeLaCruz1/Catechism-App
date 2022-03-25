@@ -8,14 +8,13 @@
 import UIKit
 
 class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
-    
+
 //    let db = DBHelper.init()
     let questionsSubjects = DBHelper.init().getQuestions()
 
     @IBOutlet weak var tableView: UITableView!
     let button = UIButton()
     var boolToggler = true
-    let url = URL(string: "https://picsum.photos/400/600?random=1")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,9 +26,9 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
         button.frame = CGRect(x: 15, y: 90, width: 400, height: 50)
         button.setBackgroundImage(image, for: UIControl.State.normal)
         button.layer.cornerRadius = 30
-        button.addTarget(self, action:#selector(self.imageButtonTapped(_:)), for: .touchUpInside)
+        button.addTarget(self, action: #selector(self.imageButtonTapped(_:)), for: .touchUpInside)
         self.view.addSubview(button)
-        
+
         if tableView != nil {
             self.view.addSubview(tableView)
 
@@ -41,52 +40,56 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
     @IBAction func backButton(_ sender: Any) {
         self.dismiss(animated: true)
     }
-    
-    @objc func imageButtonTapped(_ sender:UIButton!){
-        if boolToggler{
+
+    @objc func imageButtonTapped(_ sender: UIButton!) {
+        if boolToggler {
             let image = UIImage(named: "pastViewToggler.png")
             button.setBackgroundImage(image, for: UIControl.State.normal)
             boolToggler = false
-        }else{
+        } else {
             let image = UIImage(named: "newViewToggler.png")
             button.setBackgroundImage(image, for: UIControl.State.normal)
             boolToggler = true
         }
     }
-    
+
     func numberOfSections(in tableView: UITableView) -> Int {
-       return 1
+        return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 10
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-       return 180
+        return 180
     }
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "QuizTableViewCell") as! QuizTableViewCell
-//        cell.randomImgView.image = URLIm
         
-        let data = try? Data(contentsOf: url!)
-
-        if let imageData = data {
-            cell.randomImgView.image = UIImage(data: imageData)
-            
-        }
-        cell.quizTitleLabel.text = String(questionsSubjects[indexPath.row].subject_name)
-//        cell.quizTitleLabel.text = questionsSubjects.subject_name
-
-        cell.subTypeLabel.text = "Attempts: 2. Date: \(Date())"
+        let cell: QuizTableViewCell = tableView.dequeueReusableCell(withIdentifier: "QuizTableViewCell", for: indexPath) as! QuizTableViewCell
         
-        
+        self.configureCell(cell: cell, indexPath: indexPath)
         return cell
-
     }
-    
 
-    
-    func seedData(){
+    private func configureCell(cell: QuizTableViewCell, indexPath: IndexPath) {
+
+        //MARK: need to save images for reuse so cell lag gets fixed. 
+            let url = URL(string: "https://picsum.photos/400/600?random=1")
+
+            let data = (try? Data(contentsOf: url!))!
+            let imagedata = UIImage(data: data)
+            
+            let subjectName = String(self.questionsSubjects[indexPath.row].subject_name)
+            let date = "Attempts: 2. Date: \(Date().formatted())"
+            
+            cell.randomImgView.image = imagedata
+            cell.quizTitleLabel.text = subjectName
+            cell.subTypeLabel.text = date
+            
+    }
+
+    func seedData() {
         DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
         DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)
         DBHelper.init().insertQuestions(subjectName: "iOS", questionText: "what is ", correctAnswer: 1)

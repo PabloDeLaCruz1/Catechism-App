@@ -44,7 +44,15 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
         profileAvatar.layer.cornerRadius = profileAvatar.frame.size.width / 2
         profileAvatar.clipsToBounds = true
         // Do any additional setup after loading the view.
+
         print(User.id)
+        print(User.name)
+        print(User.scoresBySubject)
+        print(User.subscriptionType)
+        print(User.password)
+
+
+
         userNameLabel.text = "\(User.name)'s Detail View!"
 
         self.view.addSubview(tableView)
