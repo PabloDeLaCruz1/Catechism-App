@@ -33,4 +33,10 @@ class QuizTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
 
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        self.randomImgView.image = nil
+        self.subTypeLabel.text = nil
+        self.quizTitleLabel.text = nil
+    }
 }
