@@ -228,7 +228,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                         displayVC.userData = d
                         displayVC.userWelcome = userText.text!
                         displayVC.susWelcome = String(d.subscriptionType)
-                        displayVC.idWellcome = d.id
+                        displayVC.idUserWelcome = d.id
                         displayVC.modalPresentationStyle = .fullScreen
                         self.present(displayVC, animated: true, completion: nil)
                         print("Exxiste  id:***********************:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
