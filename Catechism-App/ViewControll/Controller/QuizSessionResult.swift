@@ -10,6 +10,8 @@ import UIKit
 
 class QuizSessionResult: UIViewController {
     
+    let db = DBHelper()
+//    let loginUser = Users
     var score: Int?
     var totalScore: Int?
     
@@ -45,8 +47,16 @@ class QuizSessionResult: UIViewController {
         lblRating.textColor=color
     }
     
+//    func checkFree(uid: Int, numberOfTrial: Int) {  //TODO
+//
+//    }
+    
+    
+    
     @objc func btnRestartAction() {
-        self.navigationController?.popToRootViewController(animated: true)
+        if !(db.checkFree(gameUser: 0) > 2) {
+            self.navigationController?.popToRootViewController(animated: true)
+        }
     }
     
     func setupViews() {

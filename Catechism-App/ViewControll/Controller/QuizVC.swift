@@ -20,19 +20,18 @@ struct QuestionFetched {
 }
 
 class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
-//    var db = DBConnector()
     var questions = Array<QuestionSet>()
     var answersCV: UICollectionView!
     var questionsArray = [QuestionFetched]()
     var score: Int = 0
     var currentQuestionNumber = 1
-    var typeChosen = 0
+    var typeChosen = ""
     
-//            let    questions = DBConnector.init().get5Quizes()
-   // let users =  DBHelper.init().getUsers()
     var window: UIWindow?
-    override func viewDidLoad() {
-        super.viewDidLoad()
+    
+    override func loadView() {
+        super.loadView()
+        print("quiz received")
         self.title="QuizOne"
         self.view.backgroundColor=UIColor.white
         
@@ -43,7 +42,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
         
-        questions = DBConnector.init().get5Quizes(type: typeChosen)  //TODO To accept the parameter value from users.
+        questions = DBHelper.init().get5Quizes(type: typeChosen)  //TODO To accept the parameter value from users.
 
         answersCV=UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), collectionViewLayout: layout)
         answersCV.delegate=self
@@ -76,7 +75,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
+//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) { //TODO Investigating.
 //        setQuestionNumber()
 //    }
 //
@@ -113,9 +112,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func moveToFrame(contentOffset : CGFloat) {
-        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height)
-//        let frame: CGRect = CGRect(x : self.answersCV.contentOffset.x,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height)
-        self.answersCV.scrollRectToVisible(frame, animated: true)
+        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height) //TODO Some adjustment needed.
+        self.answersCV.scrollRectToVisible(frame, animated: true)  //TODO Some adjustment needed.
     }
     
     func setupViews() {
@@ -199,7 +197,7 @@ extension QuizVC: QuizCVCellDelegate {
         questionsArray[index.item].isAnswered=true
         if questionsArray[index.item].correctAnswer != btnIndex {
             questionsArray[index.item].wrongAnswer = btnIndex
-            score -= 1
+            score = 0
             DispatchQueue.global().async { AudioSounds.incorrect?.play() }
         } else {
             score += 1
