@@ -13,10 +13,10 @@ class DBHelper {
 
     init() {
         db = openDatabase()
-//        createUsersTable()
-//        createQuizSessionsTable()
-//        createQuestionsTable()
-//        createAnswersTable()
+        createUsersTable()
+        createQuizSessionsTable()
+        createQuestionsTable()
+        createAnswersTable()
     }
 
     let dbPath: String = "catechism.sqlite"
@@ -257,4 +257,58 @@ class DBHelper {
         }
         sqlite3_finalize(recordScoreStmt)
     }
+    
+    func createFeedbackTable() {
+            let createTableString = "CREATE TABLE IF NOT EXISTS Feedback(feedback TEXT);"
+            var createTableStatement: OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, createTableString, -1, &createTableStatement, nil) == SQLITE_OK {
+                if sqlite3_step(createTableStatement) == SQLITE_DONE {
+                    print("Feedback table created.")
+                } else {
+                    print("Feedback table could not be created.")
+                }
+            } else {
+                print("CREATE TABLE statement could not be prepared.")
+            }
+            sqlite3_finalize(createTableStatement)
+        }
+
+        func insertFeedback(feedback: String ) {
+            let insertStatementString = "INSERT INTO Feedback( feedback) VALUES (?);"
+            var insertStatement: OpaquePointer? = nil
+            if sqlite3_prepare_v2(db, insertStatementString, -1, &insertStatement, nil) == SQLITE_OK {
+    //            sqlite3_bind_int(insertStatement, 1, Int32(id))
+                sqlite3_bind_text(insertStatement, 1, (feedback  as NSString).utf8String, -1, nil)
+
+
+                if sqlite3_step(insertStatement) == SQLITE_DONE {
+                    print("Successfully inserted row in feedback.")
+                } else {
+                    print("Could not insert row.")
+                }
+            } else {
+                print("INSERT statement could not be prepared.")
+            }
+            sqlite3_finalize(insertStatement)
+        }
+    func getFeedback() -> [Feedback] {
+            let queryStatementString = "SELECT * FROM feedback;"
+            var queryStatement: OpaquePointer? = nil
+            var psns: [Feedback] = []
+            if sqlite3_prepare_v2(db, queryStatementString, -1, &queryStatement, nil) == SQLITE_OK {
+                while sqlite3_step(queryStatement) == SQLITE_ROW {
+
+                    let feedback = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
+
+                    psns.append(Feedback(feedback: feedback))
+                   // psns.append(Users(id: Int(id), name: name, password: password, subscriptionType: Int(subscriptionType)))
+                    print("Query Result Feedback:")
+                    print("\(feedback)")
+                }
+            } else {
+                print("SELECT statement could not be prepared")
+            }
+            sqlite3_finalize(queryStatement)
+            return psns
+        }
 }
