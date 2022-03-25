@@ -21,7 +21,7 @@ class AdminViewController: UIViewController {
 
         print("Hello Admin!!!-------------------")
         // Do any additional setup after loading the view.
-       // populateDataForTesting()
+        populateDataForTesting()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
         
         createQuizBtn.layer.cornerRadius = 40
@@ -58,15 +58,17 @@ class AdminViewController: UIViewController {
         db.deleteByIDandTable(id: 4, table: "Quiz_Sessions")
         db.deleteByIDandTable(id: 5, table: "Quiz_Sessions")
 
-//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-//        print("LAST ID -------------------------------------------------------")
-//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-//        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
-//
-//        db.insertUsers(name: "Young", password: "123", subscriptionType: 2)
-//        db.insertUsers(name: "David", password: "123", subscriptionType: 0)
+        db.insertUsers(name: "Pablo", password: "32", subscriptionType: 1)
+        db.insertUsers(name: "Pedro", password: "32", subscriptionType: 1)
+        print("LAST ID -------------------------------------------------------")
+        db.insertUsers(name: "Paul", password: "32", subscriptionType: 1)
+        db.insertUsers(name: "Paolo", password: "32", subscriptionType: 1)
+        db.insertUsers(name: "Pat", password: "32", subscriptionType: 1)
+
+        db.insertUsers(name: "Young", password: "123", subscriptionType: 2)
+        db.insertUsers(name: "David", password: "123", subscriptionType: 0)
+        db.insertUsers(name: "David2", password: "123", subscriptionType: 3)
+
         
         db.insertFeedback(feedback: "Pablo is the best developer in the world!")
         
@@ -84,6 +86,16 @@ class AdminViewController: UIViewController {
         db.insertQuizSessions(userId: 1, score: 3, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 2, score: 5, sessionDate: "Mar-17-2022", subjectName: "Math")
         db.insertQuizSessions(userId: 2, score: 2, sessionDate: "Mar-17-2022", subjectName: "Science")
+        db.insertQuizSessions(userId: 2, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
+        
+        db.insertQuizSessions(userId: 3, score: 4, sessionDate: "Mar-37-2022", subjectName: "Math")
+        db.insertQuizSessions(userId: 3, score: 4, sessionDate: "Mar-37-2022", subjectName: "English")
+        db.insertQuizSessions(userId: 3, score: 4, sessionDate: "Mar-37-2022", subjectName: "Science")
+        db.insertQuizSessions(userId: 3, score: 4, sessionDate: "Mar-37-2022", subjectName: "Science")
+        db.insertQuizSessions(userId: 3, score: 4, sessionDate: "Mar-37-2022", subjectName: "Math")
+        db.insertQuizSessions(userId: 3, score: 3, sessionDate: "Mar-37-2022", subjectName: "Math")
+        db.insertQuizSessions(userId: 2, score: 5, sessionDate: "Mar-37-2022", subjectName: "Math")
+        db.insertQuizSessions(userId: 2, score: 2, sessionDate: "Mar-37-2022", subjectName: "Science")
         db.insertQuizSessions(userId: 2, score: 4, sessionDate: "Mar-17-2022", subjectName: "Math")
 
     }

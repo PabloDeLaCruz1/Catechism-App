@@ -38,7 +38,7 @@ class DashboardViewController: UIViewController {
         susO .isEnabled = false
     }
     @IBAction func goLogin(_ sender: Any) {
-        goNextView(nameView: "login")
+        self.dismiss(animated: true)
     }
     let quizSessions = DBHelper.init().getQuizSessionsScore()
     let Users = DBHelper.init().getUsers()
