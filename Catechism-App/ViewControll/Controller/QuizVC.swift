@@ -50,7 +50,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         answersCV.register(QuizCVCell.self, forCellWithReuseIdentifier: "Cell")
 //        answersCV.showsHorizontalScrollIndicator = false
 //        answersCV.translatesAutoresizingMaskIntoConstraints=false
-        answersCV.backgroundColor=UIColor.yellow
+        answersCV.backgroundColor=UIColor.blue
         answersCV.isPagingEnabled = true
         
         
