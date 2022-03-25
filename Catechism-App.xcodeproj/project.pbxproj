@@ -218,8 +218,8 @@
 		2201373727DCEF37000F0C7C /* View */ = {
 			isa = PBXGroup;
 			children = (
-				78EB652527EA5C7600915F1B /* ReusableButton.swift */,
 				7818854A27E8DD7C007E7F58 /* QuizCVCell.swift */,
+				78EB652527EA5C7600915F1B /* ReusableButton.swift */,
 				FE74DD9127DCD0F400F33D69 /* Main.storyboard */,
 				2247308427E10DB2009085D5 /* StartStoryboard.storyboard */,
 				2247308A27E10E71009085D5 /* AdminStoryBoard.storyboard */,
