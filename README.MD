@@ -11,9 +11,7 @@ Powerpoint
 
 
 
-![app icon](https://ibb.co/Wv1h0fH)
-
-
+![app icon](https://i.ibb.co/m57j04R/appIcon.png)
 
 
 ##Group Norms:
