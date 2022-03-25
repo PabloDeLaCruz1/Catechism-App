@@ -10,6 +10,12 @@ Scrum Board
 Powerpoint
 
 
+
+![app icon](https://ibb.co/Wv1h0fH)
+
+
+
+
 ##Group Norms:
 Everyone is equally responsible for this great project. Roles are for practicing real world scenarios. 
 Strive to understand each other's perspectives, rather than jumping to conclusions
