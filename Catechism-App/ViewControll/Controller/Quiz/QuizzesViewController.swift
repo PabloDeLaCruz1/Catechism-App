@@ -11,11 +11,12 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
 
 //    let db = DBHelper.init()
     let questionsSubjects = DBHelper.init().getQuestions()
-
+    var userData = Users()
     @IBOutlet weak var tableView: UITableView!
     let button = UIButton()
     var boolToggler = true
-
+    var selectedSubject = ""
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -52,12 +53,30 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
             boolToggler = true
         }
     }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        let Users = self.Users[indexPath.row]
+//        Users.scoresBySubject = self.getUserTotalScoreBySubjectById(id: Users.id)
+        selectedSubject = String(self.questionsSubjects[indexPath.row].subject_name)
+        print("Selected subject----------------------", selectedSubject)
+        self.performSegue(withIdentifier: "ShowQuizViewController", sender: userData)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "ShowQuizViewController" {
+            if let nextVC = segue.destination as? ShowQuizViewController {
+                nextVC.selectedSubject = selectedSubject
+                nextVC.userData = sender as! Users
+                
+            }
+        }
+    }
 
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return 5
     }
 
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
@@ -89,12 +108,12 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
             
     }
 
-    func seedData() {
-        DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
-        DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)
-        DBHelper.init().insertQuestions(subjectName: "iOS", questionText: "what is ", correctAnswer: 1)
-        DBHelper.init().insertQuestions(subjectName: "GDC", questionText: "what is ", correctAnswer: 1)
-    }
+//    func seedData() {
+//        DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
+//        DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)
+//        DBHelper.init().insertQuestions(subjectName: "iOS", questionText: "what is ", correctAnswer: 1)
+//        DBHelper.init().insertQuestions(subjectName: "GDC", questionText: "what is ", correctAnswer: 1)
+//    }
 
 }
 

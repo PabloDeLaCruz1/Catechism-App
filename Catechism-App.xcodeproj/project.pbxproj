@@ -55,6 +55,7 @@
 		FE35FD7627EBC01600A369D2 /* FeedbackTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */; };
 		FE35FD7927EC53C400A369D2 /* QuizTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */; };
 		FE6467E627EC582E00795DB2 /* QuizzesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */; };
+		FE64680027F1B3A400795DB2 /* ShowQuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE6467FF27F1B3A400795DB2 /* ShowQuizViewController.swift */; };
 		FE74DD8C27DCD0F400F33D69 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */; };
 		FE74DD9027DCD0F400F33D69 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FE74DD8F27DCD0F400F33D69 /* ViewController.swift */; };
 		FE74DD9327DCD0F400F33D69 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FE74DD9127DCD0F400F33D69 /* Main.storyboard */; };
@@ -147,6 +148,7 @@
 		FE35FD7527EBC01600A369D2 /* FeedbackTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackTableViewController.swift; sourceTree = "<group>"; };
 		FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizTableViewCell.swift; sourceTree = "<group>"; };
 		FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QuizzesViewController.swift; sourceTree = "<group>"; };
+		FE6467FF27F1B3A400795DB2 /* ShowQuizViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowQuizViewController.swift; sourceTree = "<group>"; };
 		FE74DD8827DCD0F400F33D69 /* Catechism-App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Catechism-App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		FE74DD8B27DCD0F400F33D69 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FE74DD8F27DCD0F400F33D69 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -328,6 +330,7 @@
 			children = (
 				FE35FD7827EC53C400A369D2 /* QuizTableViewCell.swift */,
 				FE6467E527EC582E00795DB2 /* QuizzesViewController.swift */,
+				FE6467FF27F1B3A400795DB2 /* ShowQuizViewController.swift */,
 			);
 			path = Quiz;
 			sourceTree = "<group>";
@@ -619,6 +622,7 @@
 				78B3329627EE261F005B83C7 /* ChooseQuizTypeVC.swift in Sources */,
 				2247309127E10ECA009085D5 /* StartViewController.swift in Sources */,
 				78B3329B27EE26B5005B83C7 /* QuizCVCell.swift in Sources */,
+				FE64680027F1B3A400795DB2 /* ShowQuizViewController.swift in Sources */,
 				FE74DE7B27E404F900F33D69 /* QuizSessionsHelpers.swift in Sources */,
 				FE35FD7027EB900100A369D2 /* ScoresBySubjectTableViewCell.swift in Sources */,
 				2226EE7C27E5499D00A0B628 /* GraphRunningTimeView.swift in Sources */,

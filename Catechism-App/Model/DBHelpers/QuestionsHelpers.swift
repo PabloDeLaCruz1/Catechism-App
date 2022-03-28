@@ -62,8 +62,8 @@ extension DBHelper {
 
                 questions.append(Questions(id: Int(id), subject_name: subject_name, question_text: question_text, corrrect_answer: corrrect_answer))
 
-                print("Questions Sessions Query Result:")
-                print("\(id) | \(subject_name) | \(question_text) | \(corrrect_answer)")
+//                print("Questions Sessions Query Result:")
+//                print("\(id) | \(subject_name) | \(question_text) | \(corrrect_answer)")
             }
         } else {
             print("Questions Sessions SELECT statement could not be prepared")
