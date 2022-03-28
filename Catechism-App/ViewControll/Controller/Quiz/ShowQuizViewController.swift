@@ -41,6 +41,12 @@ class ShowQuizViewController: UIViewController {
         if questionsLeft == 0 {
             print("End of questions!, your total score was", score)
             //send to detail quiz result view before back to main screen.
+            
+            let displayVC : WelcomeViewController  = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as!  WelcomeViewController
+            displayVC.modalPresentationStyle = .fullScreen
+            displayVC.userData = self.userData
+            self.present(displayVC, animated: true, completion: nil)
+            
         } else {
 
             var currentQuestions = db.getQuestions()
