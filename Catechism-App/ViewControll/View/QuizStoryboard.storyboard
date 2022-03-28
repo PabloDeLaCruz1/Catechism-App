@@ -151,6 +151,13 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Mc-v4-kKX">
+                                <rect key="frame" x="207" y="83" width="201" height="48"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="dLy-qY-s27"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -164,6 +171,7 @@
                         <outlet property="questionLabel" destination="Kjw-tO-XFA" id="0ZB-6j-jRU"/>
                         <outlet property="subjectLabel" destination="paG-hZ-F5c" id="Iv0-C5-CGt"/>
                         <outlet property="submitBtn" destination="6WF-Kj-yrp" id="Cnx-85-jIr"/>
+                        <outlet property="timeLeftLabel" destination="6Mc-v4-kKX" id="bmH-B2-cGt"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aW-jG-Tfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

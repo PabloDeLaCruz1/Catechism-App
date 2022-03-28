@@ -6,6 +6,8 @@
 //
 
 import UIKit
+import Foundation
+
 
 class ShowQuizViewController: UIViewController {
 
@@ -18,6 +20,7 @@ class ShowQuizViewController: UIViewController {
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
 
+    @IBOutlet weak var timeLeftLabel: UILabel!
     let db = DBHelper.init()
 
     var userData = Users()
@@ -27,14 +30,39 @@ class ShowQuizViewController: UIViewController {
     var correctAnswer = 4
     var score = 0
     var questionsLeft = 5
+    
+    var timeLeft = 60 * 30
 
     override func viewDidLoad() {
         super.viewDidLoad()
         subjectLabel.text = selectedSubject
         questionLabel.numberOfLines = 0
         // Do any additional setup after loading the view.
-
+        
+        loadTimer()
         loadQuestionsAndAnswers()
+        self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+    }
+    
+    func loadTimer(){
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+                 print("timer fired!")
+
+            self.timeLeft -= 1
+           
+            
+            let (h,m,s) = self.secondsToHoursMinutesSeconds(self.timeLeft)
+            self.timeLeftLabel.text = "Time Left: \(h):\(m):\(s)"
+            print(self.timeLeft)
+            
+            if(self.timeLeft==0){
+                      timer.invalidate()
+                  }
+         }
+    }
+    
+    func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
+        return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 
     func loadQuestionsAndAnswers() {
@@ -88,6 +116,7 @@ class ShowQuizViewController: UIViewController {
         answer4Btn.tintColor = UIColor.systemBlue
 
         print("Answer 1 ")
+        loadTimer()
     }
 
 
