@@ -193,6 +193,12 @@ class DBHelper {
                 let thirdAnswerColumn = String(describing: String(cString: sqlite3_column_text(getFiveStmt, 6)))
                 let fourthAnswerColumn = String(describing: String(cString: sqlite3_column_text(getFiveStmt, 7)))
                 let correctAnswerColumn = sqlite3_column_int(getFiveStmt, 1)
+                print("get5Quiz ---", questionColumn)
+                print("get5Quiz ---", firstAnswerColumn)
+                print("get5Quiz ---", secondAnswerColumn)
+                print("get5Quiz ---", thirdAnswerColumn)
+                print("get5Quiz ---", correctAnswerColumn)
+
                 questions.append(QuestionSet(question: String(questionColumn), correctAnswer: Int(correctAnswerColumn),  wrongAnswer: 0, isAnswered: false, firstAnswer: String(firstAnswerColumn), secondAnswer: String(secondAnswerColumn), thirdAnswer: String(thirdAnswerColumn), fourthAnswer: String(fourthAnswerColumn)))
             }
         } else {
@@ -302,7 +308,6 @@ class DBHelper {
                     let feedback = String(describing: String(cString: sqlite3_column_text(queryStatement, 0)))
 
                     psns.append(Feedback(feedback: feedback))
-                   // psns.append(Users(id: Int(id), name: name, password: password, subscriptionType: Int(subscriptionType)))
                     print("Query Result Feedback:")
                     print("\(feedback)")
                 }

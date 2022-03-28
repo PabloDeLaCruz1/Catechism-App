@@ -9,21 +9,19 @@ import UIKit
 import MapKit
 import Eureka
 
-class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource  {
-    
+class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+
     var User = Users()
 
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var profileAvatar: UIImageView!
     @IBOutlet weak var mkMapView: MKMapView!
-
     @IBOutlet weak var userNameLabel: UILabel!
-    struct Scores {
-        var subjectsLabel  : String
-        var scoresLabel: String
-       
-    }
 
+    struct Scores {
+        var subjectsLabel: String
+        var scoresLabel: String
+    }
     let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
     let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
     let paris = Capital(title: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), info: "Often called the City of Light.")
@@ -32,10 +30,10 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        tableView.estimatedRowHeight = 50
-        
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
+
+        tableView.estimatedRowHeight = 50
         tableView.delegate = self
         tableView.dataSource = self
 
@@ -43,53 +41,64 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
 
         profileAvatar.layer.cornerRadius = profileAvatar.frame.size.width / 2
         profileAvatar.clipsToBounds = true
-        // Do any additional setup after loading the view.
 
-        print(User.id)
-        print(User.name)
-        print(User.scoresBySubject)
-        print(User.subscriptionType)
-        print(User.password)
-
-
-
+        User.scoresBySubject = getUserTotalScoreBySubjectById(id: User.id)
         userNameLabel.text = "\(User.name)'s Detail View!"
 
         self.view.addSubview(tableView)
-
     }
+
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return Array(User.scoresBySubject).count
     }
-    
-    
+
+    @IBAction func goHome(_ sender: Any) {
+        let displayVC: WelcomeViewController = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as! WelcomeViewController
+        displayVC.modalPresentationStyle = .fullScreen
+        displayVC.userData = self.User
+        displayVC.userWelcome = self.User.name
+        self.present(displayVC, animated: true, completion: nil)
+    }
+
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "ScoresBySubjectTableViewCell") as! ScoresBySubjectTableViewCell
-//        Array(myDict)[index].key
-        print(Array(User.scoresBySubject)[indexPath.row].key, Array(User.scoresBySubject)[indexPath.row].value, Array(User.scoresBySubject).count, "====================================")
-//        cell.subjectLabel.text = "hello"
-//        cell.scoreLabel.text = "score"
-        
-//        cell.subjectsLabel?.text = "hello"
-        var subjectsKey = Array(User.scoresBySubject)[indexPath.row].key
+        let subjectsKey = Array(User.scoresBySubject)[indexPath.row].key
         cell.subjectLabel.text = subjectsKey
         cell.scoreLabel.text = "\(User.scoresBySubject[subjectsKey]!)"
 
         return cell
     }
-    
-     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "HCell") as! HeaderCellForDetailTableViewCell
         headerCell.backgroundColor = UIColor.systemBlue
 
-   
+
 
         return headerCell
     }
 
+    func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
+        var score = 0
+        var userScoreBySubject = [String: Int]()
+        let quizSessions = DBHelper.init().getQuizSessions()
+        for q in quizSessions {
+            if q.userId == id {
+                score += q.score
+
+                if userScoreBySubject[q.subjectName] == nil {
+                    userScoreBySubject[q.subjectName] = q.score
+                } else {
+                    userScoreBySubject[q.subjectName]! += q.score
+                }
+            }
+        }
+        return userScoreBySubject;
+    }
 
     class Capital: NSObject, MKAnnotation {
         var title: String?
@@ -102,6 +111,5 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
             self.info = info
         }
     }
-
 
 }

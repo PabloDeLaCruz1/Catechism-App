@@ -62,8 +62,6 @@ extension DBHelper {
 
                 questions.append(Questions(id: Int(id), subject_name: subject_name, question_text: question_text, corrrect_answer: corrrect_answer))
 
-//                print("Questions Sessions Query Result:")
-//                print("\(id) | \(subject_name) | \(question_text) | \(corrrect_answer)")
             }
         } else {
             print("Questions Sessions SELECT statement could not be prepared")
@@ -71,10 +69,4 @@ extension DBHelper {
         sqlite3_finalize(queryStatement)
         return questions
     }
-
-//    func getLastInsertedId() -> Int {
-//        let queryStatementString = "SSELECT LAST_INSERT_ROWID();"
-//        var queryStatement: OpaquePointer? = nil
-//        var questions: Int = 0
-//    }
 }

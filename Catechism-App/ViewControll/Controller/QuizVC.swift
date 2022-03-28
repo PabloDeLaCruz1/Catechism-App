@@ -48,8 +48,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         answersCV.delegate=self
         answersCV.dataSource=self
         answersCV.register(QuizCVCell.self, forCellWithReuseIdentifier: "Cell")
-//        answersCV.showsHorizontalScrollIndicator = false
-//        answersCV.translatesAutoresizingMaskIntoConstraints=false
         answersCV.backgroundColor=UIColor.blue
         answersCV.isPagingEnabled = true
         
@@ -75,10 +73,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) { //TODO Investigating.
-//        setQuestionNumber()
-//    }
-//
     func setQuestionNumber() {
         let x = answersCV.contentOffset.x
         let w = answersCV.bounds.size.width

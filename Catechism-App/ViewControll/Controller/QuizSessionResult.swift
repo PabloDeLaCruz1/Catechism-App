@@ -11,7 +11,6 @@ import UIKit
 class QuizSessionResult: UIViewController {
     
     let db = DBHelper()
-//    let loginUser = Users
     var score: Int?
     var totalScore: Int?
     
@@ -46,12 +45,6 @@ class QuizSessionResult: UIViewController {
         lblRating.text = "\(rating)"
         lblRating.textColor=color
     }
-    
-//    func checkFree(uid: Int, numberOfTrial: Int) {  //TODO
-//
-//    }
-    
-    
     
     @objc func btnRestartAction() {
         if !(db.checkFree(gameUser: 0) > 2) {

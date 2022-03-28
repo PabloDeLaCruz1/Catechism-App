@@ -20,6 +20,8 @@ class Users {
         self.name = name
         self.password = password
         self.subscriptionType = subscriptionType
+        self.scoresBySubject = ["Math" : 0, "iOS": 0, "Science": 0]
+
     }
     
     init() {
@@ -27,5 +29,7 @@ class Users {
         self.name = "name"
         self.password = "password"
         self.subscriptionType = 4
+        
+        self.scoresBySubject = ["Math" : 0, "iOS": 0, "Science": 0]
     }
 }

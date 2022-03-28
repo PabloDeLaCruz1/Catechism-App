@@ -10,13 +10,12 @@ import UIKit
 class HeaderCellForDetailTableViewCell: UITableViewCell {
 
     @IBOutlet weak var subjectHeader: UILabel!
-    
-    
     @IBOutlet weak var totalScoreHeader: UILabel!
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
-        
+
         subjectHeader.text = "Subject:"
         totalScoreHeader.text = "Total Score:"
     }

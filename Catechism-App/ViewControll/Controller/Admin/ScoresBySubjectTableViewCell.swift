@@ -11,6 +11,7 @@ class ScoresBySubjectTableViewCell: UITableViewCell {
 
     @IBOutlet weak var scoreLabel: UILabel!
     @IBOutlet weak var subjectLabel: UILabel!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -21,6 +22,5 @@ class ScoresBySubjectTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-
     
 }

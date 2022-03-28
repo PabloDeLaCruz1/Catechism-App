@@ -18,17 +18,7 @@ class DashboardViewController: UIViewController {
     @IBOutlet weak var nameFirst: UILabel!
     @IBOutlet weak var nameSecond: UILabel!
     @IBOutlet weak var nameThird: UILabel!
-
-
-
-
-
-
-
-
     @IBOutlet weak var technology: UILabel!
-
-
 
     @IBOutlet weak var susO: UIButton!
     @IBAction func susB(_ sender: Any) {
@@ -58,68 +48,13 @@ class DashboardViewController: UIViewController {
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
         for (i, user) in Users.enumerated() {
-//            user.scoresBySubject = getUserTotalScoreBySubjectById(id: user.id)
             print(user.scoresBySubject)
             if user.scoresBySubject == [:] {break}
-//            for u in user.
             UsersDict.append(user.scoresBySubject)
-//            print(UsersDict[i][""])
-            
-            print(Array(user.scoresBySubject)[i].key)
-//            , Array(User.scoresBySubject)[indexPath.row].value, Array(User.scoresBySubject).count,
         }
-
-        print("Users Dictioanry ------", UsersDict)
-//        rankUsers(userDict: UsersDict)
-        
-        
-       
-//        print("SORTED Dictioanry ------", sortedByValueArray)
-
-        
     }
 
-//    func rankUsers(userDict: [[String: Int]]) {
-//        var topBySubject = [String: Int]()
-//        for currentUser in userDict{
-//            for subjects in currentUser{
-//                if topBySubject[subjects.key] == nil{
-//                    topBySubject[subjects.key] == subjects.value
-//                } else {
-//                    if topBySubject[subjects.key]! < subjects.value{
-//                        topBySubject[subjects.key] = subjects.value
-//                    }
-//                }
-//                print(subjects.key)
-//                print(subjects.value)
-//
-//            }
-//        }
-//
-//        print(topBySubject)
-//    }
-
-//    func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
-//        var score = 0
-//        var userScoreBySubject = [String: Int]()
-//
-//        for q in quizSessions {
-//            if q.userId == id {
-//                score += q.score
-//
-//                if userScoreBySubject[q.subjectName] == nil {
-//                    userScoreBySubject[q.subjectName] = q.score
-//                } else {
-//                    userScoreBySubject[q.subjectName]! += q.score
-//                }
-//            }
-//        }
-//        return userScoreBySubject;
-//    }
-
     var ScoreArray: [String] = ["95", "80", "70", "80", "78", "68", "100", "80", "70"]
-    // MARK: CALENDAR
-
 
     // MARK: FUNCTIONS
     func goNextView(nameView: String) {
@@ -134,12 +69,6 @@ class DashboardViewController: UIViewController {
             print("no")
         }
     }
-
-
-
-
-
-
 
     func getAuth() {
         let eStore = EKEventStore()
@@ -185,11 +114,8 @@ class DashboardViewController: UIViewController {
             }
         }
     }
-
-
-
+    
     // MARK: NOTIFICATION USER
-
 
     func sendNotification() {
         print("Notification ini")
@@ -204,16 +130,13 @@ class DashboardViewController: UIViewController {
                     }
                     self.generateNotification()
                 }
-
             case .authorized:
-
                 self.generateNotification()
             case .denied:
                 print("app not allowed")
             default:
                 print("")
             }
-
         }
     }
 
@@ -223,8 +146,7 @@ class DashboardViewController: UIViewController {
         ncont.title = "Congratulation"
         ncont.subtitle = "from Catechism"
         ncont.body = "You win a Free Suscription for 3 months, we will add the starting date to your calendar"
-        // ncont.sound = UNNotificationSound.default
-
+        
         let ntrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
         let nreq = UNNotificationRequest(identifier: "User_Local_notification", content: ncont, trigger: ntrigger)
 
@@ -233,13 +155,7 @@ class DashboardViewController: UIViewController {
                 print("can add notification request", error)
             }
         }
-
     }
-
-
-
-
-
 
     //MARK: GRAPH
     func graph() {
@@ -259,9 +175,7 @@ class DashboardViewController: UIViewController {
         imageV3.backgroundColor = UIColor.blue
         imageV3.frame = CGRect(x: 290, y: 500, width: 50, height: 100)
         self.view.addSubview(imageV3)
-
     }
-    // ************
     // Queue GCD  QoS
     func getScoreData() {
         // ***
@@ -278,26 +192,23 @@ class DashboardViewController: UIViewController {
         rankT2(t: "MATH")
     }
 
-
     @IBAction func t3B(_ sender: Any) {
         rankT3(t: "DATA BASE")
     }
-    // ***********************************************
+    
     func rankT1(t: String) {
         //DBHELPER
         var cont = 1
         for d in quizSessions {
-            print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
             switch cont {
 
             case 1:
-                technology.text = t //d.subjectName
+                technology.text = t
                 scoreFirst.text = ScoreArray[0]
                 let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "David"
                 for n in getUserById1 {
-                    print("Entrooooooo00000000000000000000000000o")
-                    nameFirst.text = n.name // "Pablo"//d.name
+                    nameFirst.text = n.name
                 }
 
                 cont = cont + 1
@@ -306,7 +217,7 @@ class DashboardViewController: UIViewController {
                 scoreSecond.text = ScoreArray[1]
                 let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text = n.name // "Pablo"//d.name
+                    nameSecond.text = n.name
                 }
 
                 cont = cont + 1
@@ -315,13 +226,12 @@ class DashboardViewController: UIViewController {
                 nameThird.text = "Young"
                 let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text = n.name // "Pablo"//d.name
+                    nameThird.text = n.name
                 }
                 cont = cont + 1
             default:
-                print("f")
+                print("default ranking t1")
             }
-
         }
     }
 
@@ -329,39 +239,37 @@ class DashboardViewController: UIViewController {
         //DBHELPER
         var cont = 1
         for d in quizSessions {
-            print("iniciaaaaaaaaaaaaaaaaaaaaaa/")
             switch cont {
-
             case 1:
-                technology.text = t //d.subjectName
+                technology.text = t
                 scoreFirst.text = ScoreArray[3]
                 let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "Luis"
                 for n in getUserById1 {
-                    print("Entrooooooo00000000000000000000000000o")
-                    nameFirst.text = n.name // "Pablo"//d.name
+                    nameFirst.text = n.name
                 }
-
                 cont = cont + 1
+                
             case 2:
                 nameSecond.text = "Daniel"
                 scoreSecond.text = ScoreArray[4]
                 let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text = n.name // "Pablo"//d.name
+                    nameSecond.text = n.name
                 }
-
                 cont = cont + 1
+                
             case 3:
                 scordThird.text = ScoreArray[5]
                 nameThird.text = "Melany"
                 let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text = n.name // "Pablo"//d.name
+                    nameThird.text = n.name
                 }
                 cont = cont + 1
+
             default:
-                print("f")
+                print("default ranking t2")
             }
 
         }
@@ -372,43 +280,40 @@ class DashboardViewController: UIViewController {
         var cont = 1
         for d in quizSessions {
             switch cont {
-
             case 1:
-                technology.text = t //d.subjectName
+                technology.text = t
                 scoreFirst.text = ScoreArray[6]
                 let getUserById1 = DBHelper.init().getUserById(id: d.userId)
                 nameFirst.text = "Richard"
                 for n in getUserById1 {
-                    nameFirst.text = n.name // "Pablo"//d.name
+                    nameFirst.text = n.name
                 }
-
                 cont = cont + 1
+                
             case 2:
                 nameSecond.text = "Analy"
                 scoreSecond.text = ScoreArray[7]
                 let getUserById2 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById2 {
-                    nameSecond.text = n.name // "Pablo"//d.name
+                    nameSecond.text = n.name
                 }
-
                 cont = cont + 1
+                
             case 3:
                 scordThird.text = ScoreArray[8]
                 nameThird.text = "Boris"
                 let getUserById3 = DBHelper.init().getUserById(id: d.userId)
                 for n in getUserById3 {
-                    nameThird.text = n.name // "Pablo"//d.name
+                    nameThird.text = n.name
                 }
                 cont = cont + 1
+                
             default:
-                print("f")
+                print("default ranking t3")
             }
 
         }
     }
-
-
-
 }
 
 extension DashboardViewController: UNUserNotificationCenterDelegate {

@@ -30,51 +30,55 @@ class ShowQuizViewController: UIViewController {
     var correctAnswer = 4
     var score = 0
     var questionsLeft = 5
-    
+
     var timeLeft = 60 * 30
+
+    var myTimer = Timer()
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        subjectLabel.text = selectedSubject
+        subjectLabel.text = selectedSubject + " Quiz"
         questionLabel.numberOfLines = 0
-        // Do any additional setup after loading the view.
-        
-        loadTimer()
+
+        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
+
+            self.myTimer = timer
+            self.timeLeft -= 1
+            let (h, m, s) = self.secondsToHoursMinutesSeconds(self.timeLeft)
+            self.timeLeftLabel.text = "Time Left: \(h):\(m):\(s)"
+            if(self.timeLeft == 0) {
+                timer.invalidate()
+            }
+        }
+
         loadQuestionsAndAnswers()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
     }
-    
-    func loadTimer(){
-        Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-                 print("timer fired!")
 
-            self.timeLeft -= 1
-           
-            
-            let (h,m,s) = self.secondsToHoursMinutesSeconds(self.timeLeft)
-            self.timeLeftLabel.text = "Time Left: \(h):\(m):\(s)"
-            print(self.timeLeft)
-            
-            if(self.timeLeft==0){
-                      timer.invalidate()
-                  }
-         }
-    }
-    
     func secondsToHoursMinutesSeconds(_ seconds: Int) -> (Int, Int, Int) {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "quizDetail" {
+            if let nextVC = segue.destination as? ShowOneUserViewController {
+                nextVC.modalPresentationStyle = .fullScreen
+                db.insertQuizSessions(userId: userData.id, score: score, sessionDate: "\(Date.now)", subjectName: selectedSubject)
+                nextVC.User.scoresBySubject = getUserTotalScoreBySubjectById(id: userData.id)
+                print("getUserTotalScoreBySubjectById", getUserTotalScoreBySubjectById(id: nextVC.User.id))
+                nextVC.User = sender as! Users
+            }
+        }
+    }
+
     func loadQuestionsAndAnswers() {
         if questionsLeft == 0 {
-            print("End of questions!, your total score was", score)
+            print("End of questions!, your total score was", score, "---userdata", userData)
+            self.myTimer.invalidate()
             //send to detail quiz result view before back to main screen.
-            
-            let displayVC : WelcomeViewController  = UIStoryboard(name: "StartStoryboard", bundle: nil).instantiateViewController(withIdentifier: "WelcomeSB") as!  WelcomeViewController
-            displayVC.modalPresentationStyle = .fullScreen
-            displayVC.userData = self.userData
-            self.present(displayVC, animated: true, completion: nil)
-            
+
+            self.performSegue(withIdentifier: "quizDetail", sender: userData)
+
         } else {
 
             var currentQuestions = db.getQuestions()
@@ -116,7 +120,6 @@ class ShowQuizViewController: UIViewController {
         answer4Btn.tintColor = UIColor.systemBlue
 
         print("Answer 1 ")
-        loadTimer()
     }
 
 
@@ -169,4 +172,23 @@ class ShowQuizViewController: UIViewController {
             }
         }
     }
+
+    func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
+        var score = 0
+        var userScoreBySubject = [String: Int]()
+        let quizSessions = db.getQuizSessions()
+        for q in quizSessions {
+            if q.userId == id {
+                score += q.score
+
+                if userScoreBySubject[q.subjectName] == nil {
+                    userScoreBySubject[q.subjectName] = q.score
+                } else {
+                    userScoreBySubject[q.subjectName]! += q.score
+                }
+            }
+        }
+        return userScoreBySubject;
+    }
+
 }

@@ -36,32 +36,26 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                 row.title = "Answer #\(index) - 1"
                 row.placeholder = "Answer 1"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-
             }
             <<< TextAreaRow("Answer #\(index) - 2") { row in
                 row.title = "Answer #\(index) - 2"
                 row.placeholder = "Answer 2"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-
             }
             <<< TextAreaRow("Answer #\(index) - 3") { row in
                 row.title = "Answer #\(index) - 3"
                 row.placeholder = "Answer 3"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-
             }
             <<< TextAreaRow("Answer #\(index) - 4") { row in
                 row.title = "Answer #\(index) - 4"
                 row.placeholder = "Answer 4"
                 row.textAreaHeight = TextAreaHeight.dynamic(initialTextViewHeight: 30)
-
             }
             <<< IntRow("Correct#\(index)") { row in
                 row.title = "Enter Correct Answer #"
                 row.placeholder = "0"
-
             }
-
         }
         form +++ Section("Submit All")
         <<< ButtonRow("my Button") { row in
@@ -94,7 +88,7 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
         }
     }
 
-    func sendNotificationToAllUsers(){
+    func sendNotificationToAllUsers() {
         UNUserNotificationCenter.current().getNotificationSettings { notifS in
             switch notifS.authorizationStatus {
             case .notDetermined:
@@ -106,32 +100,28 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
             case .authorized:
                 self.generateNotification()
                 DispatchQueue.main.async {
-                  UIApplication.shared.registerForRemoteNotifications()
+                    UIApplication.shared.registerForRemoteNotifications()
                 }
             default:
                 print("Defaulted notification request failed.")
             }
-            
-//            guard settings.authorizationStatus == .authorized else { return }
-           
         }
     }
-    
-    func generateNotification(){
+
+    func generateNotification() {
         let notiContent = UNMutableNotificationContent()
         notiContent.title = "Quiz App"
         notiContent.subtitle = "New Quiz!"
         notiContent.body = "You have a new quiz waiting for you!"
-        
+
         let notiTrigger = UNTimeIntervalNotificationTrigger(timeInterval: 7.0, repeats: false)
         let notiRequest = UNNotificationRequest(identifier: "User_Local_Notification", content: notiContent, trigger: notiTrigger)
-        
-        UNUserNotificationCenter.current().add(notiRequest){ err in
+
+        UNUserNotificationCenter.current().add(notiRequest) { err in
             if let error = err {
                 print("cannot add notification request", error)
             }
         }
-        
     }
     func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
         completionHandler([.alert])

@@ -172,11 +172,22 @@
                         <outlet property="subjectLabel" destination="paG-hZ-F5c" id="Iv0-C5-CGt"/>
                         <outlet property="submitBtn" destination="6WF-Kj-yrp" id="Cnx-85-jIr"/>
                         <outlet property="timeLeftLabel" destination="6Mc-v4-kKX" id="bmH-B2-cGt"/>
+                        <segue destination="8Vp-ho-vks" kind="show" identifier="quizDetail" id="qyE-1o-5jc"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="7aW-jG-Tfp" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="2029.9065420560746" y="37.580993520518362"/>
+        </scene>
+        <!--userScoreSB-->
+        <scene sceneID="keP-l3-4Z7">
+            <objects>
+                <viewControllerPlaceholder storyboardIdentifier="userScoreSB" storyboardName="AdminStoryBoard" referencedIdentifier="userScoreSB" id="8Vp-ho-vks" sceneMemberID="viewController">
+                    <navigationItem key="navigationItem" id="GnV-th-h3k"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ChO-Ju-Gj8" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2594" y="-59"/>
         </scene>
     </scenes>
     <resources>

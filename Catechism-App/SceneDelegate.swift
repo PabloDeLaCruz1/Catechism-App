@@ -22,17 +22,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let _ = (scene as? UIWindowScene) else { return }
             /// MARK: for upload 03/21/2022
         SceneDelegate.scene = scene
-//                    guard let windowScene = (scene as? UIWindowScene) else { return }
-//
-//                    let window = UIWindow(windowScene: windowScene)
-//                    let viewController = ChooseQuizTypeVC()
-//
-//                    let navigation = UINavigationController(rootViewController: viewController)
-//                    window.rootViewController = navigation
-//
-//                    self.window = window
-//                    window.makeKeyAndVisible()
-//                    window.backgroundColor = UIColor.white
 
     }
 
@@ -64,47 +53,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // to restore the scene back to its current state.
     }
 
-    
-
-//    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
-//        guard let url = URLContexts.first?.url else {
-//            return
-//        }
-//
-//        ApplicationDelegate.shared.application(
-//            UIApplication.shared,
-//            open: url,
-//            sourceApplication: nil,
-//            annotation: [UIApplication.OpenURLOptionsKey.annotation]
-//        )
-//    }
-
-
-
-
 }
-
-//extension UIViewController {
-//     var appDelegate: AppDelegate {
-//     return UIApplication.shared.delegate as! AppDelegate
-// }
-//
-// var sceneDelegate: SceneDelegate? {
-//     guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//         let delegate = windowScene.delegate as? SceneDelegate else { return nil }
-//      return delegate
-// }
-//}
-//
-//extension UIViewController {
-//    var window: UIWindow? {
-//        if #available(iOS 13, *) {
-//            guard let windowScene = UIApplication.shared.connectedScenes.first as? UIWindowScene,
-//                let delegate = windowScene.delegate as? SceneDelegate, let window = delegate.window else { return nil }
-//                   return window
-//        }
-//
-//        guard let delegate = UIApplication.shared.delegate as? AppDelegate, let window = delegate.window else { return nil }
-//        return window
-//    }
-//}

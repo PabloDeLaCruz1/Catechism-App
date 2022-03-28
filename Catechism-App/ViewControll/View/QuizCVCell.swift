@@ -104,14 +104,10 @@ class QuizCVCell: UICollectionViewCell {
         btn.clipsToBounds=true
         btn.translatesAutoresizingMaskIntoConstraints=false
         btn.titleLabel?.lineBreakMode = .byWordWrapping
-//        btn.titleLabel?.lineBreakMode = .byClipping
         btn.titleLabel?.adjustsFontSizeToFitWidth = true
         btn.titleLabel?.textAlignment = .left
-//        btn.titleLabel?.adjustsFontSizeToFitWidth = bool
         btn.titleLabel?.minimumScaleFactor = 0.2;
         btn.titleLabel?.baselineAdjustment = .alignBaselines
-//            btn.titleLabel!.frame.size
-        
 
         return btn
     }

@@ -13,18 +13,13 @@ class MenuViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
             DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
             DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)
             DBHelper.init().insertQuestions(subjectName: "iOS", questionText: "what is ", correctAnswer: 1)
             DBHelper.init().insertQuestions(subjectName: "GDC", questionText: "what is ", correctAnswer: 1)
         
-        
-        
-//        startB.layer.cornerRadius = 20
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
     }
-    
     @IBAction func startButtonPressed(_ sender: Any) {
           
             let storyBoard : UIStoryboard = UIStoryboard(name: "StartStoryboard", bundle:nil)
@@ -33,18 +28,5 @@ class MenuViewController: UIViewController {
         nextViewController.modalPresentationStyle = .fullScreen
             present(nextViewController, animated: true)
     }
-    
-
-    
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-//
-//        let backItem = UIBarButtonItem()
-//           backItem.title = "Something Else"
-//           navigationItem.backBarButtonItem = backItem // This wil
-//    }
-    
 
 }
