@@ -64,8 +64,8 @@ extension DBHelper{
                 let sequence = sqlite3_column_int(queryStatement, 3)
                 answers.append(Answers(id: Int(id), questionId: Int(questionId), answerText: answerText, sequence: Int(sequence)))
            
-                print("Quiz Sessions Query Result:")
-                print("\(questionId) | \(answerText) | \(sequence)")
+//                print("Quiz Sessions Query Result:")
+//                print("\(questionId) | \(answerText) | \(sequence)")
             }
         } else {
             print("Quiz Sessions SELECT statement could not be prepared")

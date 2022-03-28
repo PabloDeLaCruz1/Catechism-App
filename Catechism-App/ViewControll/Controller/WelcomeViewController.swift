@@ -124,6 +124,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
             let displayVC : QuizzesViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizzesViewController
             displayVC.modalPresentationStyle = .fullScreen
+            displayVC.userData = self.userData
             self.present(displayVC, animated: true, completion: nil)
 
         }
