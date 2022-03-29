@@ -196,6 +196,8 @@ class DashboardViewController: UIViewController {
         rankT3(t: "DATA BASE")
     }
     
+    //MARK: RANK
+    
     func rankT1(t: String) {
         //DBHELPER
         var cont = 1
@@ -203,10 +205,10 @@ class DashboardViewController: UIViewController {
             switch cont {
 
             case 1:
+                nameFirst.text = "David" // Ini
                 technology.text = t
                 scoreFirst.text = ScoreArray[0]
                 let getUserById1 = DBHelper.init().getUserById(id: d.userId)
-                nameFirst.text = "David"
                 for n in getUserById1 {
                     nameFirst.text = n.name
                 }
