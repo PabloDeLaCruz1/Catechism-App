@@ -9,6 +9,7 @@ import UIKit
 import MapKit
 import Eureka
 
+//User Detail View
 class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
     var User = Users()
@@ -18,10 +19,7 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
     @IBOutlet weak var mkMapView: MKMapView!
     @IBOutlet weak var userNameLabel: UILabel!
 
-    struct Scores {
-        var subjectsLabel: String
-        var scoresLabel: String
-    }
+    //Locations for mapkip
     let london = Capital(title: "London", coordinate: CLLocationCoordinate2D(latitude: 51.507222, longitude: -0.1275), info: "Home to the 2012 Summer Olympics.")
     let oslo = Capital(title: "Oslo", coordinate: CLLocationCoordinate2D(latitude: 59.95, longitude: 10.75), info: "Founded over a thousand years ago.")
     let paris = Capital(title: "Paris", coordinate: CLLocationCoordinate2D(latitude: 48.8567, longitude: 2.3508), info: "Often called the City of Light.")
@@ -76,9 +74,6 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "HCell") as! HeaderCellForDetailTableViewCell
         headerCell.backgroundColor = UIColor.systemBlue
-
-
-
         return headerCell
     }
 
@@ -89,7 +84,6 @@ class ShowOneUserViewController: UIViewController, UITableViewDelegate, UITableV
         for q in quizSessions {
             if q.userId == id {
                 score += q.score
-
                 if userScoreBySubject[q.subjectName] == nil {
                     userScoreBySubject[q.subjectName] = q.score
                 } else {

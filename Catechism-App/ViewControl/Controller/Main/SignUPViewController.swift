@@ -9,9 +9,11 @@ import UIKit
 import SwiftUI
 
 class SignUpViewController: UIViewController {
+
     // MARK: Variables
     var db: DBHelper = DBHelper()
     var userWelcome = ""
+
     // MARK: IBOutlet
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passT: UITextField!
@@ -27,7 +29,7 @@ class SignUpViewController: UIViewController {
     @IBOutlet weak var selected2: UIImageView!
     @IBOutlet weak var selected3: UIImageView!
 
-    // Suscription
+    // MARK: Suscription
     @IBOutlet weak var freeeB: UIButton!
     @IBOutlet weak var paidB: UIButton!
     @IBOutlet weak var adminB: UIButton!
@@ -89,7 +91,7 @@ class SignUpViewController: UIViewController {
         showPB.isHidden = false
     }
 
-    // MARK:  FUNCTIONS
+    // MARK: FUNCTIONS
     func saveUserDB() {
         db.insertUsers(name: emailText.text!, password: passT.text!, subscriptionType: Int(subscriptionType.text!) ?? 0)
     }

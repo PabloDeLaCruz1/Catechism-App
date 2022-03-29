@@ -19,11 +19,11 @@ class ShowQuizViewController: UIViewController {
 
     @IBOutlet weak var subjectLabel: UILabel!
     @IBOutlet weak var questionLabel: UILabel!
-
     @IBOutlet weak var timeLeftLabel: UILabel!
+    
     let db = DBHelper.init()
-
     var userData = Users()
+    
     var selectedSubject = ""
     var questionNum = 0
     var selectedAnswer = 4
@@ -40,8 +40,8 @@ class ShowQuizViewController: UIViewController {
         subjectLabel.text = selectedSubject + " Quiz"
         questionLabel.numberOfLines = 0
 
+        //30min timer for quiz:
         Timer.scheduledTimer(withTimeInterval: 1.0, repeats: true) { timer in
-
             self.myTimer = timer
             self.timeLeft -= 1
             let (h, m, s) = self.secondsToHoursMinutesSeconds(self.timeLeft)
@@ -50,7 +50,6 @@ class ShowQuizViewController: UIViewController {
                 timer.invalidate()
             }
         }
-
         loadQuestionsAndAnswers()
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
     }
@@ -59,13 +58,13 @@ class ShowQuizViewController: UIViewController {
         return (seconds / 3600, (seconds % 3600) / 60, (seconds % 3600) % 60)
     }
 
+    //Insert Data into Quiz once the quiz is over.
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "quizDetail" {
             if let nextVC = segue.destination as? ShowOneUserViewController {
                 nextVC.modalPresentationStyle = .fullScreen
                 db.insertQuizSessions(userId: userData.id, score: score, sessionDate: "\(Date.now)", subjectName: selectedSubject)
                 nextVC.User.scoresBySubject = getUserTotalScoreBySubjectById(id: userData.id)
-                print("getUserTotalScoreBySubjectById", getUserTotalScoreBySubjectById(id: nextVC.User.id))
                 nextVC.User = sender as! Users
             }
         }
@@ -73,14 +72,9 @@ class ShowQuizViewController: UIViewController {
 
     func loadQuestionsAndAnswers() {
         if questionsLeft == 0 {
-            print("End of questions!, your total score was", score, "---userdata", userData)
             self.myTimer.invalidate()
-            //send to detail quiz result view before back to main screen.
-
             self.performSegue(withIdentifier: "quizDetail", sender: userData)
-
         } else {
-
             var currentQuestions = db.getQuestions()
             var currentAnswers = db.getAnswers()
 
@@ -106,22 +100,20 @@ class ShowQuizViewController: UIViewController {
         }
     }
 
+    //TODO: implement and use
     func checkAnswer() {
 
     }
 
+    //IBAction buttons as answer pickers:
     @IBAction func answer1Btn(_ sender: Any) {
-
         selectedAnswer = 0
         answer1Btn.tintColor = UIColor.systemRed
 
         answer2Btn.tintColor = UIColor.systemBlue
         answer3Btn.tintColor = UIColor.systemBlue
         answer4Btn.tintColor = UIColor.systemBlue
-
-        print("Answer 1 ")
     }
-
 
     @IBAction func answer2Btn(_ sender: Any) {
         selectedAnswer = 1
@@ -130,9 +122,6 @@ class ShowQuizViewController: UIViewController {
         answer1Btn.tintColor = UIColor.systemBlue
         answer3Btn.tintColor = UIColor.systemBlue
         answer4Btn.tintColor = UIColor.systemBlue
-
-        print("Answer 2 ")
-
     }
 
     @IBAction func answer3Btn(_ sender: Any) {
@@ -142,9 +131,6 @@ class ShowQuizViewController: UIViewController {
         answer2Btn.tintColor = UIColor.systemBlue
         answer1Btn.tintColor = UIColor.systemBlue
         answer4Btn.tintColor = UIColor.systemBlue
-
-        print("Answer 3 ")
-
     }
     @IBAction func answer4Btn(_ sender: Any) {
         selectedAnswer = 3
@@ -153,9 +139,6 @@ class ShowQuizViewController: UIViewController {
         answer2Btn.tintColor = UIColor.systemBlue
         answer3Btn.tintColor = UIColor.systemBlue
         answer1Btn.tintColor = UIColor.systemBlue
-
-        print("Answer 4 ")
-
     }
 
     @IBAction func submitBtn(_ sender: Any) {
@@ -163,6 +146,7 @@ class ShowQuizViewController: UIViewController {
             print("Error, No Answer Selected!")
         } else {
             if selectedAnswer == correctAnswer {
+                //TODO: Optional, depending on requirements - Inform user of correct/wrong answer
                 print("Correct Answer!")
                 score += 1
                 loadQuestionsAndAnswers()
@@ -173,6 +157,7 @@ class ShowQuizViewController: UIViewController {
         }
     }
 
+    //TODO: This function needs to be a helper, its copied and pasted in many places
     func getUserTotalScoreBySubjectById(id: Int) -> [String: Int] {
         var score = 0
         var userScoreBySubject = [String: Int]()
@@ -190,5 +175,4 @@ class ShowQuizViewController: UIViewController {
         }
         return userScoreBySubject;
     }
-
 }

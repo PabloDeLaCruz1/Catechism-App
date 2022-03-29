@@ -10,9 +10,9 @@ import UIKit
 class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
     //MARK: Variables
-    var userWelcome = "" // username comes login page
-    var idUserWelcome = 0 // id USer
-    var susWelcome = "" // suscription
+    var userWelcome = ""
+    var idUserWelcome = 0
+    var susWelcome = ""
     var userData = Users()
 
     //MARK: IBOutlet
@@ -38,11 +38,8 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
         paidB.layer.cornerRadius = 20
 
         let UITapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedUserProfile))
-
         UITapRecognizer.delegate = self
-
         self.userProfile.addGestureRecognizer(UITapRecognizer)
-
         self.userProfile.isUserInteractionEnabled = true
 
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
@@ -70,9 +67,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
             quizB.isEnabled = false
             paidB.isEnabled = false
         }
-        // Do any additional setup after loading the view.
     }
-
 
     @objc func tappedUserProfile(sender: AnyObject) {
         self.performSegue(withIdentifier: "userProfileSegue", sender: userData)

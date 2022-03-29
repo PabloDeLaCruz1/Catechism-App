@@ -7,13 +7,10 @@
 
 import Foundation
 class Feedback {
-    
-    var feedback: String
-    
 
-    init(feedback: String)
-    {
-       
+    var feedback: String
+
+    init(feedback: String) {
         self.feedback = feedback
     }
 }

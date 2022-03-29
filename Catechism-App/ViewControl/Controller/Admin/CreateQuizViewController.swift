@@ -19,11 +19,13 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
         UNUserNotificationCenter.current().delegate = self
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
 
+        //Using Eureka forms https://github.com/xmartlabs/Eureka
         form +++ Section("Create Quiz")
         <<< TextRow("Quiz Subject") { row in
             row.title = "Quiz Subject"
             row.placeholder = "iOS, Database, GCD"
         }
+        //Questions iterate to populate 5
         for index in 1...questionCount {
             form +++ Section("Question \(index)")
             <<< TextAreaRow("Question #\(index)") { row in
@@ -57,16 +59,15 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                 row.placeholder = "0"
             }
         }
+        //Save Question Subject, Question, Answers, and Send notification:
         form +++ Section("Submit All")
         <<< ButtonRow("my Button") { row in
             row.title = "Submit"
 
             row.onCellSelection { cell, row in
                 self.sendNotificationToAllUsers()
-
                 let valuesDictionary = self.form.values()
-                print(valuesDictionary)
-
+                //Pass tag name to valuesDictionary to pull data from form
                 let subjectName = valuesDictionary["Quiz Subject"] as? String ?? "No SubJect Entered"
 
                 for i in 1...(((valuesDictionary.count - 2) / 5) - 1) {
@@ -78,6 +79,7 @@ class CreateQuizViewController: FormViewController, UNUserNotificationCenterDele
                     let answer4 = valuesDictionary["Answer #\(i) - 4"] as? String ?? ""
                     let correctAnswer = valuesDictionary["Correct#\(i)"] as? Int ?? 0
 
+                    //Save to db
                     self.db.insertQuestions(subjectName: subjectName, questionText: question, correctAnswer: correctAnswer)
                     self.db.insertAnswers(questionId: questionId, answerText: answer1, sequence: 1)
                     self.db.insertAnswers(questionId: questionId, answerText: answer2, sequence: 2)

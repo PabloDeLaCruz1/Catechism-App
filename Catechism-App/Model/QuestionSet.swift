@@ -7,9 +7,7 @@
 
 import Foundation
 
-class QuestionSet
-{
-
+class QuestionSet {
     var question: String = ""
     var correctAnswer: Int = 0
     var wrongAnswer: Int = 0
@@ -20,8 +18,7 @@ class QuestionSet
     var fourthAnswer: String = ""
 
     init(question: String, correctAnswer: Int, wrongAnswer: Int, isAnswered: Bool,
-         firstAnswer: String,  secondAnswer: String,  thirdAnswer: String,  fourthAnswer: String)
-    {
+        firstAnswer: String, secondAnswer: String, thirdAnswer: String, fourthAnswer: String) {
         self.question = question
         self.correctAnswer = correctAnswer
         self.wrongAnswer = wrongAnswer

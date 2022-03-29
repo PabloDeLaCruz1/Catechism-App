@@ -13,8 +13,7 @@ class Answers {
     var answerText: String
     var sequence: Int
 
-    init(id: Int, questionId: Int, answerText: String, sequence: Int)
-    {
+    init(id: Int, questionId: Int, answerText: String, sequence: Int) {
         self.id = id
         self.questionId = questionId
         self.answerText = answerText

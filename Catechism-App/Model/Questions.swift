@@ -12,8 +12,7 @@ class Questions {
     var question_text: String
     var corrrect_answer: String
 
-    init(id: Int, subject_name: String, question_text: String, corrrect_answer: String)
-    {
+    init(id: Int, subject_name: String, question_text: String, corrrect_answer: String) {
         self.id = id
         self.subject_name = subject_name
         self.question_text = question_text

@@ -14,8 +14,7 @@ class QuizSessions {
     var sessionDate: String = ""
     var subjectName: String = ""
 
-    init(id: Int, userId: Int, score: Int, sessionDate: String, subjectName: String)
-    {
+    init(id: Int, userId: Int, score: Int, sessionDate: String, subjectName: String){
         self.id = id
         self.userId = userId
         self.score = score

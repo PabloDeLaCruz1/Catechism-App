@@ -22,12 +22,10 @@ class ViewUsersTableViewController: UITableViewController {
 
     // MARK: - Table view data source
     override func numberOfSections(in tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
         return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        // #warning Incomplete implementation, return the number of rows
         return Users.count
     }
 
@@ -46,11 +44,7 @@ class ViewUsersTableViewController: UITableViewController {
     }
 
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
         if segue.identifier == "ShowOneUserViewController" {
             if let nextVC = segue.destination as? ShowOneUserViewController {
                 nextVC.User = sender as! Users
@@ -58,15 +52,12 @@ class ViewUsersTableViewController: UITableViewController {
         }
     }
 
+    // MARK: - Header Section
     override func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerCell = tableView.dequeueReusableCell(withIdentifier: "HeaderCell") as! HeaderTableViewCell
         headerCell.backgroundColor = UIColor.systemBlue
 
         return headerCell
-    }
-
-    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
     }
 
     func getTotalScoreById(id: Int) -> Int {
@@ -125,12 +116,14 @@ class ViewUsersTableViewController: UITableViewController {
                 cell.subType.text = String(3)
             }
 
+            //Using this as "didSelectRow" because of fan Menu.
             if button.id == "promote_user_id" {
                 let Users = self.Users[indexPath.row]
                 Users.scoresBySubject = self.getUserTotalScoreBySubjectById(id: Users.id)
                 self.performSegue(withIdentifier: "ShowOneUserViewController", sender: Users)
             }
         }
+        //MARK: - FanMenu options
         // call after animation
         cell.fanMenu.onItemWillClick = { button in
             print("ItemWillClick: \(button.id)")

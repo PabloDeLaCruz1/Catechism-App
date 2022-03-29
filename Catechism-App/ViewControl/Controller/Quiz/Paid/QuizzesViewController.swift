@@ -9,19 +9,22 @@ import UIKit
 
 class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
 
+    @IBOutlet weak var tableView: UITableView!
+
     let questionsSubjects = DBHelper.init().getQuestions()
     var userData = Users()
-    @IBOutlet weak var tableView: UITableView!
     let button = UIButton()
     var boolToggler = true
     var selectedSubject = ""
     var attempts = 2
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         tableView?.delegate = self
         tableView?.dataSource = self
 
+        //Custom View. Button looking image as a toggler.
         let image = UIImage(named: "newViewToggler.png")
         button.frame = CGRect(x: 15, y: 90, width: 400, height: 50)
         button.setBackgroundImage(image, for: UIControl.State.normal)
@@ -39,6 +42,7 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
         self.dismiss(animated: true)
     }
 
+    //Toggle Button
     @objc func imageButtonTapped(_ sender: UIButton!) {
         if boolToggler {
             let image = UIImage(named: "pastViewToggler.png")
@@ -52,7 +56,6 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
     }
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-
         if attempts > 0 {
             attempts -= 1
             selectedSubject = String(self.questionsSubjects[indexPath.row].subject_name)
@@ -75,6 +78,7 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
+    //TODO: Load imaged in the background and then change rows to count amount.
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return 5
     }
@@ -105,9 +109,9 @@ class QuizzesViewController: UIViewController, UITableViewDelegate, UITableViewD
         cell.randomImgView.image = imagedata
         cell.quizTitleLabel.text = subjectName
         cell.subTypeLabel.text = date
-
     }
 
+    //TODO: Add to seed file
     func seedData() {
         DBHelper.init().insertQuestions(subjectName: "Math", questionText: "what is ", correctAnswer: 1)
         DBHelper.init().insertQuestions(subjectName: "Science", questionText: "what is ", correctAnswer: 1)

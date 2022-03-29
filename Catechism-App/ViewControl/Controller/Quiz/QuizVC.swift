@@ -31,7 +31,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     override func loadView() {
         super.loadView()
-        print("quiz received")
+
         self.title="QuizOne"
         self.view.backgroundColor=UIColor.white
         
@@ -83,6 +83,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         }
     }
     
+    // Go to Previous or Next Question View
     @objc func btnPrevNextAction(sender: UIButton) {
         if sender == btnNext && currentQuestionNumber == questionsArray.count {
             let nextVC=QuizSessionResult()
@@ -106,8 +107,8 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     }
     
     func moveToFrame(contentOffset : CGFloat) {
-        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height) //TODO Some adjustment needed.
-        self.answersCV.scrollRectToVisible(frame, animated: true)  //TODO Some adjustment needed.
+        let frame: CGRect = CGRect(x : contentOffset ,y : self.answersCV.contentOffset.y ,width : self.answersCV.frame.width,height : self.answersCV.frame.height)
+        self.answersCV.scrollRectToVisible(frame, animated: true)
     }
     
     func setupViews() {
@@ -185,6 +186,7 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
 }
 
 extension QuizVC: QuizCVCellDelegate {
+    
     func didChooseAnswer(btnIndex: Int) {
         let centerIndex = getCenterIndex()
         guard let index = centerIndex else { return }
@@ -209,6 +211,7 @@ extension QuizVC: QuizCVCellDelegate {
     }
 }
 
+//Sound Effects
 private func pausePreviousSounds() {
     DispatchQueue.global().async {
         if let incorrectSound = AudioSounds.incorrect, incorrectSound.isPlaying {

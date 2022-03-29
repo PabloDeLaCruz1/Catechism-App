@@ -7,6 +7,7 @@
 
 import UIKit
 
+// Application Entry Point
 class LaunchViewController: UIViewController {
 
     @IBOutlet weak var image: UIImageView!

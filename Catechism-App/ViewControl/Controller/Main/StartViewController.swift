@@ -55,7 +55,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
     // MARK: viewDidLoad
     override func viewDidLoad() {
         super.viewDidLoad()
-        // **************************************
+
         label?.isHidden = true
         saveB.isHidden = true
         thanksI.isHidden = true
@@ -64,7 +64,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         let loginButton = FBLoginButton()
         // Optional: Place the button in the center of your view.
         self.view.backgroundColor = UIColor(patternImage: UIImage(named: "sky.jpeg")!)
-
+        
         loginButton.permissions = ["public_profile", "email"]
         loginButton.center = view.center
         loginButton.delegate = self
@@ -81,29 +81,13 @@ class StartViewController: UIViewController, LoginButtonDelegate {
 
         view.addSubview(loginButton)
 
-        DispatchQueue.main.async {
-            for i in 31..<36 {
-                print(" i am in main queue")
-            }
-            self.getData()
-        }
-
         loginB.layer.cornerRadius = 20
         signUpB.layer.cornerRadius = 20
         saveB.layer.cornerRadius = 20
         userText.text = email
         userPasswordText.text = password
     }
-
-    // Queue GCD  QoS
-    func getData() {
-        //DBHELPER
-        let data = DBHelper.init().getUsers()
-        for d in data {
-            print("DispatchQueue.main.async:", d.id, "user: ", d.name, "pass:", d.password, d.subscriptionType)
-        }
-    }
-
+  
     // MARK: IBActions
     @IBAction func showPass(_ sender: Any) {
         print("Change passs")
@@ -117,14 +101,13 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         userPasswordText.isSecureTextEntry = true
         hidePas.isHidden = true
         showP.isHidden = false
-
     }
 
     @IBAction func signUpB(_ sender: Any) {
         goNextView(nameView: "signUp")
     }
 
-
+    //Activate Microphone for feedback
     @IBAction func activeMicro(_ sender: Any) {
         label.isHidden = false
         saveB.isHidden = false
@@ -148,7 +131,6 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         var found = "N"
         if validateData() {
 
-            //DBHELPER
             let data = DBHelper.init().getUsers()
             for d in data {
                 if found == "N" {
@@ -228,12 +210,11 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         return true
     }
 
-    // MARK: SPEECH
+    // MARK: Speech to Text
     func startSpeechRec() {
         let nd = audioEng.inputNode
         let recordF = nd.outputFormat(forBus: 0)
-        nd.installTap(onBus: 0, bufferSize: 1024, format: recordF)
-        {
+        nd.installTap(onBus: 0, bufferSize: 1024, format: recordF) {
             (buffer, _) in self.req.append(buffer)
         }
         audioEng.prepare()
@@ -245,7 +226,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         rTask = speechR?.recognitionTask(with: req, resultHandler: {
             (resp, error) in
 
-            guard let rsp = resp else {
+            guard resp != nil else {
                 print(error.debugDescription)
 
                 return
@@ -298,6 +279,7 @@ class StartViewController: UIViewController, LoginButtonDelegate {
         }
         print("cancel")
     }
+    
     // MARK: FACEBOOK LOGIN
     func loginButton(_ loginButton: FBLoginButton, didCompleteWith result: LoginManagerLoginResult?, error: Error?) {
         if result?.isCancelled ?? false {
@@ -332,11 +314,9 @@ class StartViewController: UIViewController, LoginButtonDelegate {
             })
     }
 
-
     @IBAction func facebookLoginBtnAction(_ sender: UIButton) {
         self.loginButtonClicked()
     }
-
 
     func getUserProfile(token: AccessToken?, userId: String?) {
         let graphRequest: GraphRequest = GraphRequest(graphPath: "me", parameters: ["fields": "id, first_name, middle_name, last_name, name, picture, email"])
@@ -353,12 +333,10 @@ class StartViewController: UIViewController, LoginButtonDelegate {
 
                 // Facebook First Name
                 if let facebookFirstName = data["first_name"] as? String {
-                    print("Facebook First Name: \(facebookFirstName)")
                     self.userText.text = facebookFirstName
-                    // ******** Print SAVE
                     self.db.insertUsers(name: self.userText.text ?? "Davi", password: "", subscriptionType: 2)
                     self.isFacebookUser = "S"
-                    print("Data Facebook stored:", self.userText.text)
+                    print("Data Facebook stored:", self.userText.text ?? "")
 
                 } else {
                     print("Facebook First Name: Not exists")
