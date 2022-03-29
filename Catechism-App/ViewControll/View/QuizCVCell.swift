@@ -50,7 +50,6 @@ class QuizCVCell: UICollectionViewCell {
     @objc func btnOptionAction(sender: UIButton) {
         guard let unwrappedQue = question else { return }
         if !unwrappedQue.isAnswered {
-            print(sender.tag)
             delegate?.didChooseAnswer(btnIndex: sender.tag)
         }
     }

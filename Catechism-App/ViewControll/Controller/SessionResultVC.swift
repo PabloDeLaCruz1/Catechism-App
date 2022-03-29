@@ -8,13 +8,13 @@
 
 import UIKit
 
-class QuizSessionResult: UIViewController {
+class SessionResultVC: UIViewController {
     
     let db = DBHelper()
-//    let loginUser = Users
     var score: Int?
     var totalScore: Int?
-    
+    var window: UIWindow?
+
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.hidesBackButton = true
@@ -46,17 +46,25 @@ class QuizSessionResult: UIViewController {
         lblRating.text = "\(rating)"
         lblRating.textColor=color
     }
-    
-//    func checkFree(uid: Int, numberOfTrial: Int) {  //TODO
-//
-//    }
-    
-    
-    
+        
     @objc func btnRestartAction() {
-        if !(db.checkFree(gameUser: 0) > 2) {
-            self.navigationController?.popToRootViewController(animated: true)
-        }
+        print("SessionInfo.freeSessionCount")
+        print(SessionInfo.freeSessionCount)
+        
+        let v=QuizTopicVC()
+        
+        navigationController?.pushViewController(v, animated: true)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+                    guard let windowScene = (SceneDelegate.scene as? UIWindowScene) else { return }
+            
+                                        let window = UIWindow(windowScene: windowScene)
+            
+                                        let navigation = UINavigationController(rootViewController: v)
+                                        window.rootViewController = navigation
+            
+                                        self.window = window
+                                        window.makeKeyAndVisible()
+                                        window.backgroundColor = UIColor.white
     }
     
     func setupViews() {

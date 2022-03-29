@@ -217,6 +217,8 @@ class StartViewController: UIViewController, LoginButtonDelegate {
                 if (d.name == userText.text!) && (userText.text! != "") {
                     if (d.password == userPasswordText.text!) {
                         if (d.subscriptionType != 3){
+                            SessionInfo.loginUserId = d.id
+                            SessionInfo.loginUserType = d.subscriptionType
                         found  = "S"
                         thanksI.isHidden = true
                         imageL.isHidden  = false

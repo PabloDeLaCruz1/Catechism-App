@@ -13,10 +13,6 @@ class DBHelper {
 
     init() {
         db = openDatabase()
-        createUsersTable()
-        createQuizSessionsTable()
-        createQuestionsTable()
-        createAnswersTable()
     }
 
     let dbPath: String = "catechism.sqlite"
@@ -201,34 +197,37 @@ class DBHelper {
         return questions
     }
     
-    func checkFree(gameUser: Int) -> Int32 {
+    func countFreeSessions(uid: Int) -> Int32 {
         let sql = "SELECT COUNT(*) FROM quiz_sessions WHERE user_id = ? AND subscription_type = 0 FROM quiz_sessions INNER JOIN users ON user_id = id GROUP BY user_id"
         
-      var getFreeCntStmt: OpaquePointer? = nil
+      var freeSessionCountStmt: OpaquePointer? = nil
       var freeCount: Int32 = 0
         
-        if sqlite3_prepare_v2(db, sql, -1, &getFreeCntStmt, nil) == SQLITE_OK {
-            sqlite3_bind_int(getFreeCntStmt, 1, Int32(gameUser))
-                while(sqlite3_step(getFreeCntStmt) == SQLITE_ROW){
-                       freeCount = sqlite3_column_int(getFreeCntStmt, 0)
+        if sqlite3_prepare_v2(db, sql, -1, &freeSessionCountStmt, nil) == SQLITE_OK {
+            sqlite3_bind_int(freeSessionCountStmt, 1, Int32(uid))
+                while(sqlite3_step(freeSessionCountStmt) == SQLITE_ROW){
+                       freeCount = sqlite3_column_int(freeSessionCountStmt, 0)
                  }
         } else {
             NSLog("Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db))
         }
-        sqlite3_finalize(getFreeCntStmt)
+        sqlite3_finalize(freeSessionCountStmt)
         return freeCount
     }
 
-    func createSessionRecord(uid: Int, type: String) {  //, date: String
+    func createSessionRecord(uid: Int, type: String) ->Int {  //, date: String
         let sql = "INSERT INTO quiz_sessions(user_id, subject_name, session_date) values(?, ?, DATE('now'))"
         var insertStmt: OpaquePointer? = nil
+        var lastRowID: Int = 0
         
         if sqlite3_prepare_v2(db, sql, -1, &insertStmt, nil) == SQLITE_OK {
             sqlite3_bind_int(insertStmt, 1, Int32(uid))
             sqlite3_bind_text(insertStmt, 2, (type as NSString).utf8String, -1, nil)
 
             if sqlite3_step(insertStmt) == SQLITE_DONE {
-                print("Successfully inserted row.")
+                let lastRowID64:Int64
+                lastRowID64 = sqlite3_last_insert_rowid(db)
+                lastRowID = Int(truncatingIfNeeded: lastRowID64)
             } else {
                 print("Could not insert row.")
             }
@@ -236,19 +235,19 @@ class DBHelper {
             NSLog("Database returned error %d: %s", sqlite3_errcode(db), sqlite3_errmsg(db))
         }
         sqlite3_finalize(insertStmt)
+        return lastRowID
     }
 
-    func recordSessionScore(sid : Int, noOfCorrect: Int) {
-        let sql = "UPDATE quiz_sessions SET score = ? WHERE quiz_id = ?;"
+    func recordSessionScore(sid : Int, score: Int) {
+        let sql = "UPDATE quiz_sessions SET score = ? WHERE id = ?;"
         var recordScoreStmt: OpaquePointer? = nil
         
         if sqlite3_prepare_v2(db, sql, -1, &recordScoreStmt, nil) == SQLITE_OK {
-            sqlite3_bind_int(recordScoreStmt, 1, Int32(
-            ))
+            sqlite3_bind_int(recordScoreStmt, 1, Int32(score))
             sqlite3_bind_int(recordScoreStmt, 2, Int32(sid))
 
             if sqlite3_step(recordScoreStmt) == SQLITE_DONE {
-                print("Successfully inserted row.")
+                print("Score updated.")
             } else {
                 print("Could not insert row.")
             }

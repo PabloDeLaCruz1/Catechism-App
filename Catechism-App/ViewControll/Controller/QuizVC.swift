@@ -9,7 +9,6 @@
 // All rights of the creator respected.
 
 import UIKit
-import SQLite3
 
 struct QuestionFetched {
     let question: String
@@ -20,19 +19,29 @@ struct QuestionFetched {
 }
 
 class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
+    let db = DBHelper()
     var questions = Array<QuestionSet>()
     var answersCV: UICollectionView!
     var questionsArray = [QuestionFetched]()
     var score: Int = 0
     var currentQuestionNumber = 1
     var typeChosen = ""
-    
     var window: UIWindow?
-    
+
     override func loadView() {
         super.loadView()
-        print("quiz received")
-        self.title="QuizOne"
+        var title:String = ""
+        switch typeChosen {
+            case"1":
+                title = "AIX"
+            case "2":
+                title = "Apple"
+            case "3":
+                title = "SQLite"
+            default:
+                title = "Blind Quiz"
+        }
+        self.title = title
         self.view.backgroundColor=UIColor.white
         
         let layout = UICollectionViewFlowLayout()
@@ -41,17 +50,14 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         layout.scrollDirection = .horizontal
         layout.minimumLineSpacing = 1
         layout.minimumInteritemSpacing = 1
-        
-        questions = DBHelper.init().get5Quizes(type: typeChosen)  //TODO To accept the parameter value from users.
+        questions = db.get5Quizes(type: typeChosen)
 
         answersCV=UICollectionView(frame: CGRect(x: 0, y: 0, width: self.view.frame.width, height: self.view.frame.height), collectionViewLayout: layout)
         answersCV.delegate=self
         answersCV.dataSource=self
         answersCV.register(QuizCVCell.self, forCellWithReuseIdentifier: "Cell")
-//        answersCV.showsHorizontalScrollIndicator = false
-//        answersCV.translatesAutoresizingMaskIntoConstraints=false
         answersCV.backgroundColor=UIColor.yellow
-        answersCV.isPagingEnabled = true
+        answersCV.isPagingEnabled = false  //// TO ADJUST
         
         
         self.view.addSubview(answersCV)
@@ -75,10 +81,6 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
         return cell
     }
     
-//    func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) { //TODO Investigating.
-//        setQuestionNumber()
-//    }
-//
     func setQuestionNumber() {
         let x = answersCV.contentOffset.x
         let w = answersCV.bounds.size.width
@@ -91,10 +93,12 @@ class QuizVC: UIViewController, UICollectionViewDelegate, UICollectionViewDataSo
     
     @objc func btnPrevNextAction(sender: UIButton) {
         if sender == btnNext && currentQuestionNumber == questionsArray.count {
-            let nextVC=QuizSessionResult()
+            let nextVC=SessionResultVC()
             nextVC.score = score
             nextVC.totalScore = questionsArray.count
+            db.recordSessionScore(sid: SessionInfo.sessionId, score: score)
             self.navigationController?.pushViewController(nextVC, animated: false)
+            navigationController?.setNavigationBarHidden(true, animated: false)
             return
         }
         

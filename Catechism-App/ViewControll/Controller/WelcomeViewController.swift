@@ -8,7 +8,8 @@
 import UIKit
 
 class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
-   
+    var window: UIWindow?
+
     //MARK: Variables
     var userWelcome = ""
     var susWelcome = ""
@@ -117,9 +118,23 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
 
 //            let displayVC : QuizzesViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizzesViewController
 //            displayVC.modalPresentationStyle = .fullScreen
-            self.present(ChooseQuizTypeVC(), animated: true, completion: nil)
+//            self.present(QuizTopicVC(), animated: true, completion: nil)
+                let v=QuizTopicVC()
+                
+                navigationController?.pushViewController(v, animated: true)
+                navigationController?.setNavigationBarHidden(true, animated: false)
+                            guard let windowScene = (SceneDelegate.scene as? UIWindowScene) else { return }
+                    
+                                                let window = UIWindow(windowScene: windowScene)
+                    
+                                                let navigation = UINavigationController(rootViewController: v)
+                                                window.rootViewController = navigation
+                    
+                                                self.window = window
+                                                window.makeKeyAndVisible()
+                                                window.backgroundColor = UIColor.white
 
-        }
+         }
         if (nameView == "paidQuiz") {
 
             let displayVC : QuizzesViewController  = UIStoryboard(name: "QuizStoryboard", bundle: nil).instantiateViewController(withIdentifier: "quizSB") as!  QuizzesViewController
