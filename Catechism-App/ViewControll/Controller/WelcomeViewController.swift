@@ -37,7 +37,7 @@ class WelcomeViewController: UIViewController, UIGestureRecognizerDelegate {
         adminB.layer.cornerRadius = 20
         paidB.layer.cornerRadius = 20
 
-        var UITapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedUserProfile))
+        let UITapRecognizer = UITapGestureRecognizer(target: self, action: #selector(tappedUserProfile))
 
         UITapRecognizer.delegate = self
 
